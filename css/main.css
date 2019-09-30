@@ -1,0 +1,206 @@
+
+/* General */
+html{
+    font-weight: lighter;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar{
+     background:rgb(255, 255, 255);
+     border-bottom: solid rgb(90, 30, 33) 2px;
+     margin: auto 5%;
+    }
+.nav-link, .navbar-brand{
+    color: #0000008e;
+    cursor: pointer;
+}
+.navbar-brand{
+    padding-left: 2%;
+
+}
+#marcaMinimalismo{
+    font-size: 30px;
+}
+.nav-link{
+     margin-right: 1em;
+     font-size: 20px;
+    }
+.nav-link:hover{
+     background: #f4f4f4; color: rgba(100, 138, 48, 0.753);
+    }
+.navbar-collapse{
+     justify-content: flex-end;
+    }
+#navResponsive{
+     background:rgba(0, 0, 0, 0.26);
+    }
+#formview{
+  padding-top: 50px;
+}
+/* Pagina de Inicio */
+@media only screen and (min-width: 600px){
+#textoinicio{
+    margin-top: 100px;
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+#textoinicio p {
+    text-align: justify;
+    font-size: 18px;
+
+}
+#textoinicio h2{
+    size: 30px;
+    color: rgba(0, 0, 0 , 0.623);
+    text-align: center;
+    padding-bottom: 20px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+    #textoinicio{
+        margin-top: 20%;
+        padding-right: 10%;
+        padding-left: 10%;
+        text-align: justify;
+        font-size: 15px;
+    }
+    #textoinicio h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    .navbar-brand{
+        padding-left: 2%;
+    }
+    #marcaMinimalismo{
+        font-size: 22px;
+    }
+    .nav-link{
+        font-size: 16px;
+    }
+}
+
+/*Contactos*/
+@media only screen and (max-width: 600px){
+    #estiloFormulario {
+        margin: 5% 10% auto;
+        background-color: #4984623d;
+    }
+    form{
+        padding: 5%;
+    }
+    #encabezadoFormulario{
+        margin: 25% 10% auto;
+    }
+}
+@media only screen and (min-width: 600px){
+    #estiloFormulario {
+        margin: 1% 25% auto;
+        background-color: #49846225;
+    }
+    form{
+        padding: 5%;
+
+    }
+    #encabezadoFormulario{
+        margin: 8% 5% auto;
+    }
+}
+    /* Viajes */
+
+    #estiloLista{
+         background-color: #49846256;
+         text-align: justify;
+         color: rgba(0, 0, 0, 0.678);
+}
+@media only screen and (min-width: 600px){
+    #estiloLista h2{
+        padding-top: 2%;
+        text-align: center;
+    }
+    #estiloLista ul{
+        font-size: 18px;
+        text-align: justify;
+        padding: 5%;
+    }
+    #contentViajes{
+        margin: 8% 3%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #estiloLista h2{
+        text-align: center;
+        font-size: 18px;
+        margin: 5% auto;
+    }
+    #contentViajes{
+        margin: 20% 5% auto;
+        font-size: 15px;
+        text-align: justify;
+    }
+    #estiloLista{
+        margin-top: 5%;
+    }
+    #estiloLista ul{
+        padding-right: 3%;
+        padding-left: 2%;
+    }
+
+}
+    /* Informacion */
+
+@media only screen and (max-width: 600px){
+    table{
+        margin: 20% 2% auto;
+    }
+    #formatoInput{
+        margin: 25% 5%;
+    }
+}
+
+@media only screen and (min-width: 600px){
+   #formatoTabla{
+    margin: 10% 5% auto 5%;
+
+   }
+}
+   /* testimonios */
+
+@media only screen and (max-width: 600px){
+    .jumbotron{
+        margin: 10% 10% auto;
+    }
+    .imagenTestimonios{
+        margin: 14% 10% auto;
+        align-content: center;
+    }
+    img{
+        height:300px;
+    }
+
+}
+
+@media only screen and (min-width: 600px){
+    .jumbotron{
+        margin: 3% 5%;
+    }
+    .imagenTestimonios{
+        margin: 5% 10%;
+        align-content: center;
+
+    }
+    img{
+        height:300px;
+    }
+}
+#dropdownMenuLink{
+  background-color: white;
+      color: #0000008e;
+      border: none;
+           font-size: 20px;
+
+}
+#dropdownMenuLink:hover{
+     background: #f4f4f4; color: rgba(100, 138, 48, 0.753);
+    }
