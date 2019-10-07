@@ -1,28 +1,30 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-30 23:24:30
+/* Smarty version 3.1.33, created on 2019-10-07 05:13:42
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\visitRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d92728e8bfc49_09780100',
+  'unifunc' => 'content_5d9aad664d4783_79734226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b908df853f954f5a27d11d32f2ae337b57ced275' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\visitRevistas.tpl',
-      1 => 1569878667,
+      1 => 1570418020,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:revistasFiltro.tpl' => 1,
+    'file:revistasTODAS.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5d92728e8bfc49_09780100 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9aad664d4783_79734226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -32,59 +34,43 @@ function content_5d92728e8bfc49_09780100 (Smarty_Internal_Template $_smarty_tpl)
        <div id="textoinicio">
               <h2> Revistas publicadas </h2>
               </div>
-              <form id="formview" action="insertar" method="post">
+              <form id="formview" action="insertar" name="SeleccionFecha" method="get">
                   <div class="form-group">
                       <label for="inputState">Filtrar por:</label>
                       <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
-                        <option> Todas </option>
+                        <option> Seleccione  </option>
+
+
           <option>
           <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['revistas']->value, 'revista');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 ?>
-          <option> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+          <option value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
  </option>
-
           </option>
-<?php
+          <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
        </select>
        </div>
        </form>
-       <div id="formatoTabla">
-       <table class="table table-bordered">
-       <thead>
-       <tr>
-       <th scope="col"> Titulo </th>
-       <th scope="col"> Descripción </th>
-       <th scope="col"> Fecha </th>
-       </tr>
-       </thead>
-       <tbody id="cuerpoTabla">
-       <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['revistas']->value, 'revista');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
+
+
+       <div class="container">
+         <?php if ($_smarty_tpl->tpl_vars['filtro']->value !== null) {?>
+          <?php $_smarty_tpl->_subTemplateRender("file:revistasFiltro.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-       <tr>
-       <td> <a href="detalleRevistas/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revista'];?>
-"><?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
- </a></td>
-       <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-</td>
-       <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-</td>
-       <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-       </tr>
-       </tbody>
-       </table>
+          <?php } else { ?>
+          <?php $_smarty_tpl->_subTemplateRender("file:revistasTODAS.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+          <?php }?>
+
        </div>
+
         <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         </body>

@@ -10,6 +10,11 @@ class revistasView {
    function showRevistas($revistas){
 
     $this->smarty->assign('revistas',$revistas);
+    //$this->smarty->assign('filtro', $filtro);
+    $this->smarty->display('templates/visitRevistas.tpl');
+  }
+  function showCategorias($categorias){
+    $this->smarty->assign('categorias',$categorias);
     $this->smarty->display('templates/visitRevistas.tpl');
   }
   }

@@ -11,10 +11,10 @@ class adminRevistasView {
 
     $this->smarty->assign('revistas',$revistas);
     $this->smarty->display('templates/administradorRevistas.tpl');
-    } 
+    }
 
 
-    
+
     /* function showRevistas($revistas){
         $html = '<!DOCTYPE html>
                 <html>
@@ -34,7 +34,7 @@ class adminRevistasView {
                   <link rel="shortcut icon" href="../images/aguacate.png?v1" type="image/x-icon" />
               </head>
               <body>';
-              
+
         $html .= '<nav class="navbar navbar-expand-lg fixed-top ">
                   <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

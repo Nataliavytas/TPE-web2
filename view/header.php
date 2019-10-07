@@ -1,16 +1,15 @@
 <?php
 require_once('./libs/Smarty.class.php');
-class header{
+class header {
 
-    private $smarty;
+  private $smarty;
 
-  function __construct(){
-     $this->smarty = new Smarty();
-  }
-   function getCategorias($categorias){
-
-    $this->smarty->assign('categorias',$categorias);
-    $this->smarty->display('templates/header.tpl');
+function __construct(){
+   $this->smarty = new Smarty();
+}
+   function showCategorias($cat){
+    $this->smarty->assign('cat', $cat);
+    $this->smarty->display('templates\header.tpl');
   }
   }
   ?>
