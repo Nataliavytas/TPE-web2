@@ -7,9 +7,12 @@ class header {
 function __construct(){
    $this->smarty = new Smarty();
 }
-   function showCategorias($cat){
-    $this->smarty->assign('cat', $cat);
+   function showRevistas($revistas, $categorias){
+    $this->smarty->assign('categorias', $categorias);
+    $this->smarty->assign('revistas', $revistas);
     $this->smarty->display('templates\header.tpl');
+
   }
+
   }
   ?>

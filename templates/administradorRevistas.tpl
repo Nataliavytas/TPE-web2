@@ -1,11 +1,11 @@
 <!DOCTYPE html>
         <html>
-        
+
       <body>
-       {include file="header.tpl"}
+       {include file="headerAdmin.tpl"}
 
        <div id="textoinicio">
-          <h2> Revistas publicadas </h2>
+          <h2> Edicion de revistas. </h2>
         </div>
 
           <form id="formview" action="insertar" method="post">
@@ -22,6 +22,17 @@
                   <input type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
               </div>
               <div class="form-group">
+                  <label> Categoria de publicación: </label>
+                  <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                      <option> Seleccione  </option>
+                      <option>
+                      {foreach $categorias as $categoria}
+                      <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
+                      </option>
+                      {/foreach}
+                   </select>
+              </div>
+              <div class="form-group">
                  <button type="submit" class="btn btn-primary">Insertar</button>
               </div>
           </form>
@@ -29,10 +40,5 @@
           {*Tabla inferior donde van a estar ubicadas las revistas.
           #La tabla es la misma que en "Informacion.php" dentro de $html. junto a tag de foreach (no es un tag lo se)
           #quien trae info de mysql. *}
-        <ul>
-        {foreach from=$revistas item=revista}
-          <li>{foreach key=key item=item from=$revista}
-          {$key}: {$item}
-             {/foreach}</li>
-         {/foreach}
-        </ul>  
+
+          {include file="revistasTODASadmin.tpl"}

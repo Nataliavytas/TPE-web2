@@ -1,9 +1,14 @@
 <?php
-require_once "./model/revistasModel.php";
-require_once "./view/adminRevistasView.php";
-require_once "./model/categoriasModel.php";
-require_once "./view/adminCategoriasView.php";
-
+require_once('./libs/Smarty.class.php');
 class adminCategoriasView{
-}
-?>
+
+    private $smarty;
+
+  function __construct(){
+     $this->smarty = new Smarty();
+  }
+   function showCategorias($categorias){
+    $this->smarty->assign('categorias', $categorias);
+    $this->smarty->display('templates/administradorCategorias.tpl');
+    }
+  }

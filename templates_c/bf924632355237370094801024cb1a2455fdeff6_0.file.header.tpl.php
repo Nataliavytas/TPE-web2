@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-07 05:44:27
+/* Smarty version 3.1.33, created on 2019-10-12 02:33:52
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9ab49b20b430_06495766',
+  'unifunc' => 'content_5da11f70d51f98_35738358',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf924632355237370094801024cb1a2455fdeff6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\header.tpl',
-      1 => 1570419865,
+      1 => 1570840431,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9ab49b20b430_06495766 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da11f70d51f98_35738358 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -57,24 +57,27 @@ function content_5d9ab49b20b430_06495766 (Smarty_Internal_Template $_smarty_tpl)
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
                 <li class="nav-item">
-                    <a class="nav-link" data-value="about" href="admin"> Administrador </a> </li>
+                  <a class="nav-link" data-value="about" href="admin"> Administrador </a>
+                  <a class="nav-link" data-value="about" href="revistas"> Revistas </a>
+                  </li>
   <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Revistas</a>
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cat']->value, 'cats');
+  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'cats');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['cats']->value) {
 ?>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 <a class="dropdown-item" href="revistas/<?php echo $_smarty_tpl->tpl_vars['cats']->value['id_categorias'];?>
 "><?php echo $_smarty_tpl->tpl_vars['cats']->value['nombreCat'];?>
 </a>
-
-  </div>
-          <?php
+<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+  </div>
+
 </div>
             </ul>
         </div>

@@ -1,4 +1,5 @@
 <?php
+require_once "./view/adminView.php";
 require_once "./model/revistasModel.php";
 require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
@@ -8,6 +9,7 @@ class adminController{
 
 
   private $revistasView;
+  private $admin;
   private $revistasModel;
   private $categoriasView;
   private $categoriasModel;
@@ -16,6 +18,7 @@ class adminController{
   {
     //asignacion a $view. No se coloca parametros proque el contructor no lleva parametros, si los llevase se colocan aca tambien.
     $this->revistasView = new adminRevistasView();
+    $this->admin = new adminView();
     //yo objeto, busca mi propiedad View
     $this->revistasModel = new revistasModel();
     //inicializacion de model
@@ -27,24 +30,23 @@ class adminController{
 creamos un nombre, con el cual llamamos al modelo donde llama la BBDD.
 luego, llamamos al view con una funcion junto al parametro.
 */
-  function getRevistas(){
-    $revistas = $this->revistasModel->getRevistas();
-    $this->revistasView->showRevistas($revistas);
-  }
-
-
-  function getCategorias(){
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->categoriasView->showCategorias();
-  }
+function getRevistas(){
+  $revistas = $this->revistasModel->getRevistas();
+  $categorias = $this->categoriasModel->getCategorias();
+  $this->revistasView->showRevistas($revistas, $categorias);
+}
+function Home(){
+  $this->admin->Home();
+}
+function getCategorias(){
+  $categorias = $this->categoriasModel->getCategorias();
+  $this->categoriasView->showCategorias($categorias);
+}
 }
 
 
 /* function borrarRevistas($id){
         $this->model->borrarRevistas($id),
         header("Location: " . BASE_URL);
-    } 
+    }
   */
-
-
-
