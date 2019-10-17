@@ -5,9 +5,7 @@ require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
 
-define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
-define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
-define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/revistas');
+
 
 
 class adminController {
@@ -48,20 +46,20 @@ class adminController {
     $password = $_POST['password'];
 
     if(!empty($emailUser) && !empty($password)){
-  
+
         $user = $this->adminModel->getByEmail($emailUser);
 
         if((!empty($user)) && password_verify($password, $user['password'])){
           session_start();
-          $_SESSION['id_user'] = $user->id; 
-          $_SESSION['username'] = $user->email; 
+          $_SESSION['id_user'] = $user->id;
+          $_SESSION['username'] = $user->email;
 
-          header("Location: ".REVISTAS);
+          header('Location: ' . REVISTAS);
           die();
         }
-    }else { 
-      $ups = ('fallo todo'); 
-      echo $ups; 
+    }else {
+      $ups = ('fallo todo');
+      echo $ups;
     }
   }
 }

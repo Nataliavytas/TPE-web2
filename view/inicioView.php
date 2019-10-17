@@ -14,3 +14,4 @@ class inicioView{
         $this->smarty->display('templates/inicio.tpl');
       }
     }
+?>

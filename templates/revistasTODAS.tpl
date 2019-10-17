@@ -1,4 +1,5 @@
 <div id="formatoTabla">
+  <form action="showDetalle" method="get">
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -10,11 +11,12 @@
 <tbody id="cuerpoTabla">
 {foreach $revistas as $revista }
 <tr>
-<td> <a href="detalleRevistas/{$revista['id_revista']}">{$revista['titulo']} </a></td>
+<td> <button name="conseguirDetalle" value="{$revista['id_revistas']}" href="detalleRevistas/{$revista['id_revistas']}">{$revista['titulo']} </button></td>
 <td> {$revista['descripcion']}</td>
 <td> {$revista['fecha']}</td>
 {/foreach}
 </tr>
 </tbody>
 </table>
+</form>
 </div>

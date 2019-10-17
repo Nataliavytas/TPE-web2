@@ -24,11 +24,6 @@ function getCategorias(){
 
     return $categorias;
 }
-function filtroFecha($filtro){
-  $sentencia = $this->db->prepare("SELECT * FROM revistas WHERE id_revistas = ? AND id_revistas=fecha");
-  $sentencia->execute();
-  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-}
 function filtroPorCategoria(){
 
   $sentencia= $this->db->prepare("SELECT * FROM revistas WHERE id_categoria = ?");
@@ -36,7 +31,12 @@ function filtroPorCategoria(){
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 } //trae de la tabla revistas, todas las revitas que sean de la categoria pasada por parametro
-
+function getDetalle($id){
+  //$sentencia = $this->db->prepare("SELECT revistas.* categorias.nombreCat FROM revistas, categorias WHERE revistas.id_revistas = ? and revistas.id_categorias = categorias.id_categorias");
+  $sentencia = $this->db->prepare("SELECT * FROM revistas WHERE id_revistas = ?");
+  $sentencia->execute();
+  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
 /*function filtroid(){
 
   $sentencia = $this->db->prepare("SELECT categorias.*, revistas.titulo as categoria FROM categorias JOIN revistas on categorias.id_categoria = revistas.id_categoria");
@@ -53,7 +53,7 @@ function filtroPorCategoria(){
     }
 
     function borrarRevistas($id){
-      $sentencia = $this->db->prepare("DELETE FROM db_revistas WHERE id_revistas=?");
+      $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
     }
   */

@@ -17,6 +17,7 @@ class visitController{
   private $categoriasModel;
   private $filtro;
   private $arrFiltro;
+  private $detalle;
 
   function __construct(){
     $this->inicioView = new inicioView();
@@ -24,6 +25,7 @@ class visitController{
     $this->revistasView = new revistasView();
     $this->header  = new header();
     $this->categoriasModel = new categoriasModel();
+    $this->detalleView = new detalleView();
   }
 
 
@@ -39,6 +41,7 @@ class visitController{
     }
   }*/
   function getRevistas(){
+  $this->checkLoggedIn();
   $categorias = $this->categoriasModel->getCategorias();
   $revistas = $this->revistasModel->getRevistas();
   $this->revistasView->showRevistas($revistas,$categorias);
@@ -58,7 +61,13 @@ function getCategorias(){
   //  $detalle = $this->model->filtroCategoria($id);
   //  $this->detalle->detalleCategorias($detalle);
   //}
-
+  function mostrarDetalle(){
+    $id = $_GET['conseguirDetalle'];
+    if (isset($id)){
+      $this->detalle = $this->revistasModel->getDetalle($id);
+      $this->detalleView->showDetalle($this->detalle);
+    }
+  }
   function filtrarCategoria(){
     $filtroCat = $this->model->filtroPorCategoria($id);
     $this->header->filtroPorCategoria($filtroCat);
