@@ -8,9 +8,17 @@
           <h2> Edicion de revistas. </h2>
         </div>
 
-        <a href="admin/categorias" type="button" class="btn btn-primary btn-lg btn-block">Edicion Categorias</a>
-        <a href="admin/revistas" type="button" class="btn btn-secondary btn-lg btn-block">Edicion Revistas</a>
-      </div>
+       <form  method="post">
+         <div class="form-group">
+           <label for="email">Email address:</label>
+           <input type="email" class="form-control" id="email">
+         </div>
+         <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password">
+         </div>
+            <button type="submit" class="btn-success">Submit</button>
+        </form>
           {*Tabla inferior donde van a estar ubicadas las revistas.
           #La tabla es la misma que en "Informacion.php" dentro de $html. junto a tag de foreach (no es un tag lo se)
           #quien trae info de mysql. *}

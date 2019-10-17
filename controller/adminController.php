@@ -5,7 +5,12 @@ require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
 
-class adminController{
+define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
+define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
+define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/revistas');
+
+
+class adminController {
 
 
   private $revistasView;
@@ -16,37 +21,47 @@ class adminController{
 
   function __construct()
   {
-    //asignacion a $view. No se coloca parametros proque el contructor no lleva parametros, si los llevase se colocan aca tambien.
+
     $this->revistasView = new adminRevistasView();
-    //yo objeto, busca mi propiedad View
     $this->revistasModel = new revistasModel();
-    //inicializacion de model
     $this->categoriasModel = new categoriasModel();
     $this->categoriasView = new adminCategoriasView();
     $this->adminView = new adminView();
   }
 
-/*getRevistass
-creamos un nombre, con el cual llamamos al modelo donde llama la BBDD.
-luego, llamamos al view con una funcion junto al parametro.
-*/
   function getRevistas(){
     $revistas = $this->revistasModel->getRevistas();
     $this->revistasView->showRevistas($revistas);
   }
+
   function getCategorias(){
     $categorias = $this->categoriasModel->getCategorias();
     $this->categoriasView->showCategorias($categorias);
   }
+
   function Home(){
     $this->adminView->Home();
   }
-  }
 
+  function verifyUser(){
+    $emailUser = $_POST['email'];
+    $password = $_POST['password'];
 
+    if(!empty($emailUser) && !empty($password)){
+  
+        $user = $this->adminModel->getByEmail($emailUser);
 
-/* function borrarRevistas($id){
-        $this->model->borrarRevistas($id),
-        header("Location: " . BASE_URL);
+        if((!empty($user)) && password_verify($password, $user['password'])){
+          session_start();
+          $_SESSION['id_user'] = $user->id; 
+          $_SESSION['username'] = $user->email; 
+
+          header("Location: ".REVISTAS);
+          die();
+        }
+    }else { 
+      $ups = ('fallo todo'); 
+      echo $ups; 
     }
-  */
+  }
+}
