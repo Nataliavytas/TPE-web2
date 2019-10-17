@@ -4,11 +4,7 @@ require_once "./model/revistasModel.php";
 require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
-
-define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
-define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
-define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/revistas');
-
+require_once "./model/adminModel.php";
 
 class adminController {
 
@@ -18,6 +14,7 @@ class adminController {
   private $categoriasView;
   private $categoriasModel;
   private $adminView;
+  private $adminModel;
 
   function __construct()
   {
@@ -27,6 +24,7 @@ class adminController {
     $this->categoriasModel = new categoriasModel();
     $this->categoriasView = new adminCategoriasView();
     $this->adminView = new adminView();
+    $this->adminModel = new adminModel();
   }
 
   function getRevistas(){
@@ -43,7 +41,7 @@ class adminController {
     $this->adminView->Home();
   }
 
-  function verifyUser(){
+  function iniciarSesion(){
     $emailUser = $_POST['email'];
     $password = $_POST['password'];
 

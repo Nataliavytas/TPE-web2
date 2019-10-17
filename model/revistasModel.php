@@ -60,4 +60,3 @@ function filtroPorCategoria(){
 //filtros
 //borrar/agregar/editar
 }
- ?>

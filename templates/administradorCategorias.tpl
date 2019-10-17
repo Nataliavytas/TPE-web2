@@ -5,7 +5,7 @@
        {include file="headerAdmin.tpl"}
 
         <div id="textoinicio">
-          <h2><a href="revistas" type="button" class="btn btn-outline-secondary">Revistas</a> Categorias publicadas <a href="categorias" type="button" class="btn btn-outline-secondary">Categorias</a></h2>
+        <h2> <a href="revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a> Categorias actuales  <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> </h2>
         </div>
 
       
@@ -18,9 +18,6 @@
           <th scope="col"> Editar </th>
           </tr>
           </thead>
-          <div id="textoinicio">
-            <h2> Todas las categorias. </h2>
-          </div>
           <tbody id="cuerpoTabla">
           {foreach $categorias as $categoria }
           <tr>
@@ -38,7 +35,7 @@
 
            <form id="formview" action="insertar" method="post">
             <div class="form-group">
-                <label> categoria a publicar: </label>
+                <label> Agregar nueva categoria: </label>
                 <input type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">

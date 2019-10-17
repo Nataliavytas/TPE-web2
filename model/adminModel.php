@@ -8,7 +8,6 @@ class adminModel {
     }
 
  
-
     function getByEmail($emailUser){
         $sentencia = $this->db->prepare("SELECT * FROM usuarios WHERE email = ?");
         $sentencia->execute();

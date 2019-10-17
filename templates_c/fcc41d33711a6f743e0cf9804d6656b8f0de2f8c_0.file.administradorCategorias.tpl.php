@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 15:58:26
+/* Smarty version 3.1.33, created on 2019-10-17 17:08:58
   from 'C:\xampp\htdocs\TPE\templates\administradorCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da87382ae2446_37853520',
+  'unifunc' => 'content_5da8840ade3de7_49329156',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fcc41d33711a6f743e0cf9804d6656b8f0de2f8c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorCategorias.tpl',
-      1 => 1571320703,
+      1 => 1571324933,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da87382ae2446_37853520 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da8840ade3de7_49329156 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -31,7 +31,7 @@ function content_5da87382ae2446_37853520 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
         <div id="textoinicio">
-          <h2><a href="revistas" type="button" class="btn btn-outline-secondary">Revistas</a> Categorias publicadas <a href="categorias" type="button" class="btn btn-outline-secondary">Categorias</a></h2>
+        <h2> <a href="revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a> Categorias actuales  <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> </h2>
         </div>
 
       
@@ -44,9 +44,6 @@ function content_5da87382ae2446_37853520 (Smarty_Internal_Template $_smarty_tpl)
           <th scope="col"> Editar </th>
           </tr>
           </thead>
-          <div id="textoinicio">
-            <h2> Todas las categorias. </h2>
-          </div>
           <tbody id="cuerpoTabla">
           <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
@@ -74,7 +71,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
            <form id="formview" action="insertar" method="post">
             <div class="form-group">
-                <label> categoria a publicar: </label>
+                <label> Agregar nueva categoria: </label>
                 <input type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">
