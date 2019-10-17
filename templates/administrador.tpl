@@ -2,12 +2,9 @@
         <html>
 
       <body>
-       {include file="h2.tpl"}
-
-       <div id="textoinicio">
-          <h2> Edicion de revistas. </h2>
-        </div>
-
+       {include file="header.tpl"}
+       
+      <div id="textoinicio">
        <form action="iniciarSesion" method="post">
          <div class="form-group">
            <label for="email">Email address:</label>
@@ -22,6 +19,6 @@
           {*Tabla inferior donde van a estar ubicadas las revistas.
           #La tabla es la misma que en "Informacion.php" dentro de $html. junto a tag de foreach (no es un tag lo se)
           #quien trae info de mysql. *}
-
+        </div>
 
 {include file="footer.tpl"}

@@ -5,9 +5,9 @@
        {include file="headerAdmin.tpl"}
 
        <div id="textoinicio">
-          <a href="revistas" type="button"  id="botonRevista">Revistas</a> 
-          <h2>Revistas publicadas </h2>
-          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a>
+          <h2> <a href="revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a> 
+          Revistas publicadas 
+          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
             <div id="formatoTabla">

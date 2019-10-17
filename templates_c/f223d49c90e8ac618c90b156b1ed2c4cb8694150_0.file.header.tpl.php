@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 05:27:19
+/* Smarty version 3.1.33, created on 2019-10-17 22:36:28
   from 'C:\xampp\htdocs\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da7df97b38f14_10568621',
+  'unifunc' => 'content_5da8d0cc6cfc36_97689383',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f223d49c90e8ac618c90b156b1ed2c4cb8694150' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\header.tpl',
-      1 => 1571282817,
+      1 => 1571344584,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da7df97b38f14_10568621 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da8d0cc6cfc36_97689383 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -60,7 +60,7 @@ function content_5da7df97b38f14_10568621 (Smarty_Internal_Template $_smarty_tpl)
                     <a class="nav-link" data-value="about" href="admin"> Administrador </a> </li>
                     <a class="nav-link" data-value="about" href="revistas"> Revistas </a> </li>
   <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">categorias</a>
+  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <?php

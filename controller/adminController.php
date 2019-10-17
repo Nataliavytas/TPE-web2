@@ -13,7 +13,7 @@ class adminController {
   private $revistasModel;
   private $categoriasView;
   private $categoriasModel;
-  private $adminView;
+  private $administrador;
   private $adminModel;
 
   function __construct()
@@ -23,7 +23,7 @@ class adminController {
     $this->revistasModel = new revistasModel();
     $this->categoriasModel = new categoriasModel();
     $this->categoriasView = new adminCategoriasView();
-    $this->adminView = new adminView();
+    $this->administrador = new administrador();
     $this->adminModel = new adminModel();
   }
 
@@ -38,17 +38,19 @@ class adminController {
   }
 
   function Home(){
-    $this->adminView->Home();
+    $categorias=$this->categoriasModel->getCategorias();
+    $this->administrador->Home($categorias);
   }
 
   function iniciarSesion(){
+
     $emailUser = $_POST['email'];
     $password = $_POST['password'];
 
     if(!empty($emailUser) && !empty($password)){
   
         $user = $this->adminModel->getByEmail($emailUser);
-
+        
         if((!empty($user)) && password_verify($password, $user['password'])){
           session_start();
           $_SESSION['id_user'] = $user->id; 
