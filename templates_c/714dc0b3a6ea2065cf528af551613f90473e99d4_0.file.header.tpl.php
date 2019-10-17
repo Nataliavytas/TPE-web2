@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 04:05:07
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\header.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-17 05:02:38
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da7cc531ba707_30750571',
+  'unifunc' => 'content_5da7d9ce7dd484_34334162',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'bf924632355237370094801024cb1a2455fdeff6' => 
+    '714dc0b3a6ea2065cf528af551613f90473e99d4' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\header.tpl',
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb2\\templates\\header.tpl',
       1 => 1571277718,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da7cc531ba707_30750571 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da7d9ce7dd484_34334162 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">

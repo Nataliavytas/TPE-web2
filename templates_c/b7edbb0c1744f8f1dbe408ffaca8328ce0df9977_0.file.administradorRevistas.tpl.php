@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-12 17:10:57
+/* Smarty version 3.1.33, created on 2019-10-17 04:16:36
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da1ed0172bd19_60856512',
+  'unifunc' => 'content_5da7cf0477dd58_08423247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b7edbb0c1744f8f1dbe408ffaca8328ce0df9977' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\administradorRevistas.tpl',
-      1 => 1570893055,
+      1 => 1571278594,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:revistasTODASadmin.tpl' => 1,
   ),
 ),false)) {
-function content_5da1ed0172bd19_60856512 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da7cf0477dd58_08423247 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -31,7 +31,8 @@ function content_5da1ed0172bd19_60856512 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
        <div id="textoinicio">
-          <h2> Edicion de revistas. </h2>
+          <h2><a href="revistas" type="button" class="btn btn-outline-secondary">Revistas</a> Revistas publicadas <a href="categorias" type="button" class="btn btn-outline-secondary">Categorias</a></h2>
+
         </div>
 
           <form id="formview" action="insertar" method="post">
@@ -48,31 +49,10 @@ function content_5da1ed0172bd19_60856512 (Smarty_Internal_Template $_smarty_tpl)
                   <input type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
               </div>
               <div class="form-group">
-                  <label> Categoria de publicación: </label>
-                  <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
-                      <option> Seleccione  </option>
-                      <option>
-                      <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
-?>
-                      <option value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-"> <?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
- </option>
-                      </option>
-                      <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                   </select>
-              </div>
-              <div class="form-group">
                  <button type="submit" class="btn btn-primary">Insertar</button>
               </div>
           </form>
 
-          
-          <?php $_smarty_tpl->_subTemplateRender("file:revistasTODASadmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+                    <?php $_smarty_tpl->_subTemplateRender("file:revistasTODASadmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

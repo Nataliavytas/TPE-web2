@@ -30,18 +30,16 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
                 <li class="nav-item">
-                  <a class="nav-link" data-value="about" href="admin"> Administrador </a>
-                  <a class="nav-link" data-value="about" href="revistas"> Revistas </a>
-                  </li>
+                    <a class="nav-link" data-value="about" href="admin"> Administrador </a> </li>
+                    <a class="nav-link" data-value="about" href="revistas"> Revistas </a> </li>
   <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">categorias</a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {foreach $categorias as $cats}
+        {foreach $categorias as $cats}
 <a class="dropdown-item" href="revistas/{$cats['id_categorias']}">{$cats['nombreCat']}</a>
-{/foreach}
+          {/foreach}
   </div>
-
 </div>
             </ul>
         </div>

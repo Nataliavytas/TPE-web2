@@ -2,7 +2,7 @@
         <html>
 
       <body>
-       {include file="headerAdmin.tpl"}
+       {include file="h2.tpl"}
 
        <div id="textoinicio">
           <h2> Edicion de revistas. </h2>

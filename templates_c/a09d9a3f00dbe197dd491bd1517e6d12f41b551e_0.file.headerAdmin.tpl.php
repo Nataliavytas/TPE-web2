@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 04:19:04
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\headerAdmin.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-14 18:22:10
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb2\templates\headerAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da7cf98291411_95347831',
+  'unifunc' => 'content_5da4a0b2752fb3_04247919',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4e5a0486227b7a05deca6c95349e1bef1ca88804' => 
+    'a09d9a3f00dbe197dd491bd1517e6d12f41b551e' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\headerAdmin.tpl',
-      1 => 1571278742,
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb2\\templates\\headerAdmin.tpl',
+      1 => 1571068446,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da7cf98291411_95347831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da4a0b2752fb3_04247919 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
@@ -48,7 +48,7 @@ function content_5da7cf98291411_95347831 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <nav class="navbar navbar-expand-lg fixed-top ">
-       <a class="navbar-brand" href="../" id="marcaMinimalismo"> MINIMALISMO </a>
+       <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
            id="navResponsive">

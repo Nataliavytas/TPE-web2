@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-14 17:48:15
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\revistasTODASadmin.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-14 18:22:14
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb2\templates\revistasTODAS.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da498bf2a0c71_63091770',
+  'unifunc' => 'content_5da4a0b69255e3_63386553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f79a3a90523901aa9ee54d3941ca04e0dcd52aa7' => 
+    '2d7b1737a50c7ef4fbfb55f67da5fd0c44dae963' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\revistasTODASadmin.tpl',
-      1 => 1570897767,
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb2\\templates\\revistasTODAS.tpl',
+      1 => 1570458658,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da498bf2a0c71_63091770 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da4a0b69255e3_63386553 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="formatoTabla">
 <table class="table table-bordered">
 <thead>
@@ -28,13 +28,8 @@ function content_5da498bf2a0c71_63091770 (Smarty_Internal_Template $_smarty_tpl)
 <th scope="col"> Titulo </th>
 <th scope="col"> Descripción </th>
 <th scope="col"> Fecha </th>
-<th scope="col"> Borrar </th>
-<th scope="col"> Editar </th>
 </tr>
 </thead>
-<div id="textoinicio">
-   <h2> Todas las revistas. </h2>
- </div>
 <tbody id="cuerpoTabla">
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['revistas']->value, 'revista');
@@ -42,25 +37,18 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ?>
 <tr>
-<td> <a href="detalleRevistas/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+<td> <a href="detalleRevistas/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revista'];?>
 "><?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
  </a></td>
 <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
 </td>
 <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </td>
-<form action="borrar" method="get">
-<td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" type="sudmit">Borrar</button></td>
-<td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" formaction="editar" formmethod="post" type="sudmit">Editar</button></td>
-</form>
 <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </tr>
-
 </tbody>
 </table>
 </div>

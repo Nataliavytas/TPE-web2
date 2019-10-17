@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 04:19:04
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\headerAdmin.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-14 17:56:43
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\h2.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da7cf98291411_95347831',
+  'unifunc' => 'content_5da49abb2b0e35_76822480',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4e5a0486227b7a05deca6c95349e1bef1ca88804' => 
+    '65b3b7e4457e582a828de1690ee34da99e77ea26' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\headerAdmin.tpl',
-      1 => 1571278742,
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\h2.tpl',
+      1 => 1571068582,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da7cf98291411_95347831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da49abb2b0e35_76822480 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
    <title> Minimalismo </title>
 
-   <link rel="stylesheet" href="../css/main.css">
+   <link rel="stylesheet" href="css/main.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="estilos/css/bootstrap-grid.css">
@@ -48,7 +48,7 @@ function content_5da7cf98291411_95347831 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <nav class="navbar navbar-expand-lg fixed-top ">
-       <a class="navbar-brand" href="../" id="marcaMinimalismo"> MINIMALISMO </a>
+       <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
            id="navResponsive">

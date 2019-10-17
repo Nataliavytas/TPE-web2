@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-14 17:52:49
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\categoriasTODASadmin.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-14 18:22:10
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb2\templates\categoriasTODASadmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da499d1dbaa56_55602163',
+  'unifunc' => 'content_5da4a0b28122c7_43635578',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8c3d28cf18e716fad33aae377a246ea105d25c89' => 
+    '5822e0a09f9ca01ec51bef3438036f63ff1e5657' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\categoriasTODASadmin.tpl',
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb2\\templates\\categoriasTODASadmin.tpl',
       1 => 1570897755,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da499d1dbaa56_55602163 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da4a0b28122c7_43635578 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="formatoTabla">
 <table class="table table-bordered">
 <thead>

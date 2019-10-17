@@ -1,8 +1,34 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-10-14 18:22:03
+  from 'C:\xampp\htdocs\Proyecto\paginaWeb2\templates\inicio.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5da4a0abdef296_68591644',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '09ac99a1435ba49b118462865c46b22f9ce164f6' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb2\\templates\\inicio.tpl',
+      1 => 1570897690,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
+  ),
+),false)) {
+function content_5da4a0abdef296_68591644 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <body>
-   {include file="header.tpl"}
+   <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
     <div id="textoinicio">
         <h2>
@@ -46,6 +72,8 @@
 
 
    
-    {include file="footer.tpl"}
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     </body>
- </html>
+ </html><?php }
+}

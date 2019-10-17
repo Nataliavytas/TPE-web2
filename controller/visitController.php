@@ -1,12 +1,10 @@
 <?php
 require_once "./view/revistasView.php";
-require_once "./view/detalleView.php";
+require_once  "./view/detalleView.php";
+require_once  "./model/revistasModel.php";
+require_once "./model/categoriasModel.php";
 require_once "./view/inicioView.php";
 require_once "./view/header.php";
-require_once "./model/revistasModel.php";
-require_once "./model/categoriasModel.php";
-
-
 
 
 class visitController{
@@ -14,47 +12,45 @@ class visitController{
   private $revistasView;
   private $detalleView;
   private $inicioView;
-  private $header;
-
   private $revistasModel;
+  private $header;
   private $categoriasModel;
-
   private $filtro;
   private $arrFiltro;
 
   function __construct(){
     $this->inicioView = new inicioView();
+    $this->revistasModel = new revistasModel();
     $this->revistasView = new revistasView();
     $this->header  = new header();
-
     $this->categoriasModel = new categoriasModel();
-    $this->revistasModel = new revistasModel();
   }
 
-//si selecciona algun filtro, trae una tabla de eso. Si no, trae todas las revistas.
 
   /*function getRevistas(){
-    if(isset($_GET['SeleccionCat'])){
-    $this->filtro = $_GET['SeleccionCat'];
+    if(isset($_GET['SeleccionFecha'])){
+    $this->filtro = $_GET['SeleccionFecha'];
     $this->arrFiltro = $this->revistasModel->filtroFecha($this->filtro);
     $revistas = $this->revistasModel->getRevistas();
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->revistasView->showRevistas($revistas,$arrFiltro,$categorias);
+    $this->revistasView->showRevistas($revistas,$arrFiltro);
   }else{
       $revistas = $this->revistasModel->getRevistas();
-      $categorias = $this->categoriasModel->getCategorias();
-      $this->revistasView->showRevistas($this->arrFiltro, $revistas,$categorias);
+      $this->revistasView->showRevistas($this->arrFiltro, $revistas);
     }
   }*/
   function getRevistas(){
-    $revistas = $this->revistasModel->getRevistas();
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->revistasView->showRevistas($revistas,$categorias);
-  }
-
+  $categorias = $this->categoriasModel->getCategorias();
+  $revistas = $this->revistasModel->getRevistas();
+  $this->revistasView->showRevistas($revistas,$categorias);
+}
+function getCategorias(){
+  $categorias = $this->categoriasModel->getCategorias();
+  $this->header->showCategorias($categorias);
+  //$this->revistasView->showCategorias($categorias);
+}
   function Home(){
-    $this->inicioView->Home();
-
+    $categorias = $this->categoriasModel->getCategorias();
+    $this->inicioView->Home($categorias);
   }
 
 
@@ -64,8 +60,7 @@ class visitController{
   //}
 
   function filtrarCategoria(){
-    $id= $_GET['SeleccionCat'];
-    $filtroCat = $this->categoriasModel->filtroPorCategoria($id);
+    $filtroCat = $this->model->filtroPorCategoria($id);
     $this->header->filtroPorCategoria($filtroCat);
   }
 

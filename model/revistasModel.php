@@ -24,10 +24,15 @@ function getCategorias(){
 
     return $categorias;
 }
-function filtroPorCategoria($id){
+function filtroFecha($filtro){
+  $sentencia = $this->db->prepare("SELECT * FROM revistas WHERE id_revistas = ? AND id_revistas=fecha");
+  $sentencia->execute();
+  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
+function filtroPorCategoria(){
 
   $sentencia= $this->db->prepare("SELECT * FROM revistas WHERE id_categoria = ?");
-  $sentencia->execute([id_categoria]);
+  $sentencia->execute(array($id));
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 } //trae de la tabla revistas, todas las revitas que sean de la categoria pasada por parametro

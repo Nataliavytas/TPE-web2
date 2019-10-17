@@ -16,14 +16,14 @@ if($action == ''){
 }elseif ($action == 'inicio') {
     $visitController->Home();
 }elseif ($action == 'revistas') {
-  $visitController->getRevistas();
+    $visitController->getRevistas();
 }elseif ($action == './detalleView.php'){ //hay que cambiarlo a pretty url pero no quiero cambiarte todo y que te pierdas
     $visitController->detalleCategorias();
-}else if ($action == 'admin'){
+}elseif ($action == 'admin'){
     $adminController->Home();
+}else if ($action == 'admin/revistas'){
+    $adminController->getRevistas();
 }elseif ($action == 'admin/categorias'){
     $adminController->getCategorias();
-}elseif ($action == 'admin/revistas'){
-    $adminController->getRevistas();
 }
 ?>

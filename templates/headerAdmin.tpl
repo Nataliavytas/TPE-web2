@@ -15,13 +15,13 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></link>
-   <link rel="icon" href="images/aguacate.png?v1" type="image/x-icon" />
-<link rel="shortcut icon" href="images/aguacate.png?v1" type="image/x-icon" />
+   <link rel="icon" href="./images/aguacate.png?v1" type="image/x-icon" />
+<link rel="shortcut icon" href="./images/aguacate.png?v1" type="image/x-icon" />
 </head>
 
 
 <nav class="navbar navbar-expand-lg fixed-top ">
-       <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
+       <a class="navbar-brand" href="../" id="marcaMinimalismo"> MINIMALISMO </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
            id="navResponsive">
@@ -30,6 +30,7 @@
        <div class="collapse navbar-collapse " id="navbarSupportedContent">
            <ul class="navbar-nav mr-4">
                <li class="nav-item">
-                 <a class="nav-link" data-value="about" href="admin"> Logout </a>
-                 </li>
+                   <a class="nav-link" data-value="about" href="admin"> Logout </a> </li>
+           </ul>
+       </div>
    </nav>
