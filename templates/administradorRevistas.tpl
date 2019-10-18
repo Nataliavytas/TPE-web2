@@ -5,9 +5,9 @@
        {include file="headerAdmin.tpl"}
 
        <div id="textoinicio">
-          <a href="revistas" type="button"  id="botonRevista">Revistas</a> 
-          <h2>Revistas publicadas </h2>
-          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a>
+          <h2> <a href="revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
+          Revistas publicadas
+          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
             <div id="formatoTabla">
@@ -24,7 +24,7 @@
             <tbody id="cuerpoTabla">
             {foreach $revistas as $revista }
             <tr>
-            <td> <a href="detalleRevistas/{$revista['id_revistas']}">{$revista['titulo']} </a></td>
+            <td> {$revista['titulo']} </td>
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
             <form action="borrar" method="get">
@@ -50,6 +50,19 @@
                       <label> Fecha de publicación: </label>
                       <input type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
                   </div>
+                  <div class="form-group">
+                      <label for="inputState">Seleccione categoria:</label>
+                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                        <option> Seleccione  </option>
+
+
+          <option>
+          {foreach from=$categorias item=categoria}
+          <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
+          </option>
+          {/foreach}
+       </select>
+       </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">Insertar</button>
                   </div>

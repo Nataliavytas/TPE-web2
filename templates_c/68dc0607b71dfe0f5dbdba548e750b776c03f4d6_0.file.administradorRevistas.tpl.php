@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 17:15:19
+/* Smarty version 3.1.33, created on 2019-10-17 18:17:43
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da88587105386_53166612',
+  'unifunc' => 'content_5da89427682607_06320987',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1571325314,
+      1 => 1571329060,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da88587105386_53166612 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5da89427682607_06320987 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -31,9 +31,9 @@ function content_5da88587105386_53166612 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
        <div id="textoinicio">
-          <a href="revistas" type="button"  id="botonRevista">Revistas</a> 
-          <h2>Revistas publicadas </h2>
-          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a>
+          <h2> <a href="revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a> 
+          Revistas publicadas 
+          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
             <div id="formatoTabla">

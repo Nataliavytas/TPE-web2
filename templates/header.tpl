@@ -33,7 +33,7 @@
                     <a class="nav-link" data-value="about" href="admin"> Administrador </a> </li>
                     <a class="nav-link" data-value="about" href="revistas"> Revistas </a> </li>
   <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">categorias</a>
+  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         {foreach $categorias as $cats}
