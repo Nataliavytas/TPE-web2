@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 19:04:54
+/* Smarty version 3.1.33, created on 2019-10-18 20:38:57
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da9f0b69c21e2_62934457',
+  'unifunc' => 'content_5daa06c1abb5f4_19568363',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1571418286,
+      1 => 1571423736,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da9f0b69c21e2_62934457 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5daa06c1abb5f4_19568363 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -63,9 +63,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 </td>
             <form action="borrar" method="get">
             <td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" type="sudmit">Borrar</button></td>
+" type="submit" href="borrar/ <?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+ ">Borrar</button></td>
             <td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" formaction="editar" formmethod="post" type="sudmit">Editar</button></td>
+" formaction="editar" formmethod="post" type="submit">Editar</button></td>
             </form>
             <?php
 }

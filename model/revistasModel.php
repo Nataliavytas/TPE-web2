@@ -38,15 +38,15 @@ function filtroPorCategoria(){
 } //trae de la tabla revistas, todas las revitas que sean de la categoria pasada por parametro
 
     function insertarRevista($titulo,$descripcion,$fecha,$categoria){
-      $sentencia = $this->db->prepare("INSERT INTO revistas(titulo, descripcion, fecha, id_categorias) VALUES(?,?,?,?)");
+      $sentencia = $this->db->prepare("INSERT INTO revistas (titulo, descripcion, fecha, id_categorias) VALUES(?,?,?,?)");
       $sentencia->execute(array($titulo,$descripcion,$fecha,$categoria));
     }
 
 
-    /* function borrarRevistas($id){
-      $sentencia = $this->db->prepare("DELETE FROM db_revistas WHERE id_revistas=?");
+    function borrarRevistas($id){
+      $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
-    } */
+    } 
   
 //filtros
 //borrar/agregar/editar

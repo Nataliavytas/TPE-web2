@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 22:36:28
+/* Smarty version 3.1.33, created on 2019-10-18 20:29:23
   from 'C:\xampp\htdocs\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da8d0cc6cfc36_97689383',
+  'unifunc' => 'content_5daa0483c8ddf8_68526654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f223d49c90e8ac618c90b156b1ed2c4cb8694150' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\header.tpl',
-      1 => 1571344584,
+      1 => 1571423361,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da8d0cc6cfc36_97689383 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5daa0483c8ddf8_68526654 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title> Minimalismo </title>
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos/css/bootstrap-grid.css">

@@ -67,11 +67,12 @@ class adminController {
   }
 
   function agregarRevista(){
-     $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['fecha'],$_POST['descripcion'],$_POST['categoria'] );
+     $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['descripcion'],$_POST['fecha'],$_POST['categoria'] );
      header("Location: " .REVISTAS);
   }
   
- /* function borrarRevista(){
-     $this->revistasModel->borrarRevista($_POST)
-  } */
+   function borrarRevista($id){
+     $this->revistasModel->borrarRevista($id);
+     header("Location: " . BASE_URL);
+  } 
 }

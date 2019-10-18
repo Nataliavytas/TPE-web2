@@ -28,8 +28,8 @@
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
             <form action="borrar" method="get">
-            <td><button value="{$revista['id_revistas']}" type="sudmit">Borrar</button></td>
-            <td><button value="{$revista['id_revistas']}" formaction="editar" formmethod="post" type="sudmit">Editar</button></td>
+            <td><button value="{$revista['id_revistas']}" type="submit" href="borrar/ {$revista['id_revistas']} ">Borrar</button></td>
+            <td><button value="{$revista['id_revistas']}" formaction="editar" formmethod="post" type="submit">Editar</button></td>
             </form>
             {/foreach}
             </tr>
