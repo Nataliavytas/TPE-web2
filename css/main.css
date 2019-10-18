@@ -161,8 +161,7 @@ html{
 
 @media only screen and (min-width: 600px){
    #formatoTabla{
-    margin: 10% 5% auto 5%;
-
+    margin: 5% 5% auto 5%;
    }
 }
    /* testimonios */
@@ -204,3 +203,9 @@ html{
 #dropdownMenuLink:hover{
      background: #f4f4f4; color: rgba(100, 138, 48, 0.753);
     }
+#botonRevista{
+    margin-left:5%;
+}
+#botonCategoria{
+    margin-right:5%;
+}

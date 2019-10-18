@@ -5,7 +5,7 @@ require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
 
-
+require_once "./model/adminModel.php";
 
 
 class adminController {
@@ -16,6 +16,7 @@ class adminController {
   private $categoriasView;
   private $categoriasModel;
   private $adminView;
+  private $adminModel;
 
   function __construct()
   {
@@ -25,6 +26,7 @@ class adminController {
     $this->categoriasModel = new categoriasModel();
     $this->categoriasView = new adminCategoriasView();
     $this->adminView = new adminView();
+    $this->adminModel = new adminModel();
   }
 
   function getRevistas(){
@@ -41,25 +43,24 @@ class adminController {
     $this->adminView->Home();
   }
 
-  function verifyUser(){
+  function iniciarSesion(){
     $emailUser = $_POST['email'];
     $password = $_POST['password'];
+    $user = $this->adminModel->getByEmail($emailUser);
 
-    if(!empty($emailUser) && !empty($password)){
-
-        $user = $this->adminModel->getByEmail($emailUser);
-
-        if((!empty($user)) && password_verify($password, $user['password'])){
+        if((!empty($user)) && password_verify($password, $user->password)){
           session_start();
           $_SESSION['id_user'] = $user->id;
           $_SESSION['username'] = $user->email;
 
           header('Location: ' . REVISTAS);
           die();
-        }
     }else {
       $ups = ('fallo todo');
       echo $ups;
     }
+  }
+  function login(){
+    $this->adminView->showLogin();
   }
 }

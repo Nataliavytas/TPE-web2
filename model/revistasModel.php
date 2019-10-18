@@ -60,4 +60,3 @@ function getDetalle($id){
 //filtros
 //borrar/agregar/editar
 }
- ?>

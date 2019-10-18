@@ -7,7 +7,9 @@ class adminView {
   function __construct(){
      $this->smarty = new Smarty();
   }
-   function Home(){
+   function showLogin(){
+    $this->smarty->assign('titulo', "login");
+    $this->smarty->assign('BASE_URL', BASE_URL);
     $this->smarty->display('templates/administrador.tpl');
   }
   }
