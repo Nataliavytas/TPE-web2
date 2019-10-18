@@ -37,19 +37,33 @@
             </tbody>
             </table>
                 </div>
-        <form id="formview" action="insertar" method="post">
+        <form id="formview" action="agregarRevista" method="post">
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
-                      <input type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                      <input name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
-                      <input type="text" class="form-control" id="autorTabla" placeholder="Descripcion">
+                      <input name="descripcion" type="text" class="form-control" id="autorTabla" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
-                      <input type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
+                      <input name="fecha" type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
                   </div>
+                 <div class="form-group">
+                      <label for="inputState">Filtrar por:</label>
+                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                        <option> Seleccione  </option>
+
+
+          <option>
+          {foreach from=$categorias item=categoria}
+          <option name="categoria" value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
+          </option>
+          {/foreach}
+       </select>
+       </div>
+                 
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">Insertar</button>
                   </div>

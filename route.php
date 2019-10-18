@@ -31,5 +31,7 @@ if($action == ''){
     $adminController->getCategorias();
 }elseif ($action == 'iniciarSesion'){
     $adminController->iniciarSesion();
+}elseif($action == 'admin/agregarRevista'){
+    $adminController->agregarRevista();
 }
-?>
+

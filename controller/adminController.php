@@ -29,7 +29,8 @@ class adminController {
 
   function getRevistas(){
     $revistas = $this->revistasModel->getRevistas();
-    $this->revistasView->showRevistas($revistas);
+    $categorias = $this->categoriasModel->getCategorias();
+    $this->revistasView->showRevistas($revistas, $categorias);
   }
 
   function getCategorias(){
@@ -50,7 +51,7 @@ class adminController {
     if(!empty($emailUser) && !empty($password)){
   
         $user = $this->adminModel->getByEmail($emailUser);
-        
+
         if((!empty($user)) && password_verify($password, $user['password'])){
           session_start();
           $_SESSION['id_user'] = $user->id; 
@@ -64,4 +65,13 @@ class adminController {
       echo $ups; 
     }
   }
+
+  function agregarRevista(){
+     $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['fecha'],$_POST['descripcion'],$_POST['categoria'] );
+     header("Location: " .REVISTAS);
+  }
+  
+ /* function borrarRevista(){
+     $this->revistasModel->borrarRevista($_POST)
+  } */
 }
