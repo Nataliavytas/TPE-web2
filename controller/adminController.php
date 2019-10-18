@@ -8,62 +8,55 @@ require_once "./model/adminModel.php";
 
 class adminController {
 
+    private $revistasView;
+    private $revistasModel;
+    private $categoriasView;
+    private $categoriasModel;
+    private $administrador;
+    private $adminModel;
 
-  private $revistasView;
-  private $revistasModel;
-  private $categoriasView;
-  private $categoriasModel;
-  private $administrador;
-  private $adminModel;
-
-  function __construct()
-  {
-
-    $this->revistasView = new adminRevistasView();
-    $this->revistasModel = new revistasModel();
-    $this->categoriasModel = new categoriasModel();
-    $this->categoriasView = new adminCategoriasView();
-    $this->administrador = new administrador();
-    $this->adminModel = new adminModel();
+  function __construct() {
+      $this->revistasView = new adminRevistasView();
+      $this->revistasModel = new revistasModel();
+      $this->categoriasModel = new categoriasModel();
+      $this->categoriasView = new adminCategoriasView();
+      $this->administrador = new administrador();
+      $this->adminModel = new adminModel();
   }
 
-  function getRevistas(){
-    $revistas = $this->revistasModel->getRevistas();
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->revistasView->showRevistas($revistas, $categorias);
+  function getRevistas(){ //Trae tambien categorias, cambiar nombre. 
+      $categorias = $this->categoriasModel->getCategorias();
+      $revistas = $this->revistasModel->getRevistas();
+      $this->revistasView->showRevistas($revistas, $categorias);
   }
 
   function getCategorias(){
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->categoriasView->showCategorias($categorias);
+      $categorias = $this->categoriasModel->getCategorias();
+      $this->categoriasView->showCategorias($categorias);
   }
 
   function Home(){
-    $categorias=$this->categoriasModel->getCategorias();
-    $this->administrador->Home($categorias);
+      $categorias=$this->categoriasModel->getCategorias();
+      $this->administrador->Home($categorias);
   }
 
   function iniciarSesion(){
+      $emailUser = $_POST['email'];
+      $password = $_POST['password'];
+      if(!empty($emailUser) && !empty($password)){
 
-    $emailUser = $_POST['email'];
-    $password = $_POST['password'];
+          $user = $this->adminModel->getByEmail($emailUser);
 
-    if(!empty($emailUser) && !empty($password)){
-  
-        $user = $this->adminModel->getByEmail($emailUser);
-
-        if((!empty($user)) && password_verify($password, $user['password'])){
-          session_start();
-          $_SESSION['id_user'] = $user->id; 
-          $_SESSION['username'] = $user->email; 
-
-          header("Location: ".REVISTAS);
-          die();
-        }
-    }else { 
-      $ups = ('fallo todo'); 
-      echo $ups; 
-    }
+          if((!empty($user)) && password_verify($password, $user['password'])){
+            session_start();
+            $_SESSION['id_user'] = $user->id;
+            $_SESSION['username'] = $user->email;
+            header("Location: ".REVISTAS);
+            die();
+          }
+      }else {
+        header("Location: " .LOGIN);
+      }
   }
 
   function agregarRevista(){
@@ -75,4 +68,13 @@ class adminController {
      $this->revistasModel->borrarRevista($id);
      header("Location: " . BASE_URL);
   } 
+
+  /* function editarRevista(){}
+     function agregarCategoria(){}
+     function borrarCategoria(){}
+     function editarCategoria(){}
+     lo referente a la sesion
+    */
+
 }
+

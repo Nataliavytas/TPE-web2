@@ -3,8 +3,9 @@ require_once "controller/visitController.php";
 require_once "controller/adminController.php";
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
-define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
-define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin/revistas');
+define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
+define("REVISTAS", BASE_URL . 'admin/revistas');
+define("LOGIN", BASE_URL . 'admin');
 
 $action = $_GET["action"];
 
@@ -20,7 +21,7 @@ if($action == ''){
 }elseif ($action == 'revistas') {
     $visitController->getRevistas();
 }elseif ($action == 'revista'){ 
-    $visitController->detalleRevista($partesURL[1]);
+    $visitController->mostrarDetalle($partesURL[1]);
 }elseif ($action == 'admin'){
     $adminController->Home();
 }else if ($action == 'admin/revistas'){
@@ -33,5 +34,7 @@ if($action == ''){
     $adminController->agregarRevista();
 }elseif($action == "borrar") {
     $adminController->borrarRevista($partesURL[1]);
-} 
+}elseif($partesURL[0] == "admin/agregarRevista") {
+    $adminController->agregarRevista();
+  }
 

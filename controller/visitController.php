@@ -9,63 +9,58 @@ require_once "./view/header.php";
 
 class visitController{
 
-  private $revistasView;
-  private $detalleView;
-  private $inicioView;
-  private $revistasModel;
-  private $header;
-  private $categoriasModel;
-  private $filtro;
-  private $arrFiltro;
+    private $revistasView;
+    private $detalleView;
+    private $inicioView;
+    private $revistasModel;
+    private $header;
+    private $categoriasModel;
+    private $filtro;
+    private $arrFiltro;
+    private $detalle;
 
   function __construct(){
+
     $this->inicioView = new inicioView();
     $this->revistasModel = new revistasModel();
     $this->revistasView = new revistasView();
     $this->header  = new header();
     $this->categoriasModel = new categoriasModel();
+    $this->detalleView = new detalleView();
   }
 
 
-  /*function getRevistas(){
-    if(isset($_GET['SeleccionFecha'])){
-    $this->filtro = $_GET['SeleccionFecha'];
-    $this->arrFiltro = $this->revistasModel->filtroFecha($this->filtro);
-    $revistas = $this->revistasModel->getRevistas();
-    $this->revistasView->showRevistas($revistas,$arrFiltro);
-  }else{
-      $revistas = $this->revistasModel->getRevistas();
-      $this->revistasView->showRevistas($this->arrFiltro, $revistas);
-    }
-  }*/
   function getRevistas(){
-  $categorias = $this->categoriasModel->getCategorias();
-  $revistas = $this->revistasModel->getRevistas();
-  $this->revistasView->showRevistas($revistas,$categorias);
-}
-function getCategorias(){
-  $categorias = $this->categoriasModel->getCategorias();
-  $this->header->showCategorias($categorias);
-  //$this->revistasView->showCategorias($categorias);
-}
+  //  $this->checkLoggedIn(); HACER
+    $categorias = $this->categoriasModel->getCategorias();
+    $revistas = $this->revistasModel->getRevistas();
+    $this->revistasView->showRevistas($revistas,$categorias);
+  }
+
+  function getCategorias(){
+    $categorias = $this->categoriasModel->getCategorias();
+    $this->header->showCategorias($categorias);
+  }
+
   function Home(){
     $categorias = $this->categoriasModel->getCategorias();
     $this->inicioView->Home($categorias);
   }
 
-
-  //function detalleCategorias(){
-  //  $detalle = $this->model->filtroCategoria($id);
-  //  $this->detalle->detalleCategorias($detalle);
-  //}
-
-  function filtrarCategoria(){
+  function mostrarDetalle(){
+    $id = $_GET['conseguirDetalle'];
+    if (isset($id)){
+      $this->detalle = $this->revistasModel->getDetalle($id);
+      $this->detalleView->showDetalle($this->detalle);
+    }
+  }
+ /* function filtrarCategoria(){
     $filtroCat = $this->model->filtroPorCategoria($id);
     $this->header->filtroPorCategoria($filtroCat);
-  }
+  } */
 
   //Este es el controller de todo lo que no tiene que ver con el admin
   //Desde aca controlamos el dropdown de categorias y los detalles de cada revista
   //tambien los filtros de la tabla y blabla
 }
- ?>
+

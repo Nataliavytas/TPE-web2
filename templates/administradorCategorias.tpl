@@ -42,8 +42,4 @@
                <button type="submit" class="btn btn-primary">Insertar</button>
             </div>
         </form>
-
-        {*Tabla inferior donde van a estar ubicadas las revistas.
-        #La tabla es la misma que en "Informacion.php" dentro de $html. junto a tag de foreach (no es un tag lo se)
-        #quien trae info de mysql. *}
         {include file="footer.tpl"}
