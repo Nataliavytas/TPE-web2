@@ -18,7 +18,4 @@ class adminModel {
 
         return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
-
-
-
-}
+  }

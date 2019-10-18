@@ -24,6 +24,7 @@ class adminController {
   function getRevistas(){
     $categorias = $this->categoriasModel->getCategorias();
     $revistas = $this->revistasModel->getRevistas();
+    $categorias = $this->categoriasModel->getCategorias();
     $this->revistasView->showRevistas($revistas, $categorias);
   }
   function getCategorias(){
@@ -53,4 +54,18 @@ class adminController {
       echo $ups;
     }
   }
+
+  function agregarRevista(){
+  /*  $titulo = $_POST['titulo'];
+    $descripcion = $_POST['descripcion'];
+    $fecha = $_POST['fecha'];
+    $categoria = $_POST['categoria'];*/
+
+     $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['fecha'],$_POST['descripcion'],$_POST['categoria'] );
+     header("Location: " .REVISTAS);
+  }
+
+ /* function borrarRevista(){
+     $this->revistasModel->borrarRevista($_POST)
+  } */
 }

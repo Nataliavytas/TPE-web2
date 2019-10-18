@@ -8,8 +8,8 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
 //define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
 //define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/revistas');
-define("REVISTAS", BASE_URL . '/admin/revistas');
-define("lOGIN", BASE_URL . '/admin');
+define("REVISTAS", BASE_URL . 'admin/revistas');
+define("lOGIN", BASE_URL . 'admin');
 //define('LOGIN', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin');
 //define('REVISTAS', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/admin/revistas');
 
@@ -36,5 +36,8 @@ if($action == ''){
     $adminController->getCategorias();
 }elseif ($action == 'iniciarSesion'){
     $adminController->iniciarSesion();
-}
-?>
+}elseif($action == 'admin/agregarRevista'){
+    $adminController->agregarRevista();
+}elseif($partesURL[0] == "admin/agregarRevista") {
+    $adminController->agregarRevista();
+  }
