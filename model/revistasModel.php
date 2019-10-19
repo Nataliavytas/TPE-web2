@@ -36,18 +36,11 @@
     $sentencia = $this->db->prepare("INSERT INTO revistas(titulo, fecha, descripcion, id_categorias) VALUES(?,?,?,?)");
     $sentencia->execute(array($titulo,$fecha,$descripcion,$categoria));
 
-    // var_dump($sentencia->errorInfo()); die;
-
   }
-
-
     function borrarRevista($id){
-
-     // var_dump($id);
 
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
-
      // var_dump($sentencia->errorInfo()); die;
     } 
 

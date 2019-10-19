@@ -19,27 +19,35 @@ if($action == ''){
     $visitController->Home();
 }elseif ($action == 'inicio') {
     $visitController->Home();
+
 }elseif ($action == 'revistas') {
     $visitController->getRevistas();
+
 }elseif ($action == 'revista'){ 
     $visitController->mostrarDetalle($partesURL[1]);
+
 }elseif ($action == 'admin'){
     $adminController->Home();
+
 }else if ($action == 'admin/revistas'){
     $adminController->getRevistas();
+
 }elseif ($action == 'admin/categorias'){
     $adminController->getCategorias();
+
 }elseif ($action == 'iniciarSesion'){
     $adminController->iniciarSesion();
+
 }elseif($action == 'admin/agregarRevista'){
     $adminController->agregarRevista();
+
  }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
     $adminController->borrarRevista($partesURL[2]);
-}elseif($partesURL[0] == "admin/agregarRevista") {
-    $adminController->agregarRevista();
-}elseif($partesURL[0] == "admin/agregarCategoria"){
-    $adminController->agregarCategoria();
+
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editar" ) {
     $adminController->editarRevista($partesURL[2]);
+
+}elseif($action == "admin/agregarCategoria"){
+    $adminController->agregarCategoria();
 }
 

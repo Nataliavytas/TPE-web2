@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 21:55:29
+/* Smarty version 3.1.33, created on 2019-10-19 16:14:28
   from 'C:\xampp\htdocs\TPE\templates\administradorCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5daa18b14895d0_29388371',
+  'unifunc' => 'content_5dab1a449e4f67_31224991',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fcc41d33711a6f743e0cf9804d6656b8f0de2f8c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorCategorias.tpl',
-      1 => 1571425874,
+      1 => 1571494416,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5daa18b14895d0_29388371 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dab1a449e4f67_31224991 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -69,10 +69,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           </table>
           </div>
 
-           <form id="formview" action="insertar" method="post">
+           <form id="formview" action="agregarCategoria" method="post">
             <div class="form-group">
                 <label> Agregar nueva categoria: </label>
-                <input type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                <input name="nombreCat" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">
                <button type="submit" class="btn btn-primary">Insertar</button>

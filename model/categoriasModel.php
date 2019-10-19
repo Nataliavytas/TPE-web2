@@ -16,8 +16,8 @@ function getCategorias(){
     return $cat;
 }
 
-function agregarCategoria($nombreCat, $id){
-    $sentencia = $this->db->prepare("INSERT INTO categorias(nombreCat, id_categorias) VALUE($nombreCat, $id)");
-    $sentencia->excecute($nombreCat, $id);
+function agregarCategoria($nombreCat){
+    $sentencia = $this->db->prepare("INSERT INTO categorias(nombreCat) VALUE(?)");
+    $sentencia->execute(array($nombreCat));
 }
 }

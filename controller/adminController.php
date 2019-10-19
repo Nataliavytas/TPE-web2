@@ -68,17 +68,20 @@ class adminController {
      header("Location: " . REVISTAS);
   } 
     function editarRevista($id){
+        var_dump($id);
         $this->revistasModel->editarRevista($id, $_POST['titulo'],$_POST['descripcion'], $_POST['fecha'], $_POST['categoria']);
         header("Location: ".REVISTAS);
     }
 
- //   function agregarCategoria(){
- //       $this->categoriasModel->agregarCategoria($_POST['nombreCat'], $_POST['id_categorias']);
- //       header("Location: ".CATEGORIAS)
+    function agregarCategoria(){
+        $this->categoriasModel->agregarCategoria($_POST['nombreCat']);
+         header("Location: ".CATEGORIAS);
     }
+
      /* function editarRevista(){}
      function agregarCategoria(){}
      function borrarCategoria(){}
      function editarCategoria(){}
      lo referente a la sesion
     */
+}

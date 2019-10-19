@@ -33,10 +33,10 @@
           </table>
           </div>
 
-           <form id="formview" action="insertar" method="post">
+           <form id="formview" action="agregarCategoria" method="post">
             <div class="form-group">
                 <label> Agregar nueva categoria: </label>
-                <input type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                <input name="nombreCat" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">
                <button type="submit" class="btn btn-primary">Insertar</button>
