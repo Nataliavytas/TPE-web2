@@ -5,6 +5,7 @@ require_once "controller/adminController.php";
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
 define("REVISTAS", BASE_URL . 'admin/revistas');
+define("CATEGORIAS", BASE_URL . 'admin/categorias');
 define("LOGIN", BASE_URL . 'admin');
 
 $action = $_GET["action"];
@@ -32,9 +33,13 @@ if($action == ''){
     $adminController->iniciarSesion();
 }elseif($action == 'admin/agregarRevista'){
     $adminController->agregarRevista();
-}elseif($action == "borrar") {
-    $adminController->borrarRevista($partesURL[1]);
+ }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
+    $adminController->borrarRevista($partesURL[2]);
 }elseif($partesURL[0] == "admin/agregarRevista") {
     $adminController->agregarRevista();
-  }
+}elseif($partesURL[0] == "admin/agregarCategoria"){
+    $adminController->agregarCategoria();
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "editar" ) {
+    $adminController->editarRevista($partesURL[2]);
+}
 

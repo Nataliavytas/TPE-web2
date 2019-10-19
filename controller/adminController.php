@@ -46,7 +46,6 @@ class adminController {
       if(!empty($emailUser) && !empty($password)){
 
           $user = $this->adminModel->getByEmail($emailUser);
-
           if((!empty($user)) && password_verify($password, $user['password'])){
             session_start();
             $_SESSION['id_user'] = $user->id;
@@ -66,15 +65,20 @@ class adminController {
   
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
-     header("Location: " . BASE_URL);
+     header("Location: " . REVISTAS);
   } 
+    function editarRevista($id){
+        $this->revistasModel->editarRevista($id, $_POST['titulo'],$_POST['descripcion'], $_POST['fecha'], $_POST['categoria']);
+        header("Location: ".REVISTAS);
+    }
 
-  /* function editarRevista(){}
+ //   function agregarCategoria(){
+ //       $this->categoriasModel->agregarCategoria($_POST['nombreCat'], $_POST['id_categorias']);
+ //       header("Location: ".CATEGORIAS)
+    }
+     /* function editarRevista(){}
      function agregarCategoria(){}
      function borrarCategoria(){}
      function editarCategoria(){}
      lo referente a la sesion
     */
-
-}
-

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 21:19:10
+/* Smarty version 3.1.33, created on 2019-10-18 21:54:26
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5daa102e22d968_54070113',
+  'unifunc' => 'content_5daa187292d5a4_08360700',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1571425887,
+      1 => 1571428457,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5daa102e22d968_54070113 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5daa187292d5a4_08360700 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -60,13 +60,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 </td>
             <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </td>
-            <form action="borrar" method="get">
-            <td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" type="submit" href="borrar/ <?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
- ">Borrar</button></td>
-            <td><button value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" formaction="editar" formmethod="post" type="submit">Editar</button></td>
-            </form>
+            
+            <td><a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+"  href="borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+"> Borrar </a></td>
+            <td><a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" href="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+"> Editar </a></td>
+            
+            
             <?php
 }
 }
@@ -91,18 +93,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control" name="categoria"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
                         <option> Seleccione  </option>
-                            <option>
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 ?>
-                            <option name="categoria" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+                            <option value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 "> <?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
  </option>
-                            </option>
                             <?php
 }
 }

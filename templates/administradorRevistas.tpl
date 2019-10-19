@@ -27,10 +27,11 @@
             <td> {$revista['titulo']} </td>
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
-            <form action="borrar" method="get">
-            <td><button value="{$revista['id_revistas']}" type="submit" href="borrar/ {$revista['id_revistas']} ">Borrar</button></td>
-            <td><button value="{$revista['id_revistas']}" formaction="editar" formmethod="post" type="submit">Editar</button></td>
-            </form>
+            
+            <td><a value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </a></td>
+            <td><a value="{$revista['id_revistas']}" href="editar/{$revista['id_revistas']}"> Editar </a></td>
+            
+            
             {/foreach}
             </tr>
 
@@ -52,12 +53,10 @@
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control" name="categoria"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
                         <option> Seleccione  </option>
-                            <option>
                             {foreach from=$categorias item=categoria}
-                            <option name="categoria" value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
-                            </option>
+                            <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
                             {/foreach}
                          </select>
                          </div>

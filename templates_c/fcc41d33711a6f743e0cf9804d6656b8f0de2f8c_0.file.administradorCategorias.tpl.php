@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-17 17:08:58
+/* Smarty version 3.1.33, created on 2019-10-18 21:55:29
   from 'C:\xampp\htdocs\TPE\templates\administradorCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da8840ade3de7_49329156',
+  'unifunc' => 'content_5daa18b14895d0_29388371',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fcc41d33711a6f743e0cf9804d6656b8f0de2f8c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorCategorias.tpl',
-      1 => 1571324933,
+      1 => 1571425874,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5da8840ade3de7_49329156 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5daa18b14895d0_29388371 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -78,7 +78,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                <button type="submit" class="btn btn-primary">Insertar</button>
             </div>
         </form>
-
-                <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+        <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
