@@ -10,27 +10,30 @@
 
       
           <div id="formatoTabla">
-          <table class="table table-bordered">
-          <thead>
-          <tr>
-          <th scope="col"> Categorias </th>
-          <th scope="col"> Borrar </th>
-          <th scope="col"> Editar </th>
-          </tr>
-          </thead>
-          <tbody id="cuerpoTabla">
-          {foreach $categorias as $categoria }
-          <tr>
-          <td> {$categoria['nombreCat']}</td>
-          <form action="borrar" method="get">
-          <td><button value="{$borrar['id_categorias']}" type="sudmit">Borrar</button></td>
-          <td><button value="{$editar['id_categorias']}" formaction="editar" formmethod="post" type="sudmit">Editar</button></td>
-          </form>
-          {/foreach}
-          </tr>
+                  <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col"> Categorias </th>
+                      <th scope="col"> Borrar </th>
+                      <th scope="col"> Editar </th>
+                    </tr>
+                  </thead>
+                  <tbody id="cuerpoTabla">
+                    {foreach $categorias as $categoria }
+                    <tr>
+                    <td> {$categoria['nombreCat']}</td>
+                
+                          <td> <a value="{$categoria['id_categorias']}" href="borrarCat/{$categoria['id_categorias']}" >
+                            Borrar 
+                          </a> </td>
+                          <td><a value="{$categoria['id_categorias']}" href="editarCat/{$categoria['id_categorias']}" > 
+                          Editar  
+                          </a></td>
+                      {/foreach}
+                    </tr>
 
-          </tbody>
-          </table>
+                  </tbody>
+                 </table>
           </div>
 
            <form id="formview" action="agregarCategoria" method="post">

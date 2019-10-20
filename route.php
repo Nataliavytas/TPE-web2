@@ -49,5 +49,10 @@ if($action == ''){
 
 }elseif($action == "admin/agregarCategoria"){
     $adminController->agregarCategoria();
-}
 
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "borrarCat" ) {
+    $adminController->borrarCategoria($partesURL[2]);
+
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "editarCat" ) {
+    $adminController->editarCategoria($partesURL[2]);
+}

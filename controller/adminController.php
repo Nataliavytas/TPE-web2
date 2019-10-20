@@ -78,6 +78,10 @@ class adminController {
          header("Location: ".CATEGORIAS);
     }
 
+    function borrarCategoria($id){
+        $this->categoriasModel->borrarCategoria($id);
+        // header("Location: ".CATEGORIAS);
+    }
      /* function editarRevista(){}
      function agregarCategoria(){}
      function borrarCategoria(){}
