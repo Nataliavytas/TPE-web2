@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 21:19:25
+/* Smarty version 3.1.33, created on 2019-10-25 15:59:48
   from 'C:\xampp\htdocs\TPE\templates\visitRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5daa103dd00ed2_95437187',
+  'unifunc' => 'content_5db2ffd4960fd3_42806509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2fabe8b62395494804f0c8babd08403f0c4e8b9f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\visitRevistas.tpl',
-      1 => 1571426122,
+      1 => 1572011812,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5daa103dd00ed2_95437187 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db2ffd4960fd3_42806509 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -41,6 +41,7 @@ function content_5daa103dd00ed2_95437187 (Smarty_Internal_Template $_smarty_tpl)
             <th scope="col"> Titulo </th>
             <th scope="col"> Descripción </th>
             <th scope="col"> Fecha </th>
+            <th scope="col"> Categoria </th>
             </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -58,6 +59,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 </td>
             <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </td>
+            <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['nombreCat'];?>
+ </td>
             <?php
 }
 }

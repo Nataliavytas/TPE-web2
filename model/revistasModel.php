@@ -9,7 +9,7 @@
   }
 
   function getRevistas(){
-      $sentencia = $this->db->prepare( "SELECT * FROM revistas");
+      $sentencia = $this->db->prepare( "SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE categorias.id_categorias = revistas.id_categorias");
       $sentencia->execute();
       $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
