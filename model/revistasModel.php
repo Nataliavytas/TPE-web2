@@ -25,11 +25,10 @@
   } //trae de la tabla revistas, todas las revitas que sean de la categoria pasada por parametro
 
   function getDetalle($id){
-    //$sentencia = $this->db->prepare("SELECT revistas.* categorias.nombreCat FROM revistas, categorias WHERE revistas.id_revistas = ? and revistas.id_categorias = categorias.id_categorias");
-    $sentencia = $this->db->prepare("SELECT * FROM revistas WHERE id_revistas = ?");
-    $sentencia->execute();
-
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
+    $sentencia->execute(array($id));
+    $revista = $sentencia->fetch(PDO::FETCH_ASSOC);
+    return $revista;
   }
 
   function insertarRevista($titulo,$fecha,$descripcion,$categoria){
@@ -44,7 +43,8 @@
      // var_dump($sentencia->errorInfo()); die;
     } 
 
-    function editarRevista($id, $titulo,$fecha,$descripcion,$categoria){
+    function editarRevista( $titulo,$fecha,$descripcion,$categoria, $id){
       $sentencia = $this->db->prepare("UPDATE FROM revistas SET titulo=?, fecha=?, descripcion=?, categoria=? WHERE id_revistas=?");
+      $sentencia->execute(array($titulo, $fecha, $descripcion, $categoria, $id));
     }
   }

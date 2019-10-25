@@ -47,20 +47,11 @@ class visitController{
     $this->inicioView->Home($categorias);
   }
 
-  function mostrarDetalle(){
-    $id = $_GET['conseguirDetalle'];
-    if (isset($id)){
-      $this->detalle = $this->revistasModel->getDetalle($id);
-      $this->detalleView->showDetalle($this->detalle);
-    }
+  function mostrarDetalle($id){
+      $detalle = $this->revistasModel->getDetalle($id);
+    //  var_dump($detalle);
+      $this->detalleView->showDetalle($detalle);
+    
   }
- /* function filtrarCategoria(){
-    $filtroCat = $this->model->filtroPorCategoria($id);
-    $this->header->filtroPorCategoria($filtroCat);
-  } */
-
-  //Este es el controller de todo lo que no tiene que ver con el admin
-  //Desde aca controlamos el dropdown de categorias y los detalles de cada revista
-  //tambien los filtros de la tabla y blabla
 }
 

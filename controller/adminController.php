@@ -67,7 +67,9 @@ class adminController {
      $this->revistasModel->borrarRevista($id);
      header("Location: " . REVISTAS);
   } 
-    function editarRevista($id){
+    function editarRevista(){
+     
+        $id = $_POST['submit'];
         var_dump($id);
         $this->revistasModel->editarRevista($id, $_POST['titulo'],$_POST['descripcion'], $_POST['fecha'], $_POST['categoria']);
         header("Location: ".REVISTAS);

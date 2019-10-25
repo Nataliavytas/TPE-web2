@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-19 16:03:37
+/* Smarty version 3.1.33, created on 2019-10-24 21:51:40
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dab17b93f35a7_71263212',
+  'unifunc' => 'content_5db200ccd0ff99_70717014',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1571493791,
+      1 => 1571946691,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dab17b93f35a7_71263212 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db200ccd0ff99_70717014 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -64,9 +64,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
             <td><a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "  href="borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </a></td>
-            <td><a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" href="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-"> Editar </a></td>
+            <form action="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+/">
+            <td><button type=submit> Editar </button></td>
+            </form>
             
             
             <?php
