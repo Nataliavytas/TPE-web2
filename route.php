@@ -28,6 +28,9 @@ if($action == ''){
 }elseif ($partesURL[0] == 'revista'){ 
     $visitController->mostrarDetalle($partesURL[1]);
 
+}elseif ($partesURL[0] == 'revistas'){ 
+    $visitController->getRevistasPorCategoria($partesURL[1]);
+
 }elseif ($action == 'admin'){
     $adminController->Home();
 

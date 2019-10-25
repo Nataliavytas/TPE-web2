@@ -38,7 +38,7 @@ class adminController {
 
           if((!empty($user)) && password_verify($password, $user['password'])){
             session_start();
-            $_SESSION['ID_USER'] = $user->id;
+            $_SESSION['id_user'] = $user->id;
             $_SESSION['USERNAME'] = $user->email;
 
             header("Location: ".REVISTAS);
@@ -70,7 +70,7 @@ class adminController {
     }
 
     function getCategorias(){
-        $this->checkLoggedIn();
+        // $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $this->categoriasView->showCategorias($categorias);
