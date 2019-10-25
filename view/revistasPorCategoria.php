@@ -13,6 +13,6 @@ Class revistasPorCategoria{
     function showRevistasCategoria($revistas, $categorias){
         $this->smarty->assign('revistas', $revistas);
         $this->smarty->assign('categorias', $categorias);
-        $this->smarty->display('templates/visitRevistas.tpl');
+        $this->smarty->display('templates/revistasCategoria.tpl');
     }
 }

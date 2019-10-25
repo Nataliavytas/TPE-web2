@@ -28,7 +28,7 @@
   function getDetalle($id){
     $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
     $sentencia->execute(array($id));
-    $revista = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $revista = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $revista;
   }
 
