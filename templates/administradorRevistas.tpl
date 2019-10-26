@@ -29,7 +29,7 @@
             <td> {$revista['fecha']}</td>
             
             <td><a value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </a></td>
-            <form action="admin/editar/{$revista['id_revistas']}/">
+            <form action="admin/editar/{$revista['id_revistas']}">
             <td><button type=submit> Editar </button></td>
             </form>
             

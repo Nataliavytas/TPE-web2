@@ -15,7 +15,6 @@
             <th scope="col"> Titulo </th>
             <th scope="col"> Descripción </th>
             <th scope="col"> Fecha </th>
-            <th scope="col"> Categoria </th>
             </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -24,7 +23,6 @@
             <td> <a name="conseguirDetalle" value="{$revista['id_revistas']}" href="revista/{$revista['id_revistas']}">{$revista['titulo']} </a></td>
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
-            <td> {$revista['nombreCat']} </td>
             {/foreach}
             </tr>
             </tbody>

@@ -9,25 +9,26 @@
   }
 
   function getRevistas(){
-      $sentencia = $this->db->prepare( "SELECT * FROM revistas");
+      $sentencia = $this->db->prepare( "SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE categorias.id_categorias = revistas.id_categorias");
       $sentencia->execute();
       $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
       return $revistas;
   }
 
-  function filtroPorCategoria(){
+  function filtroPorCategoria($id){
 
-    $sentencia= $this->db->prepare("SELECT * FROM revistas WHERE id_categoria = ?");
+    $sentencia= $this->db->prepare("SELECT * FROM revistas WHERE id_categorias = ?");
     $sentencia->execute(array($id));
-    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
-
-  } //trae de la tabla revistas, todas las revitas que sean de la categoria pasada por parametro
+    $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    return $revistas;
+   // var_dump($sentencia->errorInfo()); die;
+  } 
 
   function getDetalle($id){
     $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
     $sentencia->execute(array($id));
-    $revista = $sentencia->fetch(PDO::FETCH_ASSOC);
+    $revista = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $revista;
   }
 
