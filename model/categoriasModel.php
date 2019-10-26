@@ -6,9 +6,9 @@ class categoriasModel{
     function __construct(){
       $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_minimalismo;charset=utf8' , 'root' , '');
     }
-      
+
     function getCategorias(){
-        $sentencia = $this->db->prepare("select * from categorias");
+        $sentencia = $this->db->prepare("SELECT * FROM categorias");
         $sentencia->execute();
         $cat = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -21,10 +21,14 @@ class categoriasModel{
     }
 
     function borrarCategoria($id){
-        
+
         $sentencia = $this->db->prepare("DELETE FROM categorias WHERE id_categorias=?");
         $sentencia->execute(array($id));
-        var_dump($sentencia->errorInfo()); die;
+    }
+    function editarCategoria($id, $titulo){
+        $sentencia = $this->db->prepare("UPDATE categorias SET nombreCat=? WHERE id_categorias=?");
+        $sentencia->execute([$titulo, $id]);
+        //var_dump($sentencia->errorInfo()); die;
     }
       // var_dump($sentencia->errorInfo()); die;
   }

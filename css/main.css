@@ -209,3 +209,6 @@ html{
 #botonCategoria{
     margin-right:5%;
 }
+#admin_titulo_, #input_titulo_, #input2_titulo_, #input_titulo3_, #cat_titulo_{
+  display: none;
+}

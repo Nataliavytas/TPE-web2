@@ -25,10 +25,10 @@ if($action == ''){
 }elseif ($action == 'revistas') {
     $visitController->getRevistas();
 
-}elseif ($partesURL[0] == 'revista'){ 
+}elseif ($partesURL[0] == 'revista'){
     $visitController->mostrarDetalle($partesURL[1]);
 
-}elseif ($partesURL[0] == 'revistas'){ 
+}elseif ($partesURL[0] == 'revistas'){
     $visitController->getRevistasPorCategoria($partesURL[1]);
 
 }elseif ($action == 'admin'){
@@ -50,7 +50,7 @@ if($action == ''){
     $adminController->borrarRevista($partesURL[2]);
 
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editar" ) {
-    $adminController->editarRevista();
+    $adminController->editarRevista($partesURL[2]);
 
 }elseif($action == "admin/agregarCategoria"){
     $adminController->agregarCategoria();

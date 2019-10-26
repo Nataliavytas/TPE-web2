@@ -32,16 +32,20 @@ class adminController {
   function iniciarSesion(){
       $emailUser = $_POST['email'];
       $password = $_POST['password'];
+     // print_r($_POST);
 
       if(!empty($emailUser) && !empty($password)){
           $user = $this->adminModel->getByEmail($emailUser);
-
-          if((!empty($user)) && password_verify($password, $user['password'])){
+           // var_dump($user);
+          if((!empty($user)) && password_verify($password, $user->password)){
             session_start();
-            $_SESSION['id_user'] = $user->id;
+
+            $_SESSION['ID_USER'] = $user->id;
             $_SESSION['USERNAME'] = $user->email;
 
             header("Location: ".REVISTAS);
+          }else{
+            header("Location: " .LOGIN);
           }
       }else {
         header("Location: " .LOGIN);
@@ -49,8 +53,10 @@ class adminController {
   }
     function checkLoggedIn(){
         session_start();
+       // var_dump($_SESSION);
         if(!isset($_SESSION['ID_USER'])) {
             header('Location: '.LOGIN);
+
             die();
         }
     }
@@ -61,8 +67,8 @@ class adminController {
         header("Location: ".LOGIN);
     }
 
-    function getRevistas(){ //Trae tambien categorias, cambiar nombre. 
-        // $this->checkLoggedIn();
+    function getRevistas(){ //Trae tambien categorias, cambiar nombre.
+         $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
@@ -70,7 +76,7 @@ class adminController {
     }
 
     function getCategorias(){
-        // $this->checkLoggedIn();
+         $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $this->categoriasView->showCategorias($categorias);
@@ -80,29 +86,31 @@ class adminController {
         $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['descripcion'],$_POST['fecha'],$_POST['categoria'] );
         header("Location: " .REVISTAS);
     }
-  
+
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
      header("Location: " . REVISTAS);
-    } 
+    }
 
-    function editarRevista(){ 
-        $id = $_POST['submit'];
-        var_dump($id);
-        $this->revistasModel->editarRevista($id, $_POST['titulo'],$_POST['descripcion'], $_POST['fecha'], $_POST['categoria']);
-        header("Location: ".REVISTAS);
+    function editarRevista($id){
+        $this->revistasModel->editarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $id);
+        header("Location: ". REVISTAS);
 
         //No se como hacer para tomar ambos parametros al mismo tiempo, el id de la URL y los datos de los input del formulario.
     }
 
     function agregarCategoria(){
         $this->categoriasModel->agregarCategoria($_POST['nombreCat']);
-         header("Location: ".CATEGORIAS);
+         header("Location: ". CATEGORIAS);
     }
 
     function borrarCategoria($id){
         $this->categoriasModel->borrarCategoria($id);
-        // header("Location: ".CATEGORIAS);\
-        // Falla por ser una primary key. Como se elimina? 
+        header("Location: ".CATEGORIAS);
+        // Falla por ser una primary key. Como se elimina?
     }
+    function editarCategoria($id){
+        $this->categoriasModel->editarCategoria($id, $_POST['editaCategoria']);
+        header("Location: ". CATEGORIAS);
+  }
 }

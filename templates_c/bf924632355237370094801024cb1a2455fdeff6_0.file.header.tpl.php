@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-18 18:42:16
+/* Smarty version 3.1.33, created on 2019-10-27 00:23:46
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5da9eb68a42fc7_14823728',
+  'unifunc' => 'content_5db4c7728f8ee6_20445139',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bf924632355237370094801024cb1a2455fdeff6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\header.tpl',
-      1 => 1571416088,
+      1 => 1572116557,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5da9eb68a42fc7_14823728 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db4c7728f8ee6_20445139 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title> Minimalismo </title>
 
-    <link rel="stylesheet" href="css/main.css">
+     <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+:<?php echo $_SERVER['SERVER_PORT'];
+echo dirname($_SERVER['PHP_SELF']);?>
+/">
+     <link rel="stylesheet" href="../css/main.css">
+     <link rel="stylesheet" href="./css/main.css">
+     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos/css/bootstrap-grid.css">

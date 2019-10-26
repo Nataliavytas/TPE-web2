@@ -1,6 +1,6 @@
 <!DOCTYPE html>
         <html>
-
+{*  <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">*}
       <body>
        {include file="headerAdmin.tpl"}
 
@@ -24,18 +24,28 @@
             <tbody id="cuerpoTabla">
             {foreach $revistas as $revista }
             <tr>
-            <td> {$revista['titulo']} </td>
-            <td> {$revista['descripcion']}</td>
-            <td> {$revista['fecha']}</td>
-            
-            <td><a value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </a></td>
-            <form action="admin/editar/{$revista['id_revistas']}">
-            <td><button type=submit> Editar </button></td>
+            <form action="editar/{$revista['id_revistas']}" method="POST">
+            <td> <p id ="p_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
+            {$revista['titulo']}</p>
+            <input name="titulo" type="text" value="{$revista['titulo']}" id="input_titulo_{$revista['id_revistas']}" style="display:none"> </td>
+
+            <td> <p id ="p2_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
+            {$revista['descripcion']}</p>
+            <input name="descripcion" type="text" value="{$revista['descripcion']}" id="input2_titulo_{$revista['id_revistas']}" style="display:none"> </td>
+
+            <td> <p id ="p3_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
+            {$revista['fecha']}</p>
+            <input name="fecha" type="text" value="{$revista['fecha']}" id="input_titulo3_{$revista['id_revistas']}" style="display:none"> </td>
+
+            <td><button type="submit" value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </button></td>
+
+            <td><button type="submit" value="{$revista['id_revistas']}" href="editar/{$revista['id_revistas']}"> Editar </button></td>
             </form>
-            
-            
+             </tr>
+
+
             {/foreach}
-            </tr>
+
 
             </tbody>
             </table>
@@ -55,7 +65,7 @@
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select onchange=mostrarTabla() id="tipoFiltro" class="form-control" name="categoria"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                      <select id="tipoFiltro" class="form-control" name="categoria"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
                         <option> Seleccione  </option>
                             {foreach from=$categorias item=categoria}
                             <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
@@ -66,4 +76,14 @@
                     <button type="submit" class="btn btn-primary">Insertar</button>
                   </div>
               </form>
+              <script>
+              function swapTitle(id){
+                  document.getElementById('input_titulo_'+id).style.display = 'block';
+                  document.getElementById('p_titulo_'+id).style.display = 'none';
+                  document.getElementById('input2_titulo_'+id).style.display = 'block';
+                  document.getElementById('p2_titulo_'+id).style.display = 'none';
+                  document.getElementById('input_titulo3_'+id).style.display = 'block';
+                  document.getElementById('p3_titulo_'+id).style.display = 'none';
+              }
+              </script>
       {include file="footer.tpl"}

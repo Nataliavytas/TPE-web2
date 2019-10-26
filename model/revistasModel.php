@@ -23,7 +23,7 @@
     $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $revistas;
    // var_dump($sentencia->errorInfo()); die;
-  } 
+  }
 
   function getDetalle($id){
     $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
@@ -42,10 +42,11 @@
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
      // var_dump($sentencia->errorInfo()); die;
-    } 
+    }
 
-    function editarRevista( $titulo,$fecha,$descripcion,$categoria, $id){
-      $sentencia = $this->db->prepare("UPDATE FROM revistas SET titulo=?, fecha=?, descripcion=?, categoria=? WHERE id_revistas=?");
-      $sentencia->execute(array($titulo, $fecha, $descripcion, $categoria, $id));
+    function editarRevista( $titulo,$fecha,$descripcion, $id){
+      $sentencia = $this->db->prepare("UPDATE revistas SET titulo=?, fecha=?, descripcion=? WHERE id_revistas=?");
+      $sentencia->execute(array($titulo, $fecha, $descripcion, $id));
+      //var_dump($sentencia->errorInfo()); die;
     }
   }
