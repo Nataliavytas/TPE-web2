@@ -32,16 +32,20 @@ class adminController {
   function iniciarSesion(){
       $emailUser = $_POST['email'];
       $password = $_POST['password'];
+     // print_r($_POST);
 
       if(!empty($emailUser) && !empty($password)){
           $user = $this->adminModel->getByEmail($emailUser);
-
-          if((!empty($user)) && password_verify($password, $user['password'])){
+           // var_dump($user);
+          if((!empty($user)) && password_verify($password, $user->password)){
             session_start();
-            $_SESSION['id_user'] = $user->id;
+
+            $_SESSION['ID_USER'] = $user->id;
             $_SESSION['USERNAME'] = $user->email;
 
             header("Location: ".REVISTAS);
+          }else{
+            header("Location: " .LOGIN);
           }
       }else {
         header("Location: " .LOGIN);
@@ -49,8 +53,10 @@ class adminController {
   }
     function checkLoggedIn(){
         session_start();
+       // var_dump($_SESSION);
         if(!isset($_SESSION['ID_USER'])) {
             header('Location: '.LOGIN);
+
             die();
         }
     }
@@ -62,7 +68,7 @@ class adminController {
     }
 
     function getRevistas(){ //Trae tambien categorias, cambiar nombre. 
-        // $this->checkLoggedIn();
+         $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
@@ -70,7 +76,7 @@ class adminController {
     }
 
     function getCategorias(){
-        // $this->checkLoggedIn();
+         $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $this->categoriasView->showCategorias($categorias);

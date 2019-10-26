@@ -1,6 +1,6 @@
 <!DOCTYPE html>
         <html>
-
+  <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
       <body>
        {include file="headerAdmin.tpl"}
 
@@ -24,18 +24,22 @@
             <tbody id="cuerpoTabla">
             {foreach $revistas as $revista }
             <tr>
-            <td> {$revista['titulo']} </td>
+            <form action="admin/editar/{$revista['id_revistas']}" method="POST">
+            <td> <p id ="p_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});"> 
+            {$revista['titulo']}</p> 
+            <input type="text" value="{$revista['titulo']}" id="input_titulo_{$revista['id_revistas']}" style="display:none"> </td>
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
             
             <td><a value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </a></td>
-            <form action="admin/editar/{$revista['id_revistas']}">
+            
             <td><button type=submit> Editar </button></td>
             </form>
+             </tr>
             
             
             {/foreach}
-            </tr>
+          
 
             </tbody>
             </table>
@@ -66,4 +70,10 @@
                     <button type="submit" class="btn btn-primary">Insertar</button>
                   </div>
               </form>
+                <script>
+                function swapTitle(id){
+                    document.getElementById('input_titulo_'+id).style.display = 'block';
+                    document.getElementById('p_titulo_'+id).style.display = 'none';
+                }
+                </script>
       {include file="footer.tpl"}

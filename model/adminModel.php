@@ -12,10 +12,9 @@ class adminModel {
         $sentencia = $this->db->prepare("SELECT * FROM usuarios WHERE email = ?");
         $sentencia->execute(array($emailUser));
 
-        $password = $sentencia->fetch(PDO::FETCH_ASSOC);
-        return $password;
-        $sentencia->execute([$emailUser]);
-
-        return $sentencia->fetch(PDO::FETCH_ASSOC);
+      //  $password = $sentencia->fetch(PDO::FETCH_ASSOC);
+      //  return $password;
+      //  $sentencia->execute([$emailUser]);
+        return $sentencia->fetch(PDO::FETCH_OBJ);
     }
   }

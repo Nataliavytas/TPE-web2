@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-25 04:18:52
+/* Smarty version 3.1.33, created on 2019-10-26 00:36:14
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db25b8c1ba509_39703535',
+  'unifunc' => 'content_5db378debbffe9_63226840',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1571968619,
+      1 => 1572042964,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db25b8c1ba509_39703535 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db378debbffe9_63226840 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
-
+  <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+:<?php echo $_SERVER['SERVER_PORT'];
+echo dirname($_SERVER['PHP_SELF']);?>
+/">
       <body>
        <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -54,8 +57,16 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ?>
             <tr>
-            <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
- </td>
+            <form action="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" method="POST">
+            <td> <p id ="p_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" onclick="swapTitle(<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+);"> 
+            <?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+</p> 
+            <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+" id="input_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" style="display:none"> </td>
             <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
 </td>
             <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
@@ -64,17 +75,17 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
             <td><a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "  href="borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </a></td>
-            <form action="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-">
+            
             <td><button type=submit> Editar </button></td>
             </form>
+             </tr>
             
             
             <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-            </tr>
+          
 
             </tbody>
             </table>
@@ -114,6 +125,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <button type="submit" class="btn btn-primary">Insertar</button>
                   </div>
               </form>
+                <?php echo '<script'; ?>
+>
+                function swapTitle(id){
+                    document.getElementById('input_titulo_'+id).style.display = 'block';
+                    document.getElementById('p_titulo_'+id).style.display = 'none';
+                }
+                <?php echo '</script'; ?>
+>
       <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
