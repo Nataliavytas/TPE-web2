@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-27 00:27:13
+/* Smarty version 3.1.33, created on 2019-10-28 00:03:50
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db4c841cfc128_79337820',
+  'unifunc' => 'content_5db62256c902b1_25152692',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db4c841cfc128_79337820 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db62256c902b1_25152692 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <footer class="page-footer font-small cyan darken-3">
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
             <a href="inicio.php"> Minimalismo.com</a>

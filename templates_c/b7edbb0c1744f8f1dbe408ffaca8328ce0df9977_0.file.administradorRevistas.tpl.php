@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-27 00:28:03
+/* Smarty version 3.1.33, created on 2019-10-29 13:33:21
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db4c8737731e3_59648814',
+  'unifunc' => 'content_5db83191dd0725_37133797',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b7edbb0c1744f8f1dbe408ffaca8328ce0df9977' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\administradorRevistas.tpl',
-      1 => 1572128879,
+      1 => 1572352397,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db4c8737731e3_59648814 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db83191dd0725_37133797 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -55,38 +55,52 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
             <tr>
             <form action="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 " method="POST">
-            <td> <p id ="p_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" onclick="swapTitle(<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-);">
-            <?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-</p>
-            <input name="titulo" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-" id="input_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" style="display:none"> </td>
 
-            <td> <p id ="p2_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" onclick="swapTitle(<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-);">
-            <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-</p>
-            <input name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-" id="input2_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" style="display:none"> </td>
+            <td>
+              <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+</a>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <div class="card card-body">
+                      <input name="titulo" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+">
+                  </div>
+                </div>
+              </div>
+            </div></td>
+            <td>
+              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+</button>
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="card card-body">
+                      <input name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+">
+                  </div>
+                </div>
+              </div>
+            </td>
 
-            <td> <p id ="p3_titulo_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" onclick="swapTitle(<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-);">
-            <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-</p>
-            <input name="fecha" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-" id="input_titulo3_<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" style="display:none"> </td>
+            <td>
+                <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+</a>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                          <input name="fecha" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+"> </td>
+                        </div>
+                      </div>
+                    </div>
 
-            <td><button type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+
+
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "  href="borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </button></td>
 
-            <td><button type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 " href="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Editar </button></td>
             </form>
@@ -134,21 +148,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                          </select>
                          </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Insertar</button>
+                    <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>
               </form>
-              <?php echo '<script'; ?>
->
-              function swapTitle(id){
-                  document.getElementById('input_titulo_'+id).style.display = 'block';
-                  document.getElementById('p_titulo_'+id).style.display = 'none';
-                  document.getElementById('input2_titulo_'+id).style.display = 'block';
-                  document.getElementById('p2_titulo_'+id).style.display = 'none';
-                  document.getElementById('input_titulo3_'+id).style.display = 'block';
-                  document.getElementById('p3_titulo_'+id).style.display = 'none';
-              }
-              <?php echo '</script'; ?>
->
       <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

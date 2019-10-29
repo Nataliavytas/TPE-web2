@@ -25,21 +25,44 @@
             {foreach $revistas as $revista }
             <tr>
             <form action="editar/{$revista['id_revistas']}" method="POST">
-            <td> <p id ="p_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
-            {$revista['titulo']}</p>
-            <input name="titulo" type="text" value="{$revista['titulo']}" id="input_titulo_{$revista['id_revistas']}" style="display:none"> </td>
 
-            <td> <p id ="p2_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
-            {$revista['descripcion']}</p>
-            <input name="descripcion" type="text" value="{$revista['descripcion']}" id="input2_titulo_{$revista['id_revistas']}" style="display:none"> </td>
+            <td>
+              <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$revista['titulo']}</a>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <div class="card card-body">
+                      <input name="titulo" type="text" value="{$revista['titulo']}">
+                  </div>
+                </div>
+              </div>
+            </div></td>
+            <td>
+              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</button>
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="card card-body">
+                      <input name="descripcion" type="text" value="{$revista['descripcion']}">
+                  </div>
+                </div>
+              </div>
+            </td>
 
-            <td> <p id ="p3_titulo_{$revista['id_revistas']}" onclick="swapTitle({$revista['id_revistas']});">
-            {$revista['fecha']}</p>
-            <input name="fecha" type="text" value="{$revista['fecha']}" id="input_titulo3_{$revista['id_revistas']}" style="display:none"> </td>
+            <td>
+                <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                          <input name="fecha" type="text" value="{$revista['fecha']}"> </td>
+                        </div>
+                      </div>
+                    </div>
 
-            <td><button type="submit" value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
-            <td><button type="submit" value="{$revista['id_revistas']}" href="editar/{$revista['id_revistas']}"> Editar </button></td>
+
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </button></td>
+
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="editar/{$revista['id_revistas']}"> Editar </button></td>
             </form>
              </tr>
 
@@ -73,17 +96,7 @@
                          </select>
                          </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Insertar</button>
+                    <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>
               </form>
-              <script>
-              function swapTitle(id){
-                  document.getElementById('input_titulo_'+id).style.display = 'block';
-                  document.getElementById('p_titulo_'+id).style.display = 'none';
-                  document.getElementById('input2_titulo_'+id).style.display = 'block';
-                  document.getElementById('p2_titulo_'+id).style.display = 'none';
-                  document.getElementById('input_titulo3_'+id).style.display = 'block';
-                  document.getElementById('p3_titulo_'+id).style.display = 'none';
-              }
-              </script>
       {include file="footer.tpl"}

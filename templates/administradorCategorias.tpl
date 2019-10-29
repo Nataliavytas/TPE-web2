@@ -23,18 +23,27 @@
                     <tr>
                     <form  action="editarCat/{$categoria['id_categorias']}" method="POST">
                       <div>
-                          <td> <p id ="p_titulo_{$categoria['id_categorias']}" onclick="swapTitle({$categoria['id_categorias']})">
-                          {$categoria['nombreCat']}</p>
-                          <input type="text" name="editaCategoria" value="{$categoria['nombreCat']}" id="cat_titulo_{$categoria['id_categorias']}" style="display:none"> </td>
-                        </div>
-                          <td> <button type="submit" value="{$categoria['id_categorias']}" href="editarCat/{$categoria['id_categorias']}" > Editar</button></td>
-                          <td> <button type="submit" value="{$categoria['id_categorias']}" href="borrarCat/{$categoria['id_categorias']}" formmethod="DELETE" formaction="borrarCat">Borrar </button></td>
+                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$categoria['nombreCat']}</a></p>
+                          <div class="row">
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body">
+                                  <input type="text" name="editaCategoria" value="{$categoria['nombreCat']}">
+                                </div>
+                              </div>
+                            </div></td>
+
+
+                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$categoria['id_categorias']}" href="editarCat/{$categoria['id_categorias']}" > Editar</button></td>
+                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$categoria['id_categorias']}" href="borrarCat/{$categoria['id_categorias']}" formmethod="DELETE" formaction="borrarCat">Borrar </button></td>
+                      </div>
                 </form>
                 {/foreach}
                 </tr>
                   </tbody>
                  </table>
           </div>
+        </div>
 
            <form id="formview" action="agregarCategoria" method="post">
             <div class="form-group">
@@ -42,14 +51,7 @@
                 <input name="nombreCat" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">
-               <button type="submit" class="btn btn-primary">Insertar</button>
+               <button type="submit" class="btn btn-outline-secondary">Insertar</button>
             </div>
         </form>
-        <script>
-
-        function swapTitle(id){
-            document.getElementById('cat_titulo_'+id).style.display = 'block';
-            document.getElementById('p_titulo_'+id).style.display = 'none';
-        }
-      </script>
         {include file="footer.tpl"}
