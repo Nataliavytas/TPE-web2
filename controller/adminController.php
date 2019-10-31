@@ -96,7 +96,6 @@ class adminController {
         $this->revistasModel->editarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $id);
         header("Location: ". REVISTAS);
 
-        //No se como hacer para tomar ambos parametros al mismo tiempo, el id de la URL y los datos de los input del formulario.
     }
 
     function agregarCategoria(){
@@ -107,7 +106,6 @@ class adminController {
     function borrarCategoria($id){
         $this->categoriasModel->borrarCategoria($id);
         header("Location: ".CATEGORIAS);
-        // Falla por ser una primary key. Como se elimina?
     }
     function editarCategoria($id){
         $this->categoriasModel->editarCategoria($id, $_POST['editaCategoria']);

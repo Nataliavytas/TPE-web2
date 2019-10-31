@@ -3,6 +3,7 @@
    <meta charset="UTF-8">
    <title> Minimalismo </title>
 
+   <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="./css/main.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
 
 
 <nav class="navbar navbar-expand-lg fixed-top ">
-       <a class="navbar-brand" href="../" id="marcaMinimalismo"> MINIMALISMO </a>
+       <a class="navbar-brand" href="" id="marcaMinimalismo"> MINIMALISMO </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
            id="navResponsive">

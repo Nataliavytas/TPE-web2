@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-31 18:29:13
+/* Smarty version 3.1.33, created on 2019-10-31 22:46:34
   from 'C:\xampp\htdocs\TPE\templates\headerAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbb19e9576aa9_64917138',
+  'unifunc' => 'content_5dbb563aa6b3a2_14745857',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd583c078b575271771bb32550ed79324199ab9d1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\headerAdmin.tpl',
-      1 => 1572542231,
+      1 => 1572558389,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,16 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dbb19e9576aa9_64917138 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb563aa6b3a2_14745857 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
    <title> Minimalismo </title>
 
+   <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+:<?php echo $_SERVER['SERVER_PORT'];
+echo dirname($_SERVER['PHP_SELF']);?>
+/">
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="./css/main.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -49,7 +53,7 @@ function content_5dbb19e9576aa9_64917138 (Smarty_Internal_Template $_smarty_tpl)
 
 
 <nav class="navbar navbar-expand-lg fixed-top ">
-       <a class="navbar-brand" href="../" id="marcaMinimalismo"> MINIMALISMO </a>
+       <a class="navbar-brand" href="" id="marcaMinimalismo"> MINIMALISMO </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
            id="navResponsive">

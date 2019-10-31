@@ -1,13 +1,12 @@
 <!DOCTYPE html>
         <html>
-{*  <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">*}
       <body>
        {include file="headerAdmin.tpl"}
 
        <div id="textoinicio">
-          <h2> <a href="revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
+          <h2> <a href="admin/revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
           Revistas publicadas
-          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
+          <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
             <div id="formatoTabla">
@@ -24,7 +23,7 @@
             <tbody id="cuerpoTabla">
             {foreach $revistas as $revista }
             <tr>
-            <form action="editar/{$revista['id_revistas']}" method="POST">
+            <form action="admin/editar/{$revista['id_revistas']}" method="POST">
 
             <td>
               <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$revista['titulo']}</a>
@@ -60,9 +59,9 @@
 
 
 
-            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="borrar/{$revista['id_revistas']}"> Borrar </button></td>
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
-            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="editar/{$revista['id_revistas']}"> Editar </button></td>
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
             </form>
              </tr>
 
@@ -73,7 +72,7 @@
             </tbody>
             </table>
                 </div>
-        <form id="formview" action="agregarRevista" method="post">
+        <form id="formview" action="admin/agregarRevista" method="post">
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
                       <input name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">

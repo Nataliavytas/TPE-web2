@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-31 18:29:05
+/* Smarty version 3.1.33, created on 2019-10-31 22:41:01
   from 'C:\xampp\htdocs\TPE\templates\visitRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbb19e154c062_16839240',
+  'unifunc' => 'content_5dbb54edf3c4a9_62159788',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2fabe8b62395494804f0c8babd08403f0c4e8b9f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\visitRevistas.tpl',
-      1 => 1572542231,
+      1 => 1572557984,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dbb19e154c062_16839240 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb54edf3c4a9_62159788 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 

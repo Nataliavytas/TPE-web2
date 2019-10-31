@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-31 18:29:13
+/* Smarty version 3.1.33, created on 2019-10-31 22:48:39
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbb19e94ac4d5_09258078',
+  'unifunc' => 'content_5dbb56b7bc9ad8_26824353',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1572542851,
+      1 => 1572558430,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dbb19e94ac4d5_09258078 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb56b7bc9ad8_26824353 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -30,9 +30,9 @@ function content_5dbb19e94ac4d5_09258078 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
        <div id="textoinicio">
-          <h2> <a href="revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
+          <h2> <a href="admin/revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
           Revistas publicadas
-          <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
+          <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
             <div id="formatoTabla">
@@ -53,7 +53,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ?>
             <tr>
-            <form action="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+            <form action="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 " method="POST">
 
             <td>
@@ -103,11 +103,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 
 
             <td><button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-"  href="borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+"  href="admin/borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </button></td>
 
             <td><button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" href="editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" href="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Editar </button></td>
             </form>
              </tr>
@@ -122,7 +122,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </tbody>
             </table>
                 </div>
-        <form id="formview" action="agregarRevista" method="post">
+        <form id="formview" action="admin/agregarRevista" method="post">
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
                       <input name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">

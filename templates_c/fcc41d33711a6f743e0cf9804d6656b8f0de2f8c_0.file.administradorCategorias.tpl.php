@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-31 18:29:16
+/* Smarty version 3.1.33, created on 2019-10-31 22:48:38
   from 'C:\xampp\htdocs\TPE\templates\administradorCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbb19ec1699d0_89797842',
+  'unifunc' => 'content_5dbb56b60fae32_01779549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fcc41d33711a6f743e0cf9804d6656b8f0de2f8c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorCategorias.tpl',
-      1 => 1572542929,
+      1 => 1572558499,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dbb19ec1699d0_89797842 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb56b60fae32_01779549 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -31,7 +31,7 @@ function content_5dbb19ec1699d0_89797842 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 
         <div id="textoinicio">
-        <h2> <a href="revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a> Categorias actuales  <a href="categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> </h2>
+        <h2> <a href="admin/revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a> Categorias actuales  <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> </h2>
         </div>
 
 
@@ -51,16 +51,14 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 ?>
                     <tr>
-                    <form  action="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+                    <form  action="admin/editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " method="POST">
                       <div>
-                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#collapse<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
+                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
 </a></p>
                           <div class="row">
                             <div class="col">
-                              <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-">
+                              <div class="collapse multi-collapse" id="multiCollapseExample1">
                                 <div class="card card-body">
                                   <input type="text" name="editaCategoria" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
 ">
@@ -70,10 +68,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 
 
                           <td> <button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-" href="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+" href="admin/editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " > Editar</button></td>
                           <td> <button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-" href="borrarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+" href="admin/borrarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " formmethod="DELETE" formaction="borrarCat">Borrar </button></td>
                       </div>
                 </form>
@@ -87,7 +85,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           </div>
         </div>
 
-           <form id="formview" action="agregarCategoria" method="post">
+           <form id="formview" action="admin/agregarCategoria" method="post">
             <div class="form-group">
                 <label> Agregar nueva categoria: </label>
                 <input name="nombreCat" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
