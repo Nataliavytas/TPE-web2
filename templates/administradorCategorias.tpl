@@ -23,10 +23,10 @@
                     <tr>
                     <form  action="editarCat/{$categoria['id_categorias']}" method="POST">
                       <div>
-                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$categoria['nombreCat']}</a></p>
+                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#collapse{$categoria['id_categorias']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$categoria['nombreCat']}</a></p>
                           <div class="row">
                             <div class="col">
-                              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                              <div class="collapse multi-collapse" id="collapse{$categoria['id_categorias']}">
                                 <div class="card card-body">
                                   <input type="text" name="editaCategoria" value="{$categoria['nombreCat']}">
                                 </div>

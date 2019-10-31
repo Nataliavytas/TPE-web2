@@ -27,17 +27,10 @@
             <form action="editar/{$revista['id_revistas']}" method="POST">
 
             <td>
-<<<<<<< HEAD
               <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$revista['titulo']}</a>
             <div class="row">
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
-=======
-              <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$revista['titulo']}</a>
-            <div class="row">
-              <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample1">
->>>>>>> 138a3a4f71616ec12b5ecfff0c7681863b3a97fa
                   <div class="card card-body">
                       <input name="titulo" type="text" value="{$revista['titulo']}">
                   </div>
@@ -45,15 +38,9 @@
               </div>
             </div></td>
             <td>
-<<<<<<< HEAD
               <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</button>
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
-=======
-              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</button>
-              <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample2">
->>>>>>> 138a3a4f71616ec12b5ecfff0c7681863b3a97fa
                   <div class="card card-body">
                       <input name="descripcion" type="text" value="{$revista['descripcion']}">
                   </div>
@@ -62,15 +49,9 @@
             </td>
 
             <td>
-<<<<<<< HEAD
                 <a class="btn btn-light" data-toggle="collapse" href="collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
-=======
-                <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="multiCollapseExample3">
->>>>>>> 138a3a4f71616ec12b5ecfff0c7681863b3a97fa
                         <div class="card card-body">
                           <input name="fecha" type="text" value="{$revista['fecha']}"> </td>
                         </div>
