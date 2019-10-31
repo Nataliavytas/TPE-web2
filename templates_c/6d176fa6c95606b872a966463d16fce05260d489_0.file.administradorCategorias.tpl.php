@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-27 00:31:04
+/* Smarty version 3.1.33, created on 2019-10-29 13:30:44
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\administradorCategorias.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db4c928e83513_58907466',
+  'unifunc' => 'content_5db830f4b47710_75328648',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d176fa6c95606b872a966463d16fce05260d489' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\administradorCategorias.tpl',
-      1 => 1572129063,
+      1 => 1572352238,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db4c928e83513_58907466 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5db830f4b47710_75328648 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
 
@@ -54,21 +54,26 @@ foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
                     <form  action="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " method="POST">
                       <div>
-                          <td> <p id ="p_titulo_<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-" onclick="swapTitle(<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-)">
-                          <?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
-</p>
-                          <input type="text" name="editaCategoria" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
-" id="cat_titulo_<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
-" style="display:none"> </td>
-                        </div>
-                          <td> <button type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
+</a></p>
+                          <div class="row">
+                            <div class="col">
+                              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body">
+                                  <input type="text" name="editaCategoria" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['nombreCat'];?>
+">
+                                </div>
+                              </div>
+                            </div></td>
+
+
+                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " href="editarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " > Editar</button></td>
-                          <td> <button type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
+                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " href="borrarCat/<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categorias'];?>
 " formmethod="DELETE" formaction="borrarCat">Borrar </button></td>
+                      </div>
                 </form>
                 <?php
 }
@@ -78,6 +83,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </tbody>
                  </table>
           </div>
+        </div>
 
            <form id="formview" action="agregarCategoria" method="post">
             <div class="form-group">
@@ -85,18 +91,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <input name="nombreCat" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
             </div>
             <div class="form-group">
-               <button type="submit" class="btn btn-primary">Insertar</button>
+               <button type="submit" class="btn btn-outline-secondary">Insertar</button>
             </div>
         </form>
-        <?php echo '<script'; ?>
->
-
-        function swapTitle(id){
-            document.getElementById('cat_titulo_'+id).style.display = 'block';
-            document.getElementById('p_titulo_'+id).style.display = 'none';
-        }
-      <?php echo '</script'; ?>
->
         <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }

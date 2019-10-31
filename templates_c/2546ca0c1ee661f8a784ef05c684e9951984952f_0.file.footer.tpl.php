@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-28 00:03:50
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\footer.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-31 18:17:15
+  from 'C:\xampp\htdocs\TPE\TPE-web2\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db62256c902b1_25152692',
+  'unifunc' => 'content_5dbb171b2a2ab4_47561018',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4273cc163aaf288a4a7d34b17fb19f63674a7e8e' => 
+    '2546ca0c1ee661f8a784ef05c684e9951984952f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\footer.tpl',
-      1 => 1572128832,
+      0 => 'C:\\xampp\\htdocs\\TPE\\TPE-web2\\templates\\footer.tpl',
+      1 => 1572542231,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db62256c902b1_25152692 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb171b2a2ab4_47561018 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <footer class="page-footer font-small cyan darken-3">
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
             <a href="inicio.php"> Minimalismo.com</a>

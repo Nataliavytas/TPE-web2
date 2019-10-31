@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 13:33:21
-  from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\administradorRevistas.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-31 18:23:14
+  from 'C:\xampp\htdocs\TPE\TPE-web2\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db83191dd0725_37133797',
+  'unifunc' => 'content_5dbb1882d26381_65199783',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b7edbb0c1744f8f1dbe408ffaca8328ce0df9977' => 
+    '2eb4ca626c2ae986ee73295ddb28a88998d3619f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\administradorRevistas.tpl',
-      1 => 1572352397,
+      0 => 'C:\\xampp\\htdocs\\TPE\\TPE-web2\\templates\\administradorRevistas.tpl',
+      1 => 1572542591,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5db83191dd0725_37133797 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb1882d26381_65199783 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -57,11 +57,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 " method="POST">
 
             <td>
-              <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+              <a class="btn btn-light" data-toggle="collapse" href="#collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
 </a>
             <div class="row">
               <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+">
                   <div class="card card-body">
                       <input name="titulo" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
 ">
@@ -70,10 +72,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
               </div>
             </div></td>
             <td>
-              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" aria-expanded="false" aria-controls="multiCollapseExample2"><?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
 </button>
               <div class="col">
-                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+">
                   <div class="card card-body">
                       <input name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
 ">
@@ -83,10 +87,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
             </td>
 
             <td>
-                <a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+                <a class="btn btn-light" data-toggle="collapse" href="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </a>
                     <div class="col">
-                      <div class="collapse multi-collapse" id="multiCollapseExample3">
+                      <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+">
                         <div class="card card-body">
                           <input name="fecha" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 "> </td>
