@@ -14,8 +14,8 @@
                   <thead>
                     <tr>
                       <th scope="col"> Categorias </th>
-                      <th scope="col"> Borrar </th>
                       <th scope="col"> Editar </th>
+                      <th scope="col"> Borrar </th>
                     </tr>
                   </thead>
                   <tbody id="cuerpoTabla">

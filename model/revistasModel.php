@@ -41,7 +41,7 @@
 
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
-     // var_dump($sentencia->errorInfo()); die;
+      var_dump($sentencia->errorInfo()); die;
     }
 
     function editarRevista( $titulo,$fecha,$descripcion, $id){

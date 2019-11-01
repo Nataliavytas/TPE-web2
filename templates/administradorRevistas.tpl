@@ -57,9 +57,7 @@
                       </div>
                     </div>
 
-
-
-            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
+            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
             <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
             </form>
@@ -83,7 +81,7 @@
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
-                      <input name="fecha" type="text" class="form-control" id="tipoTabla" placeholder="Mes de publicación">
+                      <input name="fecha" type="text" class="form-control" id="tipoTabla" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>

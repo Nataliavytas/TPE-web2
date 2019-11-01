@@ -89,7 +89,7 @@ class adminController {
 
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
-     header("Location: " . REVISTAS);
+     //header("Location: " . REVISTAS);
     }
 
     function editarRevista($id){
