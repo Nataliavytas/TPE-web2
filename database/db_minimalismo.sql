@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-10-2019 a las 15:25:10
+-- Tiempo de generación: 01-11-2019 a las 15:41:55
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -38,10 +38,6 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`nombreCat`, `id_categorias`) VALUES
-('Familia', 2),
-('Estetica', 3),
-('Relaciones', 4),
-('Moda', 5),
 ('Hogar', 6),
 ('Educacion', 7);
 
@@ -64,16 +60,26 @@ CREATE TABLE `revistas` (
 --
 
 INSERT INTO `revistas` (`id_revistas`, `id_categorias`, `titulo`, `fecha`, `descripcion`) VALUES
-(24, 2, 'Edicion 1', 1990, 'Descripcion para revista \"Edicion 1\"'),
-(26, 3, 'Edicion 2', 1991, 'Descripcion para revista \"Edicion 2\"'),
-(27, 4, 'Edicion 3', 1992, 'Descripcion para revista \"Edicion 3\"'),
-(28, 5, 'Edicion 4', 1993, 'Descripcion para revista \"Edicion 4\"'),
-(29, 6, 'Edicion 5', 1994, 'Descripcion para revista \"Edicion 5\"'),
-(30, 2, 'Edicion 6', 1995, 'Descripcion para revista \"Edicion 6\"'),
-(31, 3, 'Edicion 7', 1996, 'Descripcion para revista \"Edicion 7\"'),
-(32, 4, 'Edicion 8', 1997, 'Descripcion para revista \"Edicion 8\"'),
-(33, 5, 'Edicion 9', 1998, 'Descripcion para revista \"Edicion 9\"'),
-(34, 6, 'Edicion 10', 1999, 'Descripcion para revista \"Edicion 10\"');
+(0, 7, 'opcion1', 0000, '2000');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
+(2, 'nati@a', '$2y$10$FN46.OfQQ2/lhydgJO7sbOmukbDxQJ/eon2UzCAE9ACz2URzNIL.a');
 
 --
 -- Índices para tablas volcadas
@@ -93,6 +99,12 @@ ALTER TABLE `revistas`
   ADD KEY `id_categorias` (`id_categorias`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -100,13 +112,13 @@ ALTER TABLE `revistas`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `revistas`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
-ALTER TABLE `revistas`
-  MODIFY `id_revistas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
@@ -116,7 +128,7 @@ ALTER TABLE `revistas`
 -- Filtros para la tabla `revistas`
 --
 ALTER TABLE `revistas`
-  ADD CONSTRAINT `revistas_ibfk_1` FOREIGN KEY (`id_categorias`) REFERENCES `categorias` (`id_categorias`);
+  ADD CONSTRAINT `revistas_ibfk_1` FOREIGN KEY (`id_categorias`) REFERENCES `categorias` (`id_categorias`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
