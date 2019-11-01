@@ -55,7 +55,6 @@ class adminController {
   }
     function checkLoggedIn(){
         session_start();
-        var_dump($_SESSION);
         if(!isset($_SESSION['id_user'])) {
             header('Location: '.LOGIN);
             die();
