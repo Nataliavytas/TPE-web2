@@ -31,31 +31,34 @@
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                   <div class="card card-body">
-                      <input name="titulo" type="text" value="{$revista['titulo']}">
+                      <input name="titulo" type="text" value="{$revista['titulo']}"/>
                   </div>
                 </div>
               </div>
             </div></td>
-            <td>
-              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</button>
-              <div class="col">
+          <td>
+            <a class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</a>
+              <div class="row">
+               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                   <div class="card card-body">
-                      <input name="descripcion" type="text" value="{$revista['descripcion']}">
+                      <input name="descripcion" type="text" value="{$revista['descripcion']}"/>
                   </div>
                 </div>
               </div>
-            </td>
+              </div></td>
 
             <td>
                 <a class="btn btn-light" data-toggle="collapse" href="collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
+                  <div class="row">
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                         <div class="card card-body">
-                          <input name="fecha" type="text" value="{$revista['fecha']}"> </td>
+                          <input name="fecha" type="text" value="{$revista['fecha']}"/>
                         </div>
                       </div>
                     </div>
+                  </div></td>
 
             <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
@@ -71,17 +74,18 @@
             </table>
                 </div>
         <form id="formview" action="admin/agregarRevista" method="post">
+  
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
-                      <input name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                      <input value="{$revista['titulo']}" name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
-                      <input name="descripcion" type="text" class="form-control" id="autorTabla" placeholder="Descripcion">
+                      <input value="{$revista['descripcion']}" name="descripcion" type="text" class="form-control" id="autorTabla" aria-describedby="emailHelp" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
-                      <input name="fecha" type="text" class="form-control" id="tipoTabla" placeholder="Año de publicación">
+                      <input value="{$revista['fecha']}" name="fecha" type="text" class="form-control" id="tipoTabla" aria-describedby="emailHelp" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>

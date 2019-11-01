@@ -42,8 +42,8 @@ class adminController {
 
             $_SESSION['ID_USER'] = $user->id;
             $_SESSION['USERNAME'] = $user->email;
-
-            header("Location: ".REVISTAS);
+          //  var_dump($_SESSION);
+           header("Location: ".REVISTAS);
           }else{
             header("Location: " .LOGIN);
           }
@@ -53,11 +53,10 @@ class adminController {
   }
     function checkLoggedIn(){
         session_start();
-       // var_dump($_SESSION);
+        //var_dump($_SESSION);
         if(!isset($_SESSION['ID_USER'])) {
-            header('Location: '.LOGIN);
-
-            die();
+        header('Location: '.LOGIN);
+        die();
         }
     }
 
@@ -67,7 +66,7 @@ class adminController {
         header("Location: ".LOGIN);
     }
 
-    function getRevistas(){ //Trae tambien categorias, cambiar nombre.
+    function getRevistas(){
          $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
@@ -83,13 +82,13 @@ class adminController {
     }
 
     function agregarRevista(){
-        $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['descripcion'],$_POST['fecha'],$_POST['categoria'] );
+        $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['fecha'],$_POST['descripcion'],$_POST['categoria'] );
         header("Location: " .REVISTAS);
     }
 
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
-     //header("Location: " . REVISTAS);
+     header("Location: " . REVISTAS);
     }
 
     function editarRevista($id){
