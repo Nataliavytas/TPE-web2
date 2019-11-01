@@ -35,7 +35,7 @@
 
 
                           <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$categoria['id_categorias']}" href="admin/editarCat/{$categoria['id_categorias']}" > Editar</button></td>
-                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$categoria['id_categorias']}" href="admin/borrarCat/{$categoria['id_categorias']}" formmethod="DELETE" formaction="borrarCat">Borrar </button></td>
+                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$categoria['id_categorias']}"> <a href="admin/borrarCat/{$categoria['id_categorias']}"> Borrar </a> </button></td>
                       </div>
                 </form>
                 {/foreach}
