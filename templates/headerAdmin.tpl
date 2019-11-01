@@ -32,7 +32,7 @@
        <div class="collapse navbar-collapse " id="navbarSupportedContent">
            <ul class="navbar-nav mr-4">
                <li class="nav-item">
-                   <a class="nav-link" data-value="about" href="admin"> Logout </a> </li>
+                   <a class="nav-link" data-value="about" href="admin/logout"> Logout </a> </li>
            </ul>
        </div>
    </nav>

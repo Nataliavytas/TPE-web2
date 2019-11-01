@@ -30,19 +30,21 @@ class adminController {
   }
 
   function iniciarSesion(){
+    session_start();
+
       $emailUser = $_POST['email'];
       $password = $_POST['password'];
-     // print_r($_POST);
 
       if(!empty($emailUser) && !empty($password)){
+
           $user = $this->adminModel->getByEmail($emailUser);
-           // var_dump($user);
+
           if((!empty($user)) && password_verify($password, $user->password)){
             session_start();
 
-            $_SESSION['ID_USER'] = $user->id;
-            $_SESSION['USERNAME'] = $user->email;
-
+            $_SESSION['id_user'] = $user->id;
+            $_SESSION['username'] = $user->email;
+            
             header("Location: ".REVISTAS);
           }else{
             header("Location: " .LOGIN);
@@ -53,10 +55,9 @@ class adminController {
   }
     function checkLoggedIn(){
         session_start();
-       // var_dump($_SESSION);
-        if(!isset($_SESSION['ID_USER'])) {
+        var_dump($_SESSION);
+        if(!isset($_SESSION['id_user'])) {
             header('Location: '.LOGIN);
-
             die();
         }
     }
@@ -67,8 +68,8 @@ class adminController {
         header("Location: ".LOGIN);
     }
 
-    function getRevistas(){ //Trae tambien categorias, cambiar nombre.
-         $this->checkLoggedIn();
+    function getRevistas(){ 
+        $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
@@ -76,20 +77,20 @@ class adminController {
     }
 
     function getCategorias(){
-         $this->checkLoggedIn();
+        $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();
         $this->categoriasView->showCategorias($categorias);
     }
 
     function agregarRevista(){
-        $this->revistasModel->insertarRevista($_POST['titulo'],$_POST['descripcion'],$_POST['fecha'],$_POST['categoria'] );
+        $this->revistasModel->insertarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $_POST['categoria'] );
         header("Location: " .REVISTAS);
     }
 
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
-     //header("Location: " . REVISTAS);
+     header("Location: " . REVISTAS);
     }
 
     function editarRevista($id){
