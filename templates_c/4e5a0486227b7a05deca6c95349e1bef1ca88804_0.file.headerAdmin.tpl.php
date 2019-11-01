@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-01 16:16:53
+/* Smarty version 3.1.33, created on 2019-11-01 16:49:30
   from 'C:\xampp\htdocs\Proyecto\paginaWeb\templates\headerAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbc4c659ab644_19468148',
+  'unifunc' => 'content_5dbc540aee64d2_44670306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4e5a0486227b7a05deca6c95349e1bef1ca88804' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Proyecto\\paginaWeb\\templates\\headerAdmin.tpl',
-      1 => 1572570906,
+      1 => 1572623231,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dbc4c659ab644_19468148 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbc540aee64d2_44670306 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
@@ -62,7 +62,7 @@ echo dirname($_SERVER['PHP_SELF']);?>
        <div class="collapse navbar-collapse " id="navbarSupportedContent">
            <ul class="navbar-nav mr-4">
                <li class="nav-item">
-                   <a class="nav-link" data-value="about" href="admin"> Logout </a> </li>
+                   <a class="nav-link" data-value="about" href="admin/logout"> Logout </a> </li>
            </ul>
        </div>
    </nav>

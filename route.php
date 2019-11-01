@@ -60,4 +60,6 @@ if($action == ''){
 
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editarCat" ) {
     $adminController->editarCategoria($partesURL[2]);
+}elseif($action == "admin/logout" ){
+    $adminController->logout();
 }
