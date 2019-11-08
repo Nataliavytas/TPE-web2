@@ -212,3 +212,10 @@ html{
 #admin_titulo_, #input_titulo_, #input2_titulo_, #input_titulo3_, #cat_titulo_{
   display: none;
 }
+#descripcionAnchor{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  width:  10ch;
+  max-width: 10ch;
+}

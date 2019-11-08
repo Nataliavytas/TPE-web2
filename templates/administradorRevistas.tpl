@@ -37,12 +37,12 @@
               </div>
             </div></td>
           <td>
-            <a class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</a>
+            <a id="descripcionAnchor"  class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</a>
               <div class="row">
                <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                   <div class="card card-body">
-                      <input name="descripcion" type="text" value="{$revista['descripcion']}"/>
+                      <input  name="descripcion" type="text" value="{$revista['descripcion']}"/>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@
             </table>
                 </div>
         <form id="formview" action="admin/agregarRevista" method="post">
-  
+
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
                       <input value="{$revista['titulo']}" name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
