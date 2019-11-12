@@ -26,7 +26,7 @@
             <form action="admin/editar/{$revista['id_revistas']}" method="POST">
 
             <td>
-              <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">{$revista['titulo']}</a>
+              <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> {$revista['titulo']} </a>
             <div class="row">
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
@@ -35,9 +35,11 @@
                   </div>
                 </div>
               </div>
-            </div></td>
+            </div>
+            </td>
+
             <td>
-              <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">{$revista['descripcion']}</button>
+              <button id="descripcionAnchor" class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2"> {$revista['descripcion']} </button>
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                   <div class="card card-body">
@@ -52,11 +54,11 @@
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                         <div class="card card-body">
-                          <input name="fecha" type="text" value="{$revista['fecha']}"> </td>
+                          <input name="fecha" type="text" value="{$revista['fecha']}"> 
                         </div>
                       </div>
                     </div>
-
+            </td>
             <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
             <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
@@ -85,7 +87,7 @@
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select id="tipoFiltro" class="form-control" name="categoria"> <!-- el onchange esta mal, se agrega un addeventlistener en el javascript-->
+                      <select id="tipoFiltro" class="form-control" name="categoria"> 
                         <option> Seleccione  </option>
                             {foreach from=$categorias item=categoria}
                             <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>

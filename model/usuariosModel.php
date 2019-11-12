@@ -1,5 +1,5 @@
 <?php
-class adminModel {
+class usuariosModel {
 
     private $db;
 

@@ -1,9 +1,35 @@
-<head>
+<?php
+/* Smarty version 3.1.33, created on 2019-11-08 15:58:04
+  from 'C:\xampp\htdocs\TPE\templates\headerAdmin.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5dc5827c7153a6_03993710',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'd583c078b575271771bb32550ed79324199ab9d1' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TPE\\templates\\headerAdmin.tpl',
+      1 => 1573224971,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5dc5827c7153a6_03993710 (Smarty_Internal_Template $_smarty_tpl) {
+?><head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta charset="UTF-8">
    <title> Minimalismo </title>
 
-   <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
+   <base href="http://<?php echo $_SERVER['SERVER_NAME'];?>
+:<?php echo $_SERVER['SERVER_PORT'];
+echo dirname($_SERVER['PHP_SELF']);?>
+/">
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="./css/main.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -14,8 +40,12 @@
    <link rel="stylesheet" href="estilos/css/bootstrap-reboot.min.css">
    <link rel="stylesheet" href="estilos/css/bootstrap.css">
    <link rel="stylesheet" href="estilos/css/bootstrap.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+   <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></link>
    <link rel="icon" href="./images/aguacate.png?v1" type="image/x-icon" />
 <link rel="shortcut icon" href="./images/aguacate.png?v1" type="image/x-icon" />
@@ -36,3 +66,5 @@
            </ul>
        </div>
    </nav>
+<?php }
+}

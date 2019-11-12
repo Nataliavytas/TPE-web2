@@ -11,7 +11,7 @@
     RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
 
   # El guión medio indica que no se sustituya la url.
-  # Con la "L", de coincidir con la expreción regular, esta regla es la ultima,
+  # Con la "L", de coincidir con la expresión regular, esta regla es la ultima,
   # y no intenta continuar con las siguientes.
   # Si llegamos a este punto, el acceso no se trata de contenido estatico.
   # El resto se dirigue al router principal.

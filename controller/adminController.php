@@ -4,7 +4,7 @@ require_once "./model/revistasModel.php";
 require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
-require_once "./model/adminModel.php";
+require_once "./model/usuariosModel.php";
 
 class adminController {
 
@@ -13,7 +13,7 @@ class adminController {
     private $categoriasView;
     private $categoriasModel;
     private $administrador;
-    private $adminModel;
+    private $usuariosModel;
 
   function __construct() {
       $this->revistasView = new adminRevistasView();
@@ -21,7 +21,7 @@ class adminController {
       $this->categoriasModel = new categoriasModel();
       $this->categoriasView = new adminCategoriasView();
       $this->administrador = new administrador();
-      $this->adminModel = new adminModel();
+      $this->usuariosModel = new usuariosModel();
   }
 
   function Home(){
@@ -37,7 +37,7 @@ class adminController {
 
       if(!empty($emailUser) && !empty($password)){
 
-          $user = $this->adminModel->getByEmail($emailUser);
+          $user = $this->usuariosModel->getByEmail($emailUser);
 
           if((!empty($user)) && password_verify($password, $user->password)){
             session_start();
