@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
         <html>
 
@@ -32,7 +33,7 @@
             </form>
             </div>
        </div>
-
+        
         {include file="footer.tpl"}
         </body>
      </html>
