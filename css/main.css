@@ -220,3 +220,11 @@ html{
     width:  30ch;
     max-width: 30ch;
   }
+#descripcionAnchor{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  width:  10ch;
+  max-width: 10ch;
+}
+/*No se cual iba asi que guarde los dos */ 

@@ -44,7 +44,7 @@ class adminController {
 
             $_SESSION['id_user'] = $user->id;
             $_SESSION['username'] = $user->email;
-            
+
             header("Location: ".REVISTAS);
           }else{
             header("Location: " .LOGIN);
@@ -67,7 +67,7 @@ class adminController {
         header("Location: ".LOGIN);
     }
 
-    function getRevistas(){ 
+    function getRevistas(){
         $this->checkLoggedIn();
 
         $categorias = $this->categoriasModel->getCategorias();

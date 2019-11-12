@@ -35,6 +35,7 @@
   function insertarRevista($titulo,$fecha,$descripcion,$categoria){
     $sentencia = $this->db->prepare("INSERT INTO revistas(titulo, fecha, descripcion, id_categorias) VALUES(?,?,?,?)");
     $sentencia->execute(array($titulo,$fecha,$descripcion,$categoria));
+    //var_dump($sentencia->errorInfo()); die;
 
   }
     function borrarRevista($id){
