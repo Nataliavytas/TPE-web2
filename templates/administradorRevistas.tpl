@@ -55,7 +55,7 @@
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                         <div class="card card-body">
-                          <input name="fecha" type="text" value="{$revista['fecha']}"> 
+                          <input name="fecha" type="text" value="{$revista['fecha']}">
                         </div>
                       </div>
                     </div>
@@ -89,13 +89,17 @@
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select id="tipoFiltro" class="form-control" name="categoria"> 
+                      <select id="tipoFiltro" class="form-control" name="categoria">
                         <option> Seleccione  </option>
                             {foreach from=$categorias item=categoria}
                             <option value="{$categoria['id_categorias']}"> {$categoria['nombreCat']} </option>
                             {/foreach}
                          </select>
                          </div>
+                   <div class="form-group">
+                     <label> Imagen de revista: </label>
+                       <input type="file" name="agregarImagen" id="imageToUpload">
+                    </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>

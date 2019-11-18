@@ -46,8 +46,8 @@
   }
   function insertarComentario($nombreU, $fechaC, $comentarioC){
     $sentencia = $this->db->prepare("INSERT INTO comentarios(nombreUsuario, fechaComentario, comentario) VALUES(?,?,?)");
-    $sentencia->execute(array($nombreUsuario, $fechaComentario, $comentarioC));
-    //var_dump($sentencia->errorInfo()); die;
+    $sentencia->execute(array($nombreU, $fechaC, $comentarioC));
+    var_dump($sentencia->errorInfo()); die;
   }
     function borrarRevista($id){
 

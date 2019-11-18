@@ -55,6 +55,7 @@
 
       </div>
     </div>
+    {/foreach}
   </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -65,10 +66,12 @@
       </h2>
     </div>
 
+
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+
       <div class="card-body">
-            {foreach $revistas as $revista}
-        <form action="admin/agregarComentario/{$revista['id_revistas']}" method="POST">
+        {foreach $comentarios as $coment}
+        <form action="admin/agregarComentario" method="POST">
           <div class="form-group">
             <label for="exampleFormControlInput1">Nombre de Usuario:</label>
             <input name="nombreU" value="{$coment['nombreUsuario']}" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Usuario">
@@ -80,17 +83,12 @@
       <div class="form-group">
           <label for="exampleFormControlTextarea1">Comentario:</label>
           <textarea name="comentarioC" value="{$coment['comentario']}" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3"></textarea>
-
       </div>
-
-      <button class="form-control form-control-lg" type="submit" class="btn btn-light" value="{$revista['id_revistas']}">Enviar</button>
+      <button class="form-control form-control-lg" type="submit" class="btn btn-light">Enviar</button>
         {/foreach}
   </form>
-
   </div>
-
       </div>
-          {/foreach}
     </div>
   </div>
         {include file="footer.tpl"}
