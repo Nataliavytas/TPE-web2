@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-01 18:25:52
+/* Smarty version 3.1.33, created on 2019-11-15 17:31:49
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dbc6aa0d12f55_95407927',
+  'unifunc' => 'content_5dced2f53edbd1_67897086',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1572629149,
+      1 => 1573567171,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dbc6aa0d12f55_95407927 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dced2f53edbd1_67897086 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -66,7 +66,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ">
                   <div class="card card-body">
                       <input name="titulo" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-">
+"/>
                   </div>
                 </div>
               </div>
@@ -81,17 +81,18 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
                 <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 ">
                   <div class="card card-body">
-                      <input name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-">
+                      <input  name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+"/>
                   </div>
                 </div>
               </div>
-            </td>
+              </div></td>
 
             <td>
                 <a class="btn btn-light" data-toggle="collapse" href="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 " role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </a>
+                  <div class="row">
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 ">
@@ -124,17 +125,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </table>
                 </div>
         <form id="formview" action="admin/agregarRevista" method="post">
+
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
-                      <input name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                      <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+" name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
-                      <input name="descripcion" type="text" class="form-control" id="autorTabla" placeholder="Descripcion">
+                      <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+" name="descripcion" type="text" class="form-control" id="autorTabla" aria-describedby="emailHelp" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
-                      <input name="fecha" type="text" class="form-control" id="tipoTabla" placeholder="Año de publicación">
+                      <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+" name="fecha" type="text" class="form-control" id="tipoTabla" aria-describedby="emailHelp" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>

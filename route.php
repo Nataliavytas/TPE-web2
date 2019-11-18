@@ -46,7 +46,7 @@ if($action == ''){
 }elseif($action == 'admin/agregarRevista'){
     $adminController->agregarRevista();
 
- }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
     $adminController->borrarRevista($partesURL[2]);
 
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editar" ) {

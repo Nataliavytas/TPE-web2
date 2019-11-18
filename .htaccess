@@ -15,7 +15,8 @@
   # y no intenta continuar con las siguientes.
   # Si llegamos a este punto, el acceso no se trata de contenido estatico.
   # El resto se dirigue al router principal.
-
+  
+    RewriteRule ^api/(.*)$ route-api.php?resource=$1 [QSA,L,END]
     RewriteRule ^(.*)$ route.php?action=$1 [QSA,L]
 
   # La expesión regular captura todas las peticiones que se hacen

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2019 a las 14:55:51
+-- Tiempo de generación: 15-11-2019 a las 19:29:48
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
@@ -38,16 +38,34 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`nombreCat`, `id_categorias`) VALUES
-<<<<<<< HEAD:database/db_minimalismo (4).sql
 ('Educacionhh', 7),
 ('Salud', 9),
 ('Hogar', 10),
 ('Familia', 11),
 ('Amor', 12);
-=======
-('Hogar', 6),
-('Educacion', 7);
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int(11) NOT NULL,
+  `id_revistas` int(11) NOT NULL,
+  `comentario` tinytext NOT NULL,
+  `puntuacion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `id_revistas`, `comentario`, `puntuacion`) VALUES
+(2, 9, 'dfgfhgfhghhghg', 3),
+(3, 3, 'sjdsakd', 2),
+(4, 10, 'sdjasdk', 3),
+(5, 9, 'sjdkandksjadnaskj', 3);
 
 -- --------------------------------------------------------
 
@@ -68,7 +86,6 @@ CREATE TABLE `revistas` (
 --
 
 INSERT INTO `revistas` (`id_revistas`, `id_categorias`, `titulo`, `fecha`, `descripcion`) VALUES
-<<<<<<< HEAD:database/db_minimalismo (4).sql
 (6, 9, 'Un paso a la vez ', 2017, 'Descripcion 2'),
 (8, 9, 'Antes de empezar, vi', 1995, 'descripcion 3'),
 (9, 10, 'Sigue tu intuición ', 2019, 'descripcion 4'),
@@ -77,9 +94,6 @@ INSERT INTO `revistas` (`id_revistas`, `id_categorias`, `titulo`, `fecha`, `desc
 (12, 10, 'Fotos: ama quien ere', 2018, 'Descripcion para revista '),
 (13, 11, 'Chucherias de regalo', 2017, 'Descripcion para revista '),
 (14, 12, 'Asigna un lugar a cada cosa', 2019, 'Descripcion para revista ');
-=======
-(0, 7, 'opcion1', 0000, '2000');
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
 
 -- --------------------------------------------------------
 
@@ -90,25 +104,16 @@ INSERT INTO `revistas` (`id_revistas`, `id_categorias`, `titulo`, `fecha`, `desc
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
-<<<<<<< HEAD:database/db_minimalismo (4).sql
   `password` varchar(255) NOT NULL,
   `tipo_usuario` int(11) NOT NULL
-=======
-  `password` varchar(255) NOT NULL
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-<<<<<<< HEAD:database/db_minimalismo (4).sql
 INSERT INTO `usuarios` (`id`, `email`, `password`, `tipo_usuario`) VALUES
 (2, 'nati@a', '$2y$10$FN46.OfQQ2/lhydgJO7sbOmukbDxQJ/eon2UzCAE9ACz2URzNIL.a', 0);
-=======
-INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
-(2, 'nati@a', '$2y$10$FN46.OfQQ2/lhydgJO7sbOmukbDxQJ/eon2UzCAE9ACz2URzNIL.a');
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
 
 --
 -- Índices para tablas volcadas
@@ -119,6 +124,13 @@ INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categorias`);
+
+--
+-- Indices de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_revistas` (`id_revistas`);
 
 --
 -- Indices de la tabla `revistas`
@@ -141,24 +153,23 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-<<<<<<< HEAD:database/db_minimalismo (4).sql
   MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-=======
-  MODIFY `id_categorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `comentarios`
 --
-<<<<<<< HEAD:database/db_minimalismo (4).sql
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `revistas`
+--
 ALTER TABLE `revistas`
   MODIFY `id_revistas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
-=======
->>>>>>> 237057186790c4790c75914d2942cff8cc4df29e:database/db_minimalismo.sql
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
