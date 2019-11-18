@@ -10,7 +10,7 @@
   function revistas(){
     $sentencia = $this->db->prepare ("SELECT * FROM revistas");
     $sentencia->execute();
-    $revistas = $sentencia-fetchAll(PDO::FETCH_ASSOC);
+    $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $revistas;
   }
 
@@ -44,6 +44,11 @@
     //var_dump($sentencia->errorInfo()); die;
 
   }
+  function insertarComentario($nombreU, $fechaC, $comentarioC){
+    $sentencia = $this->db->prepare("INSERT INTO comentarios(nombreUsuario, fechaComentario, comentario) VALUES(?,?,?)");
+    $sentencia->execute(array($nombreUsuario, $fechaComentario, $comentarioC));
+    //var_dump($sentencia->errorInfo()); die;
+  }
     function borrarRevista($id){
 
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
@@ -57,9 +62,10 @@
     }
 
     function getComentarios($id){
-      $sentencia = $this->db->prepare("SELECT * FROM comentarios WHERE id_comentarios=?");
+      $sentencia = $this->db->prepare("SELECT comentarios.* FROM comentarios, revistas WHERE comentarios.id_revistas = revistas.id_revistas AND comentarios.id_comentario = ?");
       $sentencia->execute(array($id));
-      return  $sentencia->fetch(PDO::FETCH_ASSOC);
-      var_dump($sentencia->errorInfo()); die;
+      return  $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //  var_dump($sentencia->errorInfo()); die;
     }
+
   }

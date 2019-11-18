@@ -28,9 +28,6 @@ if($action == ''){
 }elseif ($partesURL[0] == 'revista'){
     $visitController->mostrarDetalle($partesURL[1]);
 
-}elseif ($partesURL[0] == 'revista'){
-    $visitController->comentarios($partesURL[1]);
-
 }elseif ($partesURL[0] == 'revistas'){
     $visitController->getRevistasPorCategoria($partesURL[1]);
 
@@ -65,4 +62,6 @@ if($action == ''){
     $adminController->editarCategoria($partesURL[2]);
 }elseif($action == "admin/logout" ){
     $adminController->logout();
+}elseif($action == "admin/agregarComentario"){
+    $adminController->agregarComentario();
 }

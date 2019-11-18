@@ -6,7 +6,6 @@ require_once "./model/categoriasModel.php";
 require_once "./view/inicioView.php";
 require_once "./view/header.php";
 require_once "./view/revistasPorCategoria.php";
-require_once "./view/comentariosView.php";
 
 
 class visitController{
@@ -19,8 +18,6 @@ class visitController{
   private $header;
   private $revPorCategoriaView;
   private $detalle;
-  private $comentariosView;
-
   function __construct(){
 
     $this->inicioView = new inicioView();
@@ -30,7 +27,6 @@ class visitController{
     $this->categoriasModel = new categoriasModel();
     $this->detalleView = new detalleView();
     $this->revPorCategoriaView = new revistasPorCategoria();
-    $this->comentariosView = new comentariosView();
 
   }
 
@@ -52,9 +48,12 @@ class visitController{
   }
 
   function mostrarDetalle($id){
-      $detalle = $this->revistasModel->getDetalle($id);
-    //  var_dump($detalle);
-      $this->detalleView->showDetalle($detalle);
+    $comentarios = $this->revistasModel->getComentarios($id);
+  //  var_dump($comentarios);
+    $detalle =  $this->revistasModel->getDetalle($id);
+    $revistas = $this->revistasModel->revistas();
+
+    $this->detalleView->showDetalle($comentarios, $detalle, $revistas);
   }
 
   function getRevistasPorCategoria($id){
@@ -62,14 +61,5 @@ class visitController{
       $revistas = $this->revistasModel->filtroPorCategoria($id);
       //var_dump($revistas);
       $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias);
-  }
-  function comentarios($id){
-    $revistas = $this->revistasModel->revistas();
-    var_dump($revistas);
-    $comentarios = $this->revistasModel->getComentarios($id);
-    var_dump($comentarios);
-    $this->comentariosView->showComentario($revistas, $comentarios);
-
-
   }
 }
