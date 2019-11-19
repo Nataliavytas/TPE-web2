@@ -62,4 +62,6 @@ if($action == ''){
     $adminController->editarCategoria($partesURL[2]);
 }elseif($action == "admin/logout" ){
     $adminController->logout();
+}elseif($action == "admin/agregarComentario"){
+    $adminController->agregarComentario();
 }

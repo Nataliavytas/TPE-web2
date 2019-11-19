@@ -164,11 +164,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- AUTO_INCREMENT de la tabla `revistas`
---
 ALTER TABLE `revistas`
   MODIFY `id_revistas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 

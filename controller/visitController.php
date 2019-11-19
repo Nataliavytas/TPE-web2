@@ -12,14 +12,12 @@ class visitController{
 
   private $categoriasModel;
   private $revistasModel;
-
   private $revistasView;
   private $detalleView;
   private $inicioView;
   private $header;
   private $revPorCategoriaView;
   private $detalle;
-
   function __construct(){
 
     $this->inicioView = new inicioView();
@@ -29,7 +27,7 @@ class visitController{
     $this->categoriasModel = new categoriasModel();
     $this->detalleView = new detalleView();
     $this->revPorCategoriaView = new revistasPorCategoria();
-    
+
   }
 
 
@@ -50,16 +48,18 @@ class visitController{
   }
 
   function mostrarDetalle($id){
-      $detalle = $this->revistasModel->getDetalle($id);
-    //  var_dump($detalle);
-      $this->detalleView->showDetalle($detalle); 
+    $comentarios = $this->revistasModel->getComentarios($id);
+  //  var_dump($comentarios);
+    $detalle =  $this->revistasModel->getDetalle($id);
+    $revistas = $this->revistasModel->revistas();
+
+    $this->detalleView->showDetalle($comentarios, $detalle, $revistas);
   }
 
   function getRevistasPorCategoria($id){
       $categorias = $this->categoriasModel->getCategorias();
       $revistas = $this->revistasModel->filtroPorCategoria($id);
-      //var_dump($revistas); 
+      //var_dump($revistas);
       $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias);
   }
 }
-
