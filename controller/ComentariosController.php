@@ -5,9 +5,11 @@ require_once("./controller/ApiController.php");
 class ComentariosController extends ApiController{
 
 
-    public function getComentarios ($params = null) {
+    public function getComentarios ($params = [] ) {
 
-        $comentarios = $this->model->getComentarios();
+        $comentario_id = $params[':ID'];
+
+        $comentarios = $this->model->getComentarios($id);
         $this->view->response($comentarios, 200);
 
     }
@@ -33,8 +35,9 @@ class ComentariosController extends ApiController{
         $contenido = $comentario->comentario;
         $puntuacion = $comentario->puntuacion;
 
+        var_dump($id, $contenido, $puntuacion);
         $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion);
-
+        
         $this->view->response($comentario_id, 200);
 
         $comentarioNuevo = $this->model->getComentario($comentario_id);
@@ -42,7 +45,6 @@ class ComentariosController extends ApiController{
             $this->view->response($comentarioNuevo, 200);
         else
             $this->view->response("Error al insertar comentario", 500);
-
     }
 
         

@@ -111,8 +111,4 @@ class adminController {
         $this->categoriasModel->editarCategoria($id, $_POST['editaCategoria']);
         header("Location: ". CATEGORIAS);
   }
-    function agregarComentario(){
-      $this->revistasModel->insertarComentario($_POST['nombreU'], $_POST['fechaC'], $_POST['comentarioC']);
-      header("Location: " . REVISTAS);
-    }
 }

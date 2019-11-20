@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-15 20:57:28
+/* Smarty version 3.1.33, created on 2019-11-19 01:53:30
   from 'C:\xampp\htdocs\TPE\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dcf032814f539_19922677',
+  'unifunc' => 'content_5dd33d0af41bf9_58101400',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5e171741875d7dfef3163d855949a458c27272ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\footer.tpl',
-      1 => 1573843572,
+      1 => 1574120538,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dcf032814f539_19922677 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd33d0af41bf9_58101400 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <footer class="page-footer font-small cyan darken-3">
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href="inicio.php"> Minimalismo.com</a>
+            <a href=""> Minimalismo.com</a>
         </div>
 
  </footer>
@@ -42,6 +42,12 @@ function content_5dcf032814f539_19922677 (Smarty_Internal_Template $_smarty_tpl)
 >
 <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 <?php }
 }

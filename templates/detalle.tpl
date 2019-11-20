@@ -71,7 +71,7 @@
 
       <div class="card-body">
         {foreach $comentarios as $coment}
-        <form action="admin/agregarComentario" method="POST">
+        <form action="api/comentarios/{$det["id_revistas"]}" method="POST">
           <div class="form-group">
             <label for="exampleFormControlInput1">Nombre de Usuario:</label>
             <input name="nombreU" value="{$coment['nombreUsuario']}" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Usuario">

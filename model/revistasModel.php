@@ -44,13 +44,7 @@
     var_dump($sentencia->errorInfo()); die;
 
   }
-  function insertarComentario($nombreU, $fechaC, $comentarioC){
-    $sentencia = $this->db->prepare("INSERT INTO comentarios(nombreUsuario, fechaComentario, comentario) VALUES(?,?,?)");
-    $sentencia->execute(array($nombreU, $fechaC, $comentarioC));
-    var_dump($sentencia->errorInfo()); die;
-  }
     function borrarRevista($id){
-
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");
       $sentencia->execute(array($id));
     }
@@ -59,13 +53,6 @@
       $sentencia = $this->db->prepare("UPDATE revistas SET titulo=?, fecha=?, descripcion=? WHERE id_revistas=?");
       $sentencia->execute(array($titulo, $fecha, $descripcion, $id));
       //var_dump($sentencia->errorInfo()); die;
-    }
-
-    function getComentarios($id){
-      $sentencia = $this->db->prepare("SELECT comentarios.* FROM comentarios, revistas WHERE comentarios.id_revistas = revistas.id_revistas AND comentarios.id_comentario = ?");
-      $sentencia->execute(array($id));
-      return  $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    //  var_dump($sentencia->errorInfo()); die;
     }
 
   }

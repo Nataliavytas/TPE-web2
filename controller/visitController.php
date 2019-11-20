@@ -2,6 +2,7 @@
 require_once "./view/revistasView.php";
 require_once  "./view/detalleView.php";
 require_once  "./model/revistasModel.php";
+require_once "./model/comentariosModel.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/inicioView.php";
 require_once "./view/header.php";
@@ -18,6 +19,8 @@ class visitController{
   private $header;
   private $revPorCategoriaView;
   private $detalle;
+  private $comentariosModel;
+
   function __construct(){
 
     $this->inicioView = new inicioView();
@@ -27,6 +30,7 @@ class visitController{
     $this->categoriasModel = new categoriasModel();
     $this->detalleView = new detalleView();
     $this->revPorCategoriaView = new revistasPorCategoria();
+    $this->comentariosModel = new comentariosModel();
 
   }
 
@@ -48,7 +52,7 @@ class visitController{
   }
 
   function mostrarDetalle($id){
-    $comentarios = $this->revistasModel->getComentarios($id);
+    $comentarios = $this->comentariosModel->getComentarios($id); //esto esta mal hecho
   //  var_dump($comentarios);
     $detalle =  $this->revistasModel->getDetalle($id);
     $revistas = $this->revistasModel->revistas();
