@@ -7,11 +7,8 @@ class ComentariosController extends ApiController{
 
     public function getComentarios ($params = [] ) {
 
-        $comentario_id = $params[':ID'];
-
-        $comentarios = $this->model->getComentarios($id);
+        $comentarios = $this->model->getComentarios();
         $this->view->response($comentarios, 200);
-
     }
 
     public function deleteComentario ($params = []) {
@@ -30,13 +27,13 @@ class ComentariosController extends ApiController{
     public function addComentario($params = []) {     
 
         $comentario = $this->getData();
-
+        var_dump($comentario);die;
         $id = $comentario->id_revistas;
+        $usuario = $comentario->id_revistas;
         $contenido = $comentario->comentario;
         $puntuacion = $comentario->puntuacion;
 
-        var_dump($id, $contenido, $puntuacion);
-        $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion);
+        $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion, $usuario);
         
         $this->view->response($comentario_id, 200);
 

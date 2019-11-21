@@ -4,9 +4,8 @@
     <title> Minimalismo </title>
 
      <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
-     <link rel="stylesheet" href="../css/main.css">
+    
      <link rel="stylesheet" href="./css/main.css">
-     <link rel="stylesheet" href="/css/main.css">
      {*Esto es lo que achica la tabla. Hayq ue modificar el css o buscar otros tab*}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

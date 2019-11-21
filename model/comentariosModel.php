@@ -8,20 +8,20 @@
         $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_minimalismo;charset=utf8' , 'root' , '');
     }
 
-    function getComentarios($id){
+    function getComentarios(){
 
-      $sentencia = $this->db->prepare( "SELECT * FROM comentarios WHERE id_revistas = ?");
-      $sentencia->execute(array($id));
+      $sentencia = $this->db->prepare( "SELECT * FROM comentarios");
+      $sentencia->execute();
       $comentarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
       return $comentarios;
     }
 
-    function addComentario($idRevista, $comentario, $puntuacion){
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(id_revistas, comentario, puntuacion) VALUES (?,?,?)");
-        $sentencia->execute(array($idRevista, $comentario, $puntuacion));
+    function addComentario($idRevista, $comentario, $puntuacion, $usuario){
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(id_revistas, comentario, puntuacion, nombreUsuario) VALUES (?,?,?,?)");
+        $sentencia->execute(array($idRevista, $comentario, $puntuacion, $usuario));
 
-         var_dump($sentencia->errorInfo()); die;
+        var_dump($sentencia->errorInfo()); die;
         $last_id = $this->db->lastInsertId();
         return $last_id;
     }
