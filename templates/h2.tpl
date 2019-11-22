@@ -16,6 +16,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"></link>
    <link rel="icon" href="./images/aguacate.png?v1" type="image/x-icon" />
 <link rel="shortcut icon" href="./images/aguacate.png?v1" type="image/x-icon" />
+{*vue.js*}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 </head>
 
 

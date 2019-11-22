@@ -2,7 +2,7 @@
       <html>
       <body>
         {include file="header.tpl"}
-
+<div id="app">
       {foreach from=$detalle item=det}
       <div class="card" id="textoinicio">
 
@@ -90,6 +90,7 @@
   </div>
       </div>
     </div>
+  </div>
   </div>
         {include file="footer.tpl"}
 
