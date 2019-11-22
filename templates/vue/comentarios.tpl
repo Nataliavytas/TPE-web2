@@ -1,12 +1,14 @@
 {literal}
 <div id="comentarios">
 <ul>
-       <li v-for="comentario in comentarios"> {{comentario.comentario}} </li>
-
+       <li v-for="comentario in comentarios"> {{comentario.comentario}} 
+        <button onclick= "deleteComentario()" id="borrarComentario" type="button" :value="comentario.id_comentario"> {{comentario.id_comentario}} </button>
+        </li>
+      
 </ul>
 </div> 
 
-<form method="POST">
+<form>
             <div>
             <label> id revista</label>
             <input name="id" type="text" placeholder="id">
@@ -24,6 +26,8 @@
           <textarea name="comentario" type="text" rows="3"></textarea>
       </div>
       <button id="botonComentar" type="submit"> Enviar </button>
+      
+
   </form>
 
 {/literal}

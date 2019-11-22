@@ -62,4 +62,7 @@ if($action == ''){
     $adminController->editarCategoria($partesURL[2]);
 }elseif($action == "admin/logout" ){
     $adminController->logout();
+}elseif ($partesURL[0] == "admin" && $partesURL[1] == "revista"){
+    $adminController->getDetalleEdicion($partesURL[2]);
+
 }

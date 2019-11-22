@@ -4,6 +4,7 @@ require_once "./model/revistasModel.php";
 require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
+require_once "./view/edicionRevistas.php";
 require_once "./model/usuariosModel.php";
 
 class adminController {
@@ -14,6 +15,7 @@ class adminController {
     private $categoriasModel;
     private $administrador;
     private $usuariosModel;
+    private $edicionRevistas;
 
   function __construct() {
       $this->revistasView = new adminRevistasView();
@@ -22,6 +24,7 @@ class adminController {
       $this->categoriasView = new adminCategoriasView();
       $this->administrador = new administrador();
       $this->usuariosModel = new usuariosModel();
+      $this->edicionRevistas = new edicionRevistas();
   }
 
   function Home(){
@@ -111,4 +114,10 @@ class adminController {
         $this->categoriasModel->editarCategoria($id, $_POST['editaCategoria']);
         header("Location: ". CATEGORIAS);
   }
+    function getDetalleEdicion($id){
+
+          $detalle =  $this->revistasModel->getDetalle($id);
+
+          $this->edicionRevistas->showEditor($detalle);
+    }
 }

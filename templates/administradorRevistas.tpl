@@ -26,7 +26,8 @@
             <form action="admin/editar/{$revista['id_revistas']}" method="POST">
 
             <td>
-              <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> {$revista['titulo']} </a>
+              <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}"
+               role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> {$revista['titulo']} </a>
             <div class="row">
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
@@ -39,7 +40,9 @@
             </td>
 
             <td>
-              <button id="descripcionAnchor" class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2"> {$revista['descripcion']} </button>
+              <button id="descripcionAnchor" class="btn btn-light" type="button" data-toggle="collapse"
+               data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2"> 
+               {$revista['descripcion']} </button>
               <div class="col">
                 <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
                   <div class="card card-body">
@@ -50,7 +53,8 @@
               </div></td>
 
             <td>
-                <a class="btn btn-light" data-toggle="collapse" href="collapse{$revista['id_revistas']}" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
+                <a class="btn btn-light" data-toggle="collapse" href="collapse{$revista['id_revistas']}" role="button" 
+                aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
                   <div class="row">
                     <div class="col">
                       <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
@@ -60,9 +64,11 @@
                       </div>
                     </div>
             </td>
-            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
+            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" 
+            type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
-            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}" 
+            href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
             </form>
              </tr>
 
@@ -77,15 +83,18 @@
 
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
-                      <input value="{$revista['titulo']}" name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+                      <input value="{$revista['titulo']}" name="titulo" type="text" class="form-control" id="nombreTabla" 
+                      aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
-                      <input value="{$revista['descripcion']}" name="descripcion" type="text" class="form-control" id="autorTabla" aria-describedby="emailHelp" placeholder="Descripcion">
+                      <input value="{$revista['descripcion']}" name="descripcion" type="text" class="form-control" id="autorTabla" 
+                      aria-describedby="emailHelp" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
-                      <input value="{$revista['fecha']}" name="fecha" type="text" class="form-control" id="tipoTabla" aria-describedby="emailHelp" placeholder="Año de publicación">
+                      <input value="{$revista['fecha']}" name="fecha" type="text" class="form-control" id="tipoTabla" 
+                      aria-describedby="emailHelp" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>

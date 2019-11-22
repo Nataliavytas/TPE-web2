@@ -7,6 +7,7 @@
   function __construct(){
     $this->db = new PDO('mysql:host=localhost;' . 'dbname=db_minimalismo;charset=utf8' , 'root' , '');
   }
+  
   function revistas(){
     $sentencia = $this->db->prepare ("SELECT * FROM revistas");
     $sentencia->execute();
@@ -23,7 +24,6 @@
   }
 
   function filtroPorCategoria($id){
-
     $sentencia= $this->db->prepare("SELECT * FROM revistas WHERE id_categorias = ?");
     $sentencia->execute(array($id));
     $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
