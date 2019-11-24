@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-15 17:31:49
+/* Smarty version 3.1.33, created on 2019-11-22 15:41:49
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dced2f53edbd1_67897086',
+  'unifunc' => 'content_5dd7f3ad463439_23310502',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1573567171,
+      1 => 1574124686,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dced2f53edbd1_67897086 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd7f3ad463439_23310502 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -98,7 +98,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ">
                         <div class="card card-body">
                           <input name="fecha" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-"> 
+">
                         </div>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>
-                      <select id="tipoFiltro" class="form-control" name="categoria"> 
+                      <select id="tipoFiltro" class="form-control" name="categoria">
                         <option> Seleccione  </option>
                             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria');
@@ -159,6 +159,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                          </select>
                          </div>
+                   <div class="form-group">
+                     <label> Imagen de revista: </label>
+                       <input type="file" name="agregarImagen" id="imageToUpload">
+                    </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>

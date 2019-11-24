@@ -1,6 +1,7 @@
 <?php
 require_once "controller/visitController.php";
 require_once "controller/adminController.php";
+require_once "controller/registroController.php";
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -11,6 +12,7 @@ define("LOGIN", BASE_URL . 'admin');
 
 $action = $_GET["action"];
 
+$registroController = new registroController();
 $adminController = new adminController(); //Controlador del lado del administrador (lo que estabas haciendo vos)
 $visitController = new visitController(); //Controlador del lado del usuario anonimo, toda la pagina menos lo que seria "administrador"
 $partesURL = explode("/", $action);
@@ -33,6 +35,9 @@ if($action == ''){
 
 }elseif ($action == 'admin'){
     $adminController->Home();
+
+}elseif ($action == 'revistas/agregarUsuario'){
+    $registroController->agregarUsuario();
 
 }else if ($action == 'admin/revistas'){
     $adminController->getRevistas();
@@ -61,5 +66,11 @@ if($action == ''){
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editarCat" ) {
     $adminController->editarCategoria($partesURL[2]);
 }elseif($action == "admin/logout" ){
+
     $adminController->logout();
+}elseif ($partesURL[0] == "admin" && $partesURL[1] == "revista"){
+    $adminController->getDetalleEdicion($partesURL[2]);
+
+}elseif ($action == 'admin/agregarImagen'){
+    $adminController->agregarImagen();
 }

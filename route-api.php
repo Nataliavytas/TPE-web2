@@ -11,7 +11,7 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 $router = new Router();
 
-$router->addRoute("comentarios/:ID", "GET", "ComentariosController", "getComentarios");
+$router->addRoute("comentarios", "GET", "ComentariosController", "getComentarios");
 $router->addRoute("comentarios", "POST", "ComentariosController", "addComentario"); 
 $router->addRoute("comentarios/:ID", "DELETE", "ComentariosController", "deleteComentario");
 

@@ -16,7 +16,8 @@
             <th scope="col"> Titulo </th>
             <th scope="col"> Descripción </th>
             <th scope="col"> Fecha </th>
-            <th scope="col"> edicion de revista </th>
+            <th scope="col"> Borrar </th>
+            <th scope="col"> Editar </th>
             </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -24,14 +25,51 @@
             <tr>
             <form action="admin/editar/{$revista['id_revistas']}" method="POST">
 
-            <td> {$revista['titulo']} </td>
+            <td>
+              <a class="btn btn-light" data-toggle="collapse" href="#collapse{$revista['id_revistas']}"
+               role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> {$revista['titulo']} </a>
+            <div class="row">
+              <div class="col">
+                <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
+                  <div class="card card-body">
+                      <input name="titulo" type="text" value="{$revista['titulo']}"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </td>
 
-            <td>  {$revista['descripcion']}</td>
+            <td>
+              <button id="descripcionAnchor" class="btn btn-light" type="button" data-toggle="collapse"
+               data-target="#collapse{$revista['id_revistas']}" aria-expanded="false" aria-controls="multiCollapseExample2">
+               {$revista['descripcion']} </button>
+              <div class="col">
+                <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
+                  <div class="card card-body">
+                      <input  name="descripcion" type="text" value="{$revista['descripcion']}"/>
+                  </div>
+                </div>
+              </div>
+              </div></td>
 
-            <td>{$revista['fecha']}</td>
+            <td>
+                <a class="btn btn-light" data-toggle="collapse" href="collapse{$revista['id_revistas']}" role="button"
+                aria-expanded="false" aria-controls="multiCollapseExample3">{$revista['fecha']}</a>
+                  <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="collapse{$revista['id_revistas']}">
+                        <div class="card card-body">
+                          <input name="fecha" type="text" value="{$revista['fecha']}">
+                        </div>
+                      </div>
+                    </div>
+            </td>
+            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm"
+            type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
-            <td><button  name="detalleEdicion" class="btn btn-secondary btn-sm" type="button" value="{$revista['id_revistas']}"  href="admin/detalleEdicion/{$revista['id_revistas']}"> Edicion Revista </button></td>
-
+            <td><button class="btn btn-secondary btn-sm" type="submit" value="{$revista['id_revistas']}"
+            href="admin/editar/{$revista['id_revistas']}"> Editar </button></td>
+            </form>
              </tr>
 
 
@@ -41,6 +79,7 @@
             </tbody>
             </table>
                 </div>
+
         <form id="formview" action="admin/agregarRevista" method="post">
 
                   <div class="form-group">
@@ -67,18 +106,12 @@
                             {/foreach}
                          </select>
                          </div>
+                  <form action="agregarImagen" method="POST" enctype="multipart/form-data">
                    <div class="form-group">
                      <label> Imagen de revista: </label>
-                       <input class="form-control" type="file" name="agregarImagen" id="imageToUpload">
-                       <div>
-                         <button type="button" class="btn btn-default" id="show">Agregar mas de una imagen: </button>
-                            <div class="input">
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                         </div>
-                       </div>
-                       <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
+                       <input type="file" name="agregarImagen" id="imageToUpload">
                     </div>
+                  </form>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>

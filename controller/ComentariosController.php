@@ -6,12 +6,8 @@ class ComentariosController extends ApiController{
 
 
     public function getComentarios ($params = [] ) {
-
-        $comentario_id = $params[':ID'];
-
-        $comentarios = $this->model->getComentarios($id);
-        $this->view->response($comentarios, 200);
-
+        $comentarios = $this->model->getComentarios();
+        $this->view->response($comentarios, 655);
     }
 
     public function deleteComentario ($params = []) {
@@ -32,19 +28,20 @@ class ComentariosController extends ApiController{
         $comentario = $this->getData();
 
         $id = $comentario->id_revistas;
+        $usuario = $comentario->id_revistas;
         $contenido = $comentario->comentario;
         $puntuacion = $comentario->puntuacion;
 
-        var_dump($id, $contenido, $puntuacion);
-        $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion);
 
-        $this->view->response($comentario_id, 200);
+        $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion, $usuario);
+
+        //$this->view->response($comentario_id, 200);
 
         $comentarioNuevo = $this->model->getComentario($comentario_id);
-        if ($comentarioNuevo){
-    //        $this->view->response($comentarioNuevo, 200);
-//        }else
-      //      $this->view->response("Error al insertar comentario", 500);
+        if ($comentarioNuevo)
+            $this->view->response($comentarioNuevo, 666);
+        else
+            $this->view->response("Error al insertar comentario", 500);
     }
 
 

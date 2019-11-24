@@ -4,6 +4,7 @@ require_once  "./view/detalleView.php";
 require_once  "./model/revistasModel.php";
 require_once "./model/comentariosModel.php";
 require_once "./model/categoriasModel.php";
+require_once "./model/imagenesModel.php";
 require_once "./view/inicioView.php";
 require_once "./view/header.php";
 require_once "./view/revistasPorCategoria.php";
@@ -13,6 +14,7 @@ class visitController{
 
   private $categoriasModel;
   private $revistasModel;
+  private $imagenesModel;
   private $revistasView;
   private $detalleView;
   private $inicioView;
@@ -28,6 +30,7 @@ class visitController{
     $this->revistasView = new revistasView();
     $this->header  = new header();
     $this->categoriasModel = new categoriasModel();
+    $this->imagenesModel = new imagenesModel();
     $this->detalleView = new detalleView();
     $this->revPorCategoriaView = new revistasPorCategoria();
     $this->comentariosModel = new comentariosModel();
@@ -66,4 +69,9 @@ class visitController{
       //var_dump($revistas);
       $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias);
   }
+  function getImagenes($id){
+    $imagenes = $this->imagenesModel->getImagenes($id);
+    $this->detalleView->showImagenes($imagenes);
+  }
+
 }

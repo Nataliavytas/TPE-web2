@@ -218,16 +218,9 @@ html{
     text-overflow: ellipsis;
     white-space:nowrap;
     width:  30ch;
-    max-width: 30ch;
+    max-width: 40ch;
   }
-#descripcionAnchor{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space:nowrap;
-  width:  10ch;
-  max-width: 10ch;
-}
-/*No se cual iba asi que guarde los dos */
+
 .tabcontainer {
 float: left;
 width: 100%;
@@ -298,3 +291,11 @@ display: none;
 }
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+.visible{
+  display: none;
+  visibility: hidden;
+}
+/*.input{
+  display: none;
+  visibility: hidden;
+}*/
