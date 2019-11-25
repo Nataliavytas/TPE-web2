@@ -37,4 +37,15 @@ class usuariosModel {
     }
   
   
+    function agregarUsuario($mail,$password, $usuario = 1){
+      $sentencia = $this->db->prepare("INSERT INTO usuarios(email, password, tipo_usuario) VALUES (?,?,1)");
+      $sentencia->execute(array($mail, $password, $usuario = 1));
+
+    }
+    function VerificarUsuario($user){
+      $sentencia = $this->db->prepare("SELECT * FROM usuarios WHERE email = ?");
+      $sentencia->execute(array($user));
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+    }
   }

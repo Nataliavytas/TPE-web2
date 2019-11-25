@@ -8,11 +8,13 @@ class adminRevistasView {
      $this->smarty = new Smarty();
   }
    function showRevistas($revistas, $categorias){
-     
+
     $this->smarty->assign('revistas', $revistas);
     $this->smarty->assign('categorias', $categorias);
     $this->smarty->display('templates/administradorRevistas.tpl');
-  
+
+    }
+    function showError($mensaje){
+      echo $mensaje;
     }
 }
-

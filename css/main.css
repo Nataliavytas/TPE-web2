@@ -298,3 +298,11 @@ display: none;
     padding-right: 20%;
     padding-left: 20%;
 }
+.visible{
+  display: none;
+  visibility: hidden;
+}
+/*.input{
+  display: none;
+  visibility: hidden;
+}*/

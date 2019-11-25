@@ -7,6 +7,7 @@ require_once "./view/adminCategoriasView.php";
 require_once "./view/edicionRevistas.php";
 require_once "./view/adminUsuarios.php";
 require_once "./model/usuariosModel.php";
+require_once "./model/imagenesModel.php";
 
 class adminController {
 
@@ -18,6 +19,7 @@ class adminController {
     private $usuariosModel;
     private $edicionRevistas;
     private $usuariosView;
+    private $imagenesModel;
 
   function __construct() {
       $this->revistasView = new adminRevistasView();
@@ -28,6 +30,7 @@ class adminController {
       $this->usuariosModel = new usuariosModel();
       $this->edicionRevistas = new edicionRevistas();
       $this->usuariosView = new adminUsuarios();
+      $this->imagenesModel = new imagenesModel();
   }
 
   function Home(){
@@ -116,11 +119,9 @@ class adminController {
     function editarCategoria($id){
         $this->categoriasModel->editarCategoria($id, $_POST['editaCategoria']);
         header("Location: ". CATEGORIAS);
-  }
+    }
     function getDetalleEdicion($id){
-
           $detalle =  $this->revistasModel->getDetalle($id);
-
           $this->edicionRevistas->showEditor($detalle);
     }
 
@@ -140,4 +141,15 @@ class adminController {
         $this->usuariosModel->borrarUsuario($id);
         header("Location: ". USUARIOS);
     }
+}
+    function agregarImagen(){
+           if ($_FILES['agregarimagen']['type'] == "image/jpeg" || $_FILES['agregarimagen']['type'] == "image/jpg" || $_FILES['agregarimagen']['type'] == "image/png") {
+                $this->imagenesModel->agregarImagen($_FILES['agregarImagen']);
+           }
+           else {
+               $this->revistasView->showError("Formato no aceptado");
+               die();
+    }
+
+}
 }

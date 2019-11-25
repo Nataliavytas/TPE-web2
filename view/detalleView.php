@@ -14,5 +14,9 @@ class detalleView {
 
         $this->smarty->display('templates/detalle.tpl');
       }
-    }
 
+   function showImagenes($imagenes){
+     $this->smarty->assign('imagenes', $imagenes);
+     $this->smarty->display('templates/detalle.tpl');
+   }
+    }
