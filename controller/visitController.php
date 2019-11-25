@@ -56,9 +56,9 @@ class visitController{
 
   function mostrarDetalle($id){
     $detalle =  $this->revistasModel->getDetalle($id);
-    $revistas = $this->revistasModel->revistas();
-
-    $this->detalleView->showDetalle($detalle, $revistas);
+    $imagenes = $this->imagenesModel->getImagenes($id);
+    //    var_dump($sentencia->errorInfo()); die;
+    $this->detalleView->showDetalle($detalle, $imagenes);
   }
 
   function getRevistasPorCategoria($id){
@@ -66,10 +66,6 @@ class visitController{
       $revistas = $this->revistasModel->filtroPorCategoria($id);
       //var_dump($revistas);
       $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias);
-  }
-  function getImagenes($id){
-    $imagenes = $this->imagenesModel->getImagenes($id);
-    $this->detalleView->showImagenes($imagenes);
   }
 
 }

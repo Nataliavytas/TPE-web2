@@ -81,7 +81,8 @@ class adminController {
 
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
-        $this->revistasView->showRevistas($revistas, $categorias);
+        $imagenes = $this->imagenesModel->getImagen();
+        $this->revistasView->showRevistas($revistas, $categorias, $imagenes);
     }
 
     function getCategorias(){
@@ -95,6 +96,7 @@ class adminController {
         $this->revistasModel->insertarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $_POST['categoria'] );
         header("Location: " .REVISTAS);
     }
+
 
    function borrarRevista($id){
      $this->revistasModel->borrarRevista($id);
@@ -122,12 +124,14 @@ class adminController {
     }
     function getDetalleEdicion($id){
           $detalle =  $this->revistasModel->getDetalle($id);
-          $this->edicionRevistas->showEditor($detalle);
+          $imagenes = $this->imagenesModel->getImagenes($id);
+          $revistas = $this->revistasModel->getDetalle($id);
+          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas);
     }
 
     function getUsuarios() {
         $usuarios = $this->usuariosModel->getUsuarios();
-    
+
         $this->usuariosView->showUsuarios($usuarios);
     }
 
@@ -140,15 +144,15 @@ class adminController {
         $this->usuariosModel->borrarUsuario($id);
         header("Location: ". USUARIOS);
     }
-}
+
     function agregarImagen(){
-           if ($_FILES['agregarimagen']['type'] == "image/jpeg" || $_FILES['agregarimagen']['type'] == "image/jpg" || $_FILES['agregarimagen']['type'] == "image/png") {
-                $this->imagenesModel->agregarImagen($_FILES['agregarImagen']);
+           if ($_FILES['agregarImagen']['type'] == "image/jpeg" || $_FILES['agregarImagen']['type'] == "image/jpg" || $_FILES['agregarImagen']['type'] == "image/png") {
+                $this->imagenesModel->agregarImagen($_FILES['agregarImagen'], $_POST['id_revista']);
+                header("Location: ". REVISTAS);
            }
            else {
-               $this->revistasView->showError("Formato no aceptado");
+               $this->edicionRevistas->showError("Formato no aceptado");
                die();
     }
-
+  }
 }
-

@@ -55,6 +55,9 @@ if($action == ''){
 }elseif($action == 'admin/agregarRevista'){
     $adminController->agregarRevista();
 
+}elseif($action == 'admin/agregarImagen'){
+    $adminController->agregarImagen();
+
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
     $adminController->borrarRevista($partesURL[2]);
 
@@ -86,6 +89,4 @@ if($action == ''){
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrarUsuario" ) {
     $adminController->borrarUsuario($partesURL[2]);
 
-}elseif ($action == 'admin/agregarImagen'){
-    $adminController->agregarImagen();
 }

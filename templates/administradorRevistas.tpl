@@ -28,8 +28,8 @@
             {$revista['titulo']} </a></td>
             <td> {$revista['descripcion']}</td>
             <td> {$revista['fecha']}</td>
-  
-            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm" 
+
+            <td><button formaction="admin/borrar/{$revista['id_revistas']}" formmethod="POST" class="btn btn-secondary btn-sm"
             type="submit" value="{$revista['id_revistas']}"  href="admin/borrar/{$revista['id_revistas']}"> Borrar </button></td>
 
             </form>
@@ -68,18 +68,6 @@
                             {/foreach}
                          </select>
                          </div>
-                   <div class="form-group">
-                     <label> Imagen de revista: </label>
-                       <input class="form-control" type="file" name="agregarImagen" id="imageToUpload">
-                       <div>
-                         <button type="button" class="btn btn-default" id="show">Agregar mas de una imagen: </button>
-                            <div class="input">
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                         </div>
-                       </div>
-                       <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
-                    </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>
