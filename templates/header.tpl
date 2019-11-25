@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="estilos/css/bootstrap.css">
     <link rel="stylesheet" href="estilos/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="icon" href="images/aguacate.png?v1" type="image/x-icon" />
 <link rel="shortcut icon" href="images/aguacate.png?v1" type="image/x-icon" />
 </head>

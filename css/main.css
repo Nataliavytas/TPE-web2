@@ -161,7 +161,7 @@ html{
 
 @media only screen and (min-width: 600px){
    #formatoTabla{
-    margin: 5% 5% auto 5%;
+    margin: 10% 5% auto 5%;
    }
 }
    /* testimonios */
@@ -219,6 +219,7 @@ html{
     white-space:nowrap;
     width:  30ch;
     max-width: 40ch;
+    margin-top: 30px;
   }
 
 .tabcontainer {
@@ -291,3 +292,9 @@ display: none;
 }
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+#tablaEditarRevista{
+    margin-top: 150px;
+    padding-right: 20%;
+    padding-left: 20%;
+}

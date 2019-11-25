@@ -1,7 +1,7 @@
 <?php
 
 require_once("Router.php");
-require_once("./controller/ComentariosController.php");
+require_once("./api/ComentariosController.php");
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 
@@ -11,7 +11,7 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 $router = new Router();
 
-$router->addRoute("comentarios", "GET", "ComentariosController", "getComentarios");
+$router->addRoute("comentarios/:ID", "GET", "ComentariosController", "getComentarios");
 $router->addRoute("comentarios", "POST", "ComentariosController", "addComentario"); 
 $router->addRoute("comentarios/:ID", "DELETE", "ComentariosController", "deleteComentario");
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-22 15:41:49
+/* Smarty version 3.1.33, created on 2019-11-25 00:21:50
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dd7f3ad463439_23310502',
+  'unifunc' => 'content_5ddb108e814560_31054558',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1574124686,
+      1 => 1574637493,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dd7f3ad463439_23310502 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddb108e814560_31054558 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -35,15 +35,16 @@ function content_5dd7f3ad463439_23310502 (Smarty_Internal_Template $_smarty_tpl)
           <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
 
         </div>
+
+           <div class="container">
             <div id="formatoTabla">
+            <form>
             <table class="table table-bordered">
             <thead>
             <tr>
             <th scope="col"> Titulo </th>
             <th scope="col"> Descripción </th>
             <th scope="col"> Fecha </th>
-            <th scope="col"> Borrar </th>
-            <th scope="col"> Editar </th>
             </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -53,64 +54,22 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 ?>
             <tr>
-            <form action="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" method="POST">
-
-            <td>
-              <a class="btn btn-light" data-toggle="collapse" href="#collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"> <?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
- </a>
-            <div class="row">
-              <div class="col">
-                <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+            <td> <a value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" href="admin/revista/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 ">
-                  <div class="card card-body">
-                      <input name="titulo" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-"/>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </td>
-
-            <td>
-              <button id="descripcionAnchor" class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" aria-expanded="false" aria-controls="multiCollapseExample2"> <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
- </button>
-              <div class="col">
-                <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-">
-                  <div class="card card-body">
-                      <input  name="descripcion" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-"/>
-                  </div>
-                </div>
-              </div>
-              </div></td>
-
-            <td>
-                <a class="btn btn-light" data-toggle="collapse" href="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" role="button" aria-expanded="false" aria-controls="multiCollapseExample3"><?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-</a>
-                  <div class="row">
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="collapse<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-">
-                        <div class="card card-body">
-                          <input name="fecha" type="text" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-">
-                        </div>
-                      </div>
-                    </div>
-            </td>
+            <?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
+ </a></td>
+            <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
+</td>
+            <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
+</td>
+  
             <td><button formaction="admin/borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" formmethod="POST" class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
+" formmethod="POST" class="btn btn-secondary btn-sm" 
+            type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "  href="admin/borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </button></td>
 
-            <td><button class="btn btn-secondary btn-sm" type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" href="admin/editar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-"> Editar </button></td>
             </form>
              </tr>
 
@@ -129,17 +88,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-" name="titulo" type="text" class="form-control" id="nombreTabla" aria-describedby="emailHelp" placeholder="Titulo">
+" name="titulo" type="text" class="form-control" id="nombreTabla" 
+                      aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-" name="descripcion" type="text" class="form-control" id="autorTabla" aria-describedby="emailHelp" placeholder="Descripcion">
+" name="descripcion" type="text" class="form-control" id="autorTabla" 
+                      aria-describedby="emailHelp" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-" name="fecha" type="text" class="form-control" id="tipoTabla" aria-describedby="emailHelp" placeholder="Año de publicación">
+" name="fecha" type="text" class="form-control" id="tipoTabla" 
+                      aria-describedby="emailHelp" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
                       <label for="inputState">Seleccione categoria:</label>

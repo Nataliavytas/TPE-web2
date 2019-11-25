@@ -8,10 +8,9 @@ class detalleView {
     function __construct(){
         $this->smarty = new Smarty();
     }
-    function showDetalle($comentarios, $detalle, $revistas){
+    function showDetalle($detalle, $revistas){
         $this->smarty->assign('detalle', $detalle);
         $this->smarty->assign('revistas', $revistas); //de que es????
-        $this->smarty->assign('comentarios', $comentarios);
 
         $this->smarty->display('templates/detalle.tpl');
       }

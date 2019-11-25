@@ -1,21 +1,52 @@
 "use strict"
 
+document.addEventListener("DOMContentLoaded", global);
 
-document.addEventListener("DOMContentLoaded", getComentarios);
-document.querySelector("#botonComentar").addEventListener("click", addComentario);
-document.querySelector("#borrarComentario").addEventListener("click", deleteComentario);
+function global() {
+
+document.querySelector("#formComentar").addEventListener("submit", addComentario);
+
 
 let app = new Vue({
     el: "#comentarios",
     data: {
         subtitle: "Estas tareas se renderizan desde el cliente usando Vue.js",
         comentarios: [] 
+    },
+    methods: {
+      deleteComentario: function (id) {
+
+        fetch('api/comentarios/'+id, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}       
+        })
+        .then(function(){
+            getComentarios(6);
+        })
+        .catch(error => console.log(error));
+      }
     }
 });
 
-function getComentarios() {
+setIds();
+
+function setIds(){
+    let container = document.getElementById("container");
+    let objId = container.dataset.objectid;
+   
+    let objSpan = document.getElementById("objId");
+    objSpan.innerText = objId;
+
+    console.log(objId);
     
-    fetch("api/comentarios")
+    getComentarios(objId);
+}
+
+
+function getComentarios(revistaID) {
+    
+
+    fetch("api/comentarios/"+ revistaID)
     .then(response => response.json())
     .then(comentarios => {
         app.comentarios = comentarios; // similar a $this->smarty->assign("tasks", $tasks)
@@ -24,11 +55,11 @@ function getComentarios() {
     .catch(error => console.log(error));
 }
 
-function addComentario (e) {
-    e.preventDefault();
+function addComentario (event) {
+    event.preventDefault();
 
     let data = {
-        "id_revista":  document.querySelector("input[name=id]").value,
+        "id_revistas":  document.querySelector("input[name=id]").value,
         "nombreUsuario":  document.querySelector("input[name=nombreUsuario]").value,
         "comentario":  document.querySelector("textarea[name=comentario]").value,
         "puntuacion":  document.querySelector("input[name=puntuacion]").value
@@ -41,23 +72,10 @@ function addComentario (e) {
         body: JSON.stringify(data) 
      })
      .then(response => {
-         getComentarios();
+        //  setIds();
+        getComentarios(6);
      })
      .catch(error => console.log(error));
 }
 
-    function deleteComentario() {
-        event.preventDefault();
-        console.log("entro");
-
-        fetch('api/comentarios/'+id, {
-            method: 'DELETE',
-            headers: {'Content-Type': 'application/json'}       
-        })
-        .then(function(){
-            getComentarios();
-        })
-        .catch(error => console.log(error));
-    }
-
-
+}

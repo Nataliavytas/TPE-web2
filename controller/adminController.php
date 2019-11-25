@@ -5,6 +5,7 @@ require_once "./view/adminRevistasView.php";
 require_once "./model/categoriasModel.php";
 require_once "./view/adminCategoriasView.php";
 require_once "./view/edicionRevistas.php";
+require_once "./view/adminUsuarios.php";
 require_once "./model/usuariosModel.php";
 
 class adminController {
@@ -16,6 +17,7 @@ class adminController {
     private $administrador;
     private $usuariosModel;
     private $edicionRevistas;
+    private $usuariosView;
 
   function __construct() {
       $this->revistasView = new adminRevistasView();
@@ -25,6 +27,7 @@ class adminController {
       $this->administrador = new administrador();
       $this->usuariosModel = new usuariosModel();
       $this->edicionRevistas = new edicionRevistas();
+      $this->usuariosView = new adminUsuarios();
   }
 
   function Home(){
@@ -119,5 +122,22 @@ class adminController {
           $detalle =  $this->revistasModel->getDetalle($id);
 
           $this->edicionRevistas->showEditor($detalle);
+    }
+
+    function getUsuarios() {
+        $usuarios = $this->usuariosModel->getUsuarios();
+    
+        $this->usuariosView->showUsuarios($usuarios);
+    }
+
+    function editarUsuario($id){
+      //  var_dump($_POST['emailUsuario'], $_POST['tipoCuenta'], $id); die;
+        $this->usuariosModel->editarUsuario($_POST['emailUsuario'], $_POST['tipoCuenta'], $id);
+        header("Location: ". USUARIOS);
+    }
+
+    function borrarUsuario($id){
+        $this->usuariosModel->borrarUsuario($id);
+        header("Location: ". USUARIOS);
     }
 }

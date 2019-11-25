@@ -17,4 +17,24 @@ class usuariosModel {
       //  $sentencia->execute([$emailUser]);
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
+
+    function getUsuarios(){
+        $sentencia = $this->db->prepare("SELECT * FROM usuarios");
+        $sentencia->execute();
+        $response = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+        return $response;
+    }
+  
+    function editarUsuario($email, $cuenta, $id){
+        $sentencia = $this->db->prepare("UPDATE usuarios SET email=?, tipo_usuario=? WHERE id= ?");
+        $sentencia->execute(array($email, $cuenta, $id));
+        //var_dump($sentencia->errorInfo()); die;
+    }
+
+    function borrarUsuario($id){
+        $sentencia = $this->db->prepare("DELETE FROM usuarios WHERE id=?");
+        $sentencia->execute(array($id));
+    }
+  
+  
   }

@@ -6,6 +6,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
 define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
 define("REVISTAS", BASE_URL . 'admin/revistas');
 define("CATEGORIAS", BASE_URL . 'admin/categorias');
+define("USUARIOS", BASE_URL . 'admin/usuarios');
 define("LOGIN", BASE_URL . 'admin');
 
 
@@ -60,9 +61,19 @@ if($action == ''){
 
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editarCat" ) {
     $adminController->editarCategoria($partesURL[2]);
+
 }elseif($action == "admin/logout" ){
     $adminController->logout();
+
 }elseif ($partesURL[0] == "admin" && $partesURL[1] == "revista"){
     $adminController->getDetalleEdicion($partesURL[2]);
 
+}elseif ($partesURL[0] == "admin" && $partesURL[1] == "usuarios"){
+    $adminController->getUsuarios();
+
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "editarUsuario" ) {
+    $adminController->editarUsuario($partesURL[2]);
+
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "borrarUsuario" ) {
+    $adminController->borrarUsuario($partesURL[2]);
 }

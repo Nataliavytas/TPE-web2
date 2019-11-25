@@ -1,14 +1,16 @@
 {literal}
 <div id="comentarios">
+
 <ul>
        <li v-for="comentario in comentarios"> {{comentario.comentario}} 
-        <button onclick= "deleteComentario()" id="borrarComentario" type="button" :value="comentario.id_comentario"> {{comentario.id_comentario}} </button>
+        <button id="borrarComentario" type="button" v-on:click="deleteComentario(comentario.id_comentario)"> {{comentario.id_comentario}} </button>
         </li>
       
 </ul>
+
 </div> 
 
-<form>
+       <form id="formComentar">
             <div>
             <label> id revista</label>
             <input name="id" type="text" placeholder="id">
@@ -28,6 +30,6 @@
       <button id="botonComentar" type="submit"> Enviar </button>
       
 
-  </form>
+  </form>  
 
 {/literal}
