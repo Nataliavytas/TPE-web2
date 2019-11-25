@@ -7,8 +7,8 @@
 
       <div class="card" id="textoinicio">
 
-      <div id="container" data-objectid="{$det["id_revistas"]}">
-      <p><span id="objId"> </span> </p>
+      <div id="container" data-objectid="{$det['id_revistas']}">
+    {*  <p><span id="objId"> </span> </p>*}
 
             <div class="card-body" id="textoinicio">
                 <h3 class="card-title"> {$det["titulo"]} </h3>
@@ -25,13 +25,13 @@
 
                     <div class="carousel-inner">
             <div class="carousel-item active ">
-              <img class="d-block w-100 gameImg" src="{$imagenes[0]['Img_path']}" alt="First slide">
+              <img class="d-block w-100 gameImg" src="{$imgs[0]['imagen']}" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100 gameImg" src="{$imagenes[1]['Img_path']}" alt="Second slide">
+              <img class="d-block w-100 gameImg" src="{$imgs[1]['imagen']}" alt="Second slide">
             </div>
             <div class="carousel-item ">
-              <img class="d-block w-100 gameImg" src="{$imagenes[2]['Img_path']}" alt="Third slide">
+              <img class="d-block w-100 gameImg" src="{$imgs[2]['imagen']}" alt="Third slide">
             </div>
           </div>
                           {/foreach}
