@@ -21,7 +21,7 @@ let app = new Vue({
             headers: {'Content-Type': 'application/json'}       
         })
         .then(function(){
-            getComentarios(6);
+            setIds();
         })
         .catch(error => console.log(error));
       }
@@ -34,9 +34,6 @@ function setIds(){
     let container = document.getElementById("container");
     let objId = container.dataset.objectid;
    
-    let objSpan = document.getElementById("objId");
-    objSpan.innerText = objId;
-
     console.log(objId);
     
     getComentarios(objId);
@@ -44,7 +41,6 @@ function setIds(){
 
 
 function getComentarios(revistaID) {
-    
 
     fetch("api/comentarios/"+ revistaID)
     .then(response => response.json())
@@ -72,8 +68,7 @@ function addComentario (event) {
         body: JSON.stringify(data) 
      })
      .then(response => {
-        //  setIds();
-        getComentarios(6);
+         setIds();
      })
      .catch(error => console.log(error));
 }
