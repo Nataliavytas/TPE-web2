@@ -18,17 +18,7 @@
                     <tr>
                     <form action="admin/editarUsuario/{$usuario['id']}" method="POST">
                       <div>
-                      <td>  <p><a class="btn btn-light" data-toggle="collapse" href="#multiCollapseExample1" role="button" 
-                      aria-expanded="false" aria-controls="multiCollapseExample1">{$usuario['email']}</a></p>
-                          <div class="row">
-                            <div class="col">
-                              <div class="collapse multi-collapse" id="multiCollapseExample1">
-                                <div class="card card-body">
-                                  <input type="text" name="emailUsuario" value="{$usuario['email']}">
-                                </div>
-                              </div>
-                            </div>
-                        </td>
+                      <td> {$usuario['email']} </td>
 
                         <td>  
                           {if $usuario['tipo_usuario'] == '0'}

@@ -17,7 +17,7 @@
          </div>
           {*  <button type="submit" value="login" sclass="btn-success">Submit</button>*}
             <button type="submit" value="login" class="btn btn-lg btn-primary">Sign in</button>
-            <button type="button" class="btn btn-secondary btn-lg" ><a href="revistas/agregarUsuario">No es usuario? Registrese!</a></button>
+            <button type="button" class="btn btn-secondary btn-lg" ><a href="registro">No es usuario? Registrese!</a></button>
         </form>
           {*Tabla inferior donde van a estar ubicadas las revistas.
           #La tabla es la misma que en "Informacion.php" dentro de $html. junto a tag de foreach (no es un tag lo se)

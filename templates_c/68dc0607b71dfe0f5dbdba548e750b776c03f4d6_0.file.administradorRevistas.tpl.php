@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 00:21:50
+/* Smarty version 3.1.33, created on 2019-11-25 02:59:14
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddb108e814560_31054558',
+  'unifunc' => 'content_5ddb3572cdd927_79734210',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1574637493,
+      1 => 1574646739,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddb108e814560_31054558 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddb3572cdd927_79734210 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
@@ -88,19 +88,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['titulo'];?>
-" name="titulo" type="text" class="form-control" id="nombreTabla" 
+" name="titulo" type="text" class="form-control" id="nombreTabla"
                       aria-describedby="emailHelp" placeholder="Titulo">
                   </div>
                   <div class="form-group">
                       <label> Descripción de la Revista: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['descripcion'];?>
-" name="descripcion" type="text" class="form-control" id="autorTabla" 
+" name="descripcion" type="text" class="form-control" id="autorTabla"
                       aria-describedby="emailHelp" placeholder="Descripcion">
                   </div>
                   <div class="form-group">
                       <label> Fecha de publicación: </label>
                       <input value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
-" name="fecha" type="text" class="form-control" id="tipoTabla" 
+" name="fecha" type="text" class="form-control" id="tipoTabla"
                       aria-describedby="emailHelp" placeholder="Año de publicación">
                   </div>
                   <div class="form-group">
@@ -123,7 +123,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                          </div>
                    <div class="form-group">
                      <label> Imagen de revista: </label>
-                       <input type="file" name="agregarImagen" id="imageToUpload">
+                       <input class="form-control" type="file" name="agregarImagen" id="imageToUpload">
+                       <div>
+                         <button type="button" class="btn btn-default" id="show">Agregar mas de una imagen: </button>
+                            <div class="input">
+                             <input class="1" class="form-control" type="file" name="agregarImagen" >
+                             <input class="1" class="form-control" type="file" name="agregarImagen" >
+                         </div>
+                       </div>
+                       <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
                     </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>

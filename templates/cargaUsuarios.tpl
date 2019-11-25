@@ -5,7 +5,7 @@
        {include file="header.tpl"}
 
       <div id="textoinicio">
-       <form action="registro" method="post">
+       <form action="agregarUsuario" method="post">
        <div class="form-group">
            <label for="email">Ingrese un email address:</label>
            <input name="email" class="form-control" id="email">

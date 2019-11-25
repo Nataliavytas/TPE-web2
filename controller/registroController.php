@@ -14,6 +14,11 @@ class registroController {
       $this->usuariosModel = new usuariosModel();
 
   }
+
+  function registrarse(){
+    $this->registroView->showFormularioRegistro();
+  }
+
   function agregarUsuario(){
     $user= $_POST['email'];
     $password = $_POST['password'];

@@ -37,7 +37,10 @@ if($action == ''){
 }elseif ($action == 'admin'){
     $adminController->Home();
 
-}elseif ($action == 'revistas/agregarUsuario'){
+}elseif ($action == 'registro'){
+    $registroController->registrarse();
+
+}elseif ($action == 'agregarUsuario'){
     $registroController->agregarUsuario();
 
 }else if ($action == 'admin/revistas'){
@@ -82,6 +85,7 @@ if($action == ''){
 
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrarUsuario" ) {
     $adminController->borrarUsuario($partesURL[2]);
+
 }elseif ($action == 'admin/agregarImagen'){
     $adminController->agregarImagen();
 }

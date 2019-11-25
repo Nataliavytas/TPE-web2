@@ -132,8 +132,7 @@ class adminController {
     }
 
     function editarUsuario($id){
-      //  var_dump($_POST['emailUsuario'], $_POST['tipoCuenta'], $id); die;
-        $this->usuariosModel->editarUsuario($_POST['emailUsuario'], $_POST['tipoCuenta'], $id);
+        $this->usuariosModel->editarUsuario($_POST['tipoCuenta'], $id);
         header("Location: ". USUARIOS);
     }
 
@@ -152,4 +151,4 @@ class adminController {
     }
 
 }
-}
+

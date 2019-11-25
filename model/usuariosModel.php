@@ -25,9 +25,9 @@ class usuariosModel {
         return $response;
     }
   
-    function editarUsuario($email, $cuenta, $id){
-        $sentencia = $this->db->prepare("UPDATE usuarios SET email=?, tipo_usuario=? WHERE id= ?");
-        $sentencia->execute(array($email, $cuenta, $id));
+    function editarUsuario($cuenta, $id){
+        $sentencia = $this->db->prepare("UPDATE usuarios SET tipo_usuario=? WHERE id= ?");
+        $sentencia->execute(array($cuenta, $id));
         //var_dump($sentencia->errorInfo()); die;
     }
 
