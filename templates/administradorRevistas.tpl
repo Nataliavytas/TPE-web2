@@ -1,13 +1,12 @@
 <!DOCTYPE html>
         <html>
       <body>
-       {include file="headerAdmin.tpl"}
+       {include file="header.tpl"}
 
        <div id="textoinicio">
-          <h2> <a href="admin/revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
-          Revistas publicadas
-          <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
-
+        <h2> Revistas actuales <a href="admin/revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a>
+        <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> 
+         <a href="admin/usuarios" type="button" class="btn btn-outline-secondary" id="botonUsuarios">Usuarios</a> </h2>
         </div>
 
            <div class="container">

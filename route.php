@@ -8,8 +8,7 @@ define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF'])
 define("REVISTAS", BASE_URL . 'admin/revistas');
 define("CATEGORIAS", BASE_URL . 'admin/categorias');
 define("USUARIOS", BASE_URL . 'admin/usuarios');
-define("LOGIN", BASE_URL . 'admin');
-
+define("REVISTAS2", BASE_URL . 'revistas');
 
 $action = $_GET["action"];
 
@@ -34,9 +33,6 @@ if($action == ''){
 }elseif ($partesURL[0] == 'revistas'){
     $visitController->getRevistasPorCategoria($partesURL[1]);
 
-}elseif ($action == 'admin'){
-    $adminController->Home();
-
 }elseif ($action == 'registro'){
     $registroController->registrarse();
 
@@ -50,7 +46,7 @@ if($action == ''){
     $adminController->getCategorias();
 
 }elseif ($action == 'iniciarSesion'){
-    $adminController->iniciarSesion();
+    $registroController->iniciarSesion();
 
 }elseif($action == 'admin/agregarRevista'){
     $adminController->agregarRevista();
@@ -73,9 +69,8 @@ if($action == ''){
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "editarCat" ) {
     $adminController->editarCategoria($partesURL[2]);
 
-}elseif($action == "admin/logout" ){
-
-    $adminController->logout();
+}elseif($action == "logout" ){
+    $registroController->logout();
 
 }elseif ($partesURL[0] == "admin" && $partesURL[1] == "revista"){
     $adminController->getDetalleEdicion($partesURL[2]);

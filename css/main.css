@@ -306,3 +306,12 @@ display: none;
   display: none;
   visibility: hidden;
 }*/
+
+.card{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#container{
+    margin-top: 150px;
+}

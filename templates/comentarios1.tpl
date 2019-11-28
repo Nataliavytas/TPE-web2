@@ -1,6 +1,6 @@
 
   
-  <div class="accordion" id="accordionExample">
+  <div class="accordion" id="comentarios">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
@@ -9,17 +9,17 @@
         </button>
       </h2>
     </div>
-        {foreach $comentarios as $coment}
+        
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div v-for="comentario in comentarios" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 
       <div class="card-body">
-            <h6>Usuario: {$coment["nombreUsuario"]}</h6>
-            <p> Comentario: {$coment["comentario"]}</p>
-            <p> Fecha de publicacion: {$coment["fechaComentario"]} </p>
-{*            {foreach $revistas as $revista}*}
-              <form method="POST" action="admin/rateStar/{$revista['id_revistas']}" >
-                <div class="rate" class="form-group" value="{$coment['puntuacion']}">
+            <h6>Usuario: {{comentario.nombreUsuario}}</h6>
+            <p> Comentario: {{comentario.comentario}}</p>
+            <p> Fecha de publicacion:{{comentario.fechaComentario}} </p>
+
+              <form method="POST">
+                <div class="rate" class="form-group" value="{{comentario.puntuacion}}">
                   <input type="submit" type="radio" id="star5" name="rate" value="5" />
                   <label for="star5" title="text">5 stars</label>
                   <input type="submit" type="radio" id="star4" name="rate" value="4" />
@@ -35,7 +35,7 @@
 
       </div>
     </div>
-    {/foreach}
+
   </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -50,22 +50,26 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 
       <div class="card-body">
-        {foreach $comentarios as $coment}
-        <form method="POST">
+  
+        <form id="formComentar" method="POST">
           <div class="form-group">
             <label for="exampleFormControlInput1">Nombre de Usuario:</label>
-            <input name="nombreU" value="{$coment['nombreUsuario']}" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Usuario">
+            <input name="nombreUsuario" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Usuario">
           </div>
-      <div class="form-group">
-          <label for="exampleFormControlInput1">fecha:</label>
-          <input name="fechaC" value="{$coment['fechaComent']}" type="date" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="fecha">
-      </div>
-      <div class="form-group">
-          <label for="exampleFormControlTextarea1">Comentario:</label>
-          <textarea name="comentarioC" value="{$coment['comentario']}" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <button class="form-control form-control-lg" type="submit" class="btn btn-light">Enviar</button>
-        {/foreach}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">id revista</label>
+            <input name="id" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="id revista">
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">fecha:</label>
+            <input name="fecha" type="date" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="fecha">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Comentario:</label>
+            <textarea name="comentario" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="form-control form-control-lg" type="submit" class="btn btn-light">Enviar</button>
+ 
   </form>
   </div>
       </div>

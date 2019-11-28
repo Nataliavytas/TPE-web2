@@ -7,10 +7,11 @@ class revistasView {
   function __construct(){
      $this->smarty = new Smarty();
   }
-   function showRevistas($revistas,$categorias){
+   function showRevistas($revistas,$categorias, $user){
 
     $this->smarty->assign('revistas',$revistas);
     $this->smarty->assign('categorias', $categorias);
+    $this->smarty->assign('user', $user);
     $this->smarty->display('templates/visitRevistas.tpl');
   }
   }

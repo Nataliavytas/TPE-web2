@@ -22,16 +22,16 @@ class registroController {
   function agregarUsuario(){
     $user= $_POST['email'];
     $password = $_POST['password'];
-    $rePassword = $_POST['rePassword'];
+    $rePassword = $_POST['repetirPassword'];
     $error = "";
     if((!empty($user))&&(!empty($password))&&(!empty($rePassword))){
-        $chequeoUsuario =  $this->usuarioModel->VerificarUsuario($user);
-          if($chequeoUsuario[0]['email'] != $user){
-            if ($pass == $rePass){
+        $chequeoUsuario =  $this->usuariosModel->getByEmail($user);
+          if($chequeoUsuario['email'] !== $user){
+            if ($password == $rePassword){
             $this->usuariosModel->agregarUsuario($user, $password);
             session_start();
             /*$_SESSION['username'] = $user*/
-            header("Location: " . LOGIN);
+            header("Locations: " . HOME);
             }else{
               $error = "Las constraseñas no coinciden.";
               $this->registroView->mensaje($error);
@@ -45,4 +45,42 @@ class registroController {
           $this->registroView->mensaje($error);
         }
     }
+
+    function iniciarSesion(){
+      
+        $emailUser = $_POST['email'];
+        $password = $_POST['password'];
+  
+        if(!empty($emailUser) && !empty($password)){
+  
+            $user = $this->usuariosModel->getByEmail($emailUser);
+          
+
+            if((!empty($user)) && password_verify($password, $user->password)){
+              session_start();
+  
+              $_SESSION['id_user'] = $user->id;
+              $_SESSION['username'] = $user->email;
+              $_SESSION['tipo_usuario'] = $user->tipo_usuario;
+
+              if($user->tipo_usuario == 1 || $user->tipo_usuario == 0 ){
+                header("Location: ".REVISTAS);
+              }else{
+                header("Location: " .HOME);
+              }
+            }else{
+              header("Location: " .HOME);
+            }
+        }else {
+          header("Location: " .HOME);
+        }      
+    }
+    
+    function logout(){
+      session_start();
+      session_destroy();
+      header("Location: ".HOME);
+  }
+
+
   }

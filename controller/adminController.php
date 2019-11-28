@@ -33,63 +33,56 @@ class adminController {
       $this->imagenesModel = new imagenesModel();
   }
 
-  function Home(){
-      $categorias=$this->categoriasModel->getCategorias();
-      $this->administrador->Home($categorias);
-  }
+//   function Home(){
+//       $categorias=$this->categoriasModel->getCategorias();
+//       $this->administrador->Home($categorias);
+//   }
 
-  function iniciarSesion(){
+
+  function getUser(){
     session_start();
 
-      $emailUser = $_POST['email'];
-      $password = $_POST['password'];
+    if(!isset($_SESSION['id_user'])){
+        $user = [
+            "id" => "null",
+            "name" => "Visitante",
+            "admin" => "null",
+        ];
+    }
+    else{
+        $user = [
+            "id" => $_SESSION['id_user'],
+            "name" => $_SESSION['username'],
+            "admin" =>  $_SESSION['tipo_usuario'],
+        ];
+    }
+    return $user;
+}
 
-      if(!empty($emailUser) && !empty($password)){
-
-          $user = $this->usuariosModel->getByEmail($emailUser);
-
-          if((!empty($user)) && password_verify($password, $user->password)){
-            session_start();
-
-            $_SESSION['id_user'] = $user->id;
-            $_SESSION['username'] = $user->email;
-
-            header("Location: ".REVISTAS);
-          }else{
-            header("Location: " .LOGIN);
-          }
-      }else {
-        header("Location: " .LOGIN);
-      }
-  }
     function checkLoggedIn(){
-        session_start();
-        if(!isset($_SESSION['id_user'])) {
-            header('Location: '.LOGIN);
+        $user = $this->getUser();
+     
+        if($user["admin"] != 1 ) {
+            header('Location: '.HOME);
             die();
         }
     }
 
-    function logout(){
-        session_start();
-        session_destroy();
-        header("Location: ".LOGIN);
-    }
 
     function getRevistas(){
         $this->checkLoggedIn();
-
+        $user = $this->getUser();
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
         $imagenes = $this->imagenesModel->getImagen();
-        $this->revistasView->showRevistas($revistas, $categorias, $imagenes);
+        $this->revistasView->showRevistas($revistas, $categorias, $imagenes, $user);
     }
 
     function getCategorias(){
         $this->checkLoggedIn();
-
+        $user = $this->getUser();
         $categorias = $this->categoriasModel->getCategorias();
-        $this->categoriasView->showCategorias($categorias);
+        $this->categoriasView->showCategorias($categorias, $user);
     }
 
     function agregarRevista(){
@@ -126,13 +119,14 @@ class adminController {
           $detalle =  $this->revistasModel->getDetalle($id);
           $imagenes = $this->imagenesModel->getImagenes($id);
           $revistas = $this->revistasModel->getDetalle($id);
-          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas);
+          $user = $this->getUser();
+          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas, $user);
     }
 
     function getUsuarios() {
+        $user = $this->getUser();
         $usuarios = $this->usuariosModel->getUsuarios();
-
-        $this->usuariosView->showUsuarios($usuarios);
+        $this->usuariosView->showUsuarios($usuarios, $user);
     }
 
     function editarUsuario($id){

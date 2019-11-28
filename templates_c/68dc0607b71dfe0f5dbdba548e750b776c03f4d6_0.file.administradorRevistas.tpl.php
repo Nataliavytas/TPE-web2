@@ -1,39 +1,38 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 02:59:14
+/* Smarty version 3.1.33, created on 2019-11-28 03:25:36
   from 'C:\xampp\htdocs\TPE\templates\administradorRevistas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddb3572cdd927_79734210',
+  'unifunc' => 'content_5ddf3020c756a2_91888549',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68dc0607b71dfe0f5dbdba548e750b776c03f4d6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE\\templates\\administradorRevistas.tpl',
-      1 => 1574646739,
+      1 => 1574907919,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:headerAdmin.tpl' => 1,
+    'file:header.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddb3572cdd927_79734210 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ddf3020c756a2_91888549 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
         <html>
       <body>
-       <?php $_smarty_tpl->_subTemplateRender("file:headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+       <?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
        <div id="textoinicio">
-          <h2> <a href="admin/revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>
-          Revistas publicadas
-          <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategoria">Categorias</a> </h2>
-
+        <h2> Revistas actuales <a href="admin/revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a>
+        <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> 
+         <a href="admin/usuarios" type="button" class="btn btn-outline-secondary" id="botonUsuarios">Usuarios</a> </h2>
         </div>
 
            <div class="container">
@@ -63,9 +62,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['revista']->value) {
 </td>
             <td> <?php echo $_smarty_tpl->tpl_vars['revista']->value['fecha'];?>
 </td>
-  
+
             <td><button formaction="admin/borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
-" formmethod="POST" class="btn btn-secondary btn-sm" 
+" formmethod="POST" class="btn btn-secondary btn-sm"
             type="submit" value="<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "  href="admin/borrar/<?php echo $_smarty_tpl->tpl_vars['revista']->value['id_revistas'];?>
 "> Borrar </button></td>
@@ -121,18 +120,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                          </select>
                          </div>
-                   <div class="form-group">
-                     <label> Imagen de revista: </label>
-                       <input class="form-control" type="file" name="agregarImagen" id="imageToUpload">
-                       <div>
-                         <button type="button" class="btn btn-default" id="show">Agregar mas de una imagen: </button>
-                            <div class="input">
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                             <input class="1" class="form-control" type="file" name="agregarImagen" >
-                         </div>
-                       </div>
-                       <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
-                    </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>

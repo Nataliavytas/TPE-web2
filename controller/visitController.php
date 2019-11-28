@@ -39,33 +39,54 @@ class visitController{
 
 
   function getRevistas(){
+    $user = $this->getUser();
     $categorias = $this->categoriasModel->getCategorias();
     $revistas = $this->revistasModel->getRevistas();
-    $this->revistasView->showRevistas($revistas,$categorias);
+    $this->revistasView->showRevistas($revistas,$categorias, $user);
   }
 
   function getCategorias(){
+    $user = $this->getUser();
     $categorias = $this->categoriasModel->getCategorias();
-    $this->header->showCategorias($categorias);
+    $this->header->showCategorias($categorias, $user);
   }
 
   function Home(){
-    $categorias = $this->categoriasModel->getCategorias();
-    $this->inicioView->Home($categorias);
+    $this->inicioView->Home();
   }
+
+  function getUser(){
+    session_start();
+
+    if(!isset($_SESSION['id_user'])){
+        $user = [
+            "id" => "null",
+            "name" => "Visitante",
+            "admin" => "null",
+        ];
+    }
+    else{
+        $user = [
+             "id" => $_SESSION['id_user'],
+            "name" => $_SESSION['username'],
+            "admin" =>  $_SESSION['tipo_usuario'],
+        ];
+    }
+    return $user;
+}
 
   function mostrarDetalle($id){
     $detalle =  $this->revistasModel->getDetalle($id);
     $imagenes = $this->imagenesModel->getImagenes($id);
-    //    var_dump($sentencia->errorInfo()); die;
-    $this->detalleView->showDetalle($detalle, $imagenes);
+    $user = $this->getUser();
+    $this->detalleView->showDetalle($detalle, $imagenes, $user);
   }
 
   function getRevistasPorCategoria($id){
       $categorias = $this->categoriasModel->getCategorias();
       $revistas = $this->revistasModel->filtroPorCategoria($id);
-      //var_dump($revistas);
-      $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias);
+      $user = $this->getUser();
+      $this->revPorCategoriaView->showRevistasCategoria($revistas, $categorias, $user);
   }
 
 }

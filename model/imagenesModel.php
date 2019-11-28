@@ -35,13 +35,10 @@
             $sentencia->execute([$id_revista]);}
             //falta repartir esta funcion en dos, una publica y otra privada.
         }
-    }
 
     function cambioRuta($imagen){
       $filepath = "images/revistas/" . uniqid() . "." . strtolower(pathinfo($imagen['agregarImagen']['name'], PATHINFO_EXTENSION));
       move_uploaded_file($imagen['agregarImagen']['tmp_name'], $filepath);
       return $filepath;
     }
-
-}
-?>
+  }

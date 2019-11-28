@@ -70,7 +70,7 @@
                   <div class="row">
                     <div class="col">
                       {foreach from=$imagenes item=imagen}
-                      <img src="???" class="img-thumbnail" alt="Imagen por revista" value="{$imagen['id_imagen']}">
+                      <img src="{$imagen['id_imagen']}" class="img-thumbnail" alt="Imagen por revista" value="{$imagen['id_imagen']}">
                       <button type="submit" value="{$det['id_revistas']}"  href="admin/borrar/{$det['id_revistas']}"> Borrar </button>
                       {/foreach}
                       {/foreach}{*es el foreach de $det*}
@@ -91,14 +91,9 @@
           <form id="formview" action="admin/agregarImagen" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label> Imagen de revista: </label>
-                 <div>
-                   <input class="form-control" type="file" name="agregarImagen{]" id="imageToUpload" multiple>
-                    <div>
-                      <button type="button" class="btn btn-default" id="show">Agregar mas de una imagen: </button>
-                         <div>
-                          <input class="1" class="form-control" type="file" name="agregarImagen" >
-                          <input class="1" class="form-control" type="file" name="agregarImagen" >
-                        </div>
+                  {* <div>
+                   <input class="form-control" type="file" name="agregarImagen[]" id="imageToUpload" multiple>
+                    <div>  *}
                       <select id="tipoFiltro" class="form-control" name="revista">
                         <option> Seleccione la revista correspondiente: </option>
                             {foreach from=$revistas item=revista}
@@ -115,6 +110,7 @@
            </form>
             <a href="revistas" class="card-link"> Volver  </a>
 
+        
         {include file="footer.tpl"}
 
         </body>

@@ -5,17 +5,17 @@
 
       {foreach from=$detalle item=det}
 
-      <div class="card" id="textoinicio">
 
-      <div id="container" data-objectid="{$det['id_revistas']}">
-    {*  <p><span id="objId"> </span> </p>*}
+      <div id="container" data-objectid="{$det['id_revistas']}" data-user="{$user.admin}" data-userid="{$user.id}">
+        <div class="jumbotron">
+        <h1> {$det["titulo"]} </h1>
+          <p>Categoria: {$det["nombreCat"]}  </p>
+          <p>Fecha de publicacion: {$det["fecha"]} </p>
+          <p> {$det["descripcion"]} </p>
+          <label id="imagen">
+       </div>
 
-            <div class="card-body" id="textoinicio">
-                <h3 class="card-title"> {$det["titulo"]} </h3>
-            <p class="card-text">Categoria: {$det["nombreCat"]}  </p>
-            <p class="card-text">Fecha de publicacion: {$det["fecha"]} </p>
-            <p class="card-text"> {$det["descripcion"]} </p>
-            <label id="imagen">
+
          {*      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                   <div class="carousel-inner">
                           {foreach from=$imagenes item=imgs}
@@ -46,7 +46,6 @@
                   </a>
                 </div>*}
                </label>
-            <a href="revistas" class="card-link"> Volver  </a>
          </div>
 
       </div>

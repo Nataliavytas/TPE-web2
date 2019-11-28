@@ -2,7 +2,14 @@
         <html>
 
       <body>
-     {include file="headerAdmin.tpl"}
+     {include file="header.tpl"}
+
+          <div id="textoinicio">
+        <h2> Usuarios  <a href="admin/revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a>
+        <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> 
+         <a href="admin/usuarios" type="button" class="btn btn-outline-secondary" id="botonUsuarios">Usuarios</a> </h2>
+        </div>
+
     <div id="formatoTabla">
             <table class="table table-bordered">
                   <thead>
@@ -42,13 +49,14 @@
 
 
                           <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$usuario['id']}" href="admin/editarUsuario/{$usuario['id']}" > Editar</button></td>
-                          <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$usuario['id']}"> <a href="admin/borrarUsuario/{$usuario['id']}"> Borrar </a> </button></td>
+                            <td> <button class="btn btn-secondary btn-sm" type="submit" value="{$usuario['id']}"> <a id="registro" href="admin/borrarUsuario/{$usuario['id']}"> Borrar </a> </button></td>
                       </div>
                 </form>
                 {/foreach}
                 </tr>
                   </tbody>
                  </table> 
+                 </table>
         </div>
 
 

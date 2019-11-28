@@ -6,7 +6,7 @@
      <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
 
      <link rel="stylesheet" href="./css/main.css">
-     <link rel="stylesheet" href="/css/main.css">
+
      {*vue.js*}
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -27,7 +27,12 @@
 
 
  <nav class="navbar navbar-expand-lg fixed-top ">
+        {if $user.admin eq "1" or $user.admin eq "0"  }
+        <a class="navbar-brand" href="revistas" id="marcaMinimalismo"> MINIMALISMO </a>
+        {/if} 
+        {if $user.admin eq "null"}
         <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
+        {/if} 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
             id="navResponsive">
@@ -36,17 +41,23 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav mr-4">
                 <li class="nav-item">
-                    <a class="nav-link" data-value="about" href="admin"> Administrador </a> </li>
+                {if $user.admin eq "1"}
+                 <a class="nav-link" data-value="about" href="admin/revistas"> Editar Contenido </a> </li>
+                {/if}
+
                     <a class="nav-link" data-value="about" href="revistas"> Revistas </a> </li>
   <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+         <a class="btn btn-secondary dropdown-toggle" href="revistas" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        {foreach $categorias as $cats}
-<a class="dropdown-item" href="revistas/{$cats['id_categorias']}">{$cats['nombreCat']}</a>
-          {/foreach}
-  </div>
-</div>
-            </ul>
-        </div>
-    </nav>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+               {foreach $categorias as $cats}
+                <a class="dropdown-item" href="revistas/{$cats['id_categorias']}">{$cats['nombreCat']}</a>
+               {/foreach}
+         </div>
+    </div>
+                  {if $user.admin eq "1" or $user.admin eq "0"  }
+                    <a class="nav-link" data-value="about" href="logout"> Logout </a> </li>
+                {/if}
+      </ul>
+    </div>
+ </nav>

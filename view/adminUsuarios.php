@@ -7,8 +7,8 @@ class adminUsuarios {
   function __construct(){
      $this->smarty = new Smarty();
   }
-   function showUsuarios($usuarios){
-
+   function showUsuarios($usuarios, $user){
+    $this->smarty->assign('user', $user);
     $this->smarty->assign('usuarios', $usuarios);
     $this->smarty->display('templates/administradorUsuarios.tpl');
   }

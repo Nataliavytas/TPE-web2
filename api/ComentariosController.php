@@ -30,14 +30,14 @@ class ComentariosController extends ApiController{
         $comentario = $this->getData();
 
         $id = $comentario->id_revistas;
-        $usuario = $comentario->id_revistas;
+        $usuario = $comentario->id;
         $contenido = $comentario->comentario;
         $puntuacion = $comentario->puntuacion;
 
 
         $comentario_id = $this->model->addComentario($id, $contenido, $puntuacion, $usuario);
-
         $comentarioNuevo = $this->model->getComentario($comentario_id);
+
         if ($comentarioNuevo)
             $this->view->response($comentarioNuevo, 200);
         else

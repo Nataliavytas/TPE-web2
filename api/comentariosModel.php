@@ -18,7 +18,7 @@
     }
 
     function addComentario($idRevista, $comentario, $puntuacion, $usuario){
-        $sentencia = $this->db->prepare("INSERT INTO comentarios(id_revistas, comentario, puntuacion, nombreUsuario) VALUES (?,?,?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO comentarios(id_revistas, comentario, puntuacion, id) VALUES (?,?,?,?)");
         $sentencia->execute(array($idRevista, $comentario, $puntuacion, $usuario));
 
         $last_id = $this->db->lastInsertId();
@@ -26,7 +26,6 @@
     }
 
     function deleteComentario($id){
-
         $sentencia = $this->db->prepare( "DELETE FROM comentarios WHERE id_comentario = ?");
         $sentencia->execute(array($id));
     }
