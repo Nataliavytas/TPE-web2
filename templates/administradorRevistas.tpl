@@ -67,6 +67,13 @@
                             {/foreach}
                          </select>
                          </div>
+                     <div class="form-group">
+                              <label> Imagen de revista: </label>
+                                  <div>
+                                    <p class="text-muted"> Puede subir mas de una imagen por revista: </p>
+                                    <input type="file" id="imagenes" name="agregarImagen[]" multiple>
+                                    <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
+                    <div class="form-group"
                   <div class="form-group">
                     <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                   </div>

@@ -28,8 +28,6 @@ let app = new Vue({
         .catch(error => console.log(error));
       },
       addComentario: function() {
-      
-        console.log("entro");
         let data = {
             "id_revistas": objId,
             "id": usuarioID,
@@ -38,15 +36,14 @@ let app = new Vue({
         }
         
         document.querySelector("textarea[name=comentario]").value = "";
-    
-        console.log(document.querySelector("select[name=puntuacion]").value);
+
         fetch("api/comentarios", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},       
             body: JSON.stringify(data) 
          })
          .then(response => {
-           // getComentarios();
+            getComentarios();
          })
          .catch(error => console.log(error));
     }
@@ -58,8 +55,6 @@ let container = document.getElementById("container");
 let objId = container.dataset.objectid;
  let usuario = container.dataset.user;
  let usuarioID = container.dataset.userid;
-console.log(usuarioID);
-console.log(usuario);
 getComentarios(objId);
 
 
@@ -69,11 +64,14 @@ function getComentarios() {
     fetch("api/comentarios/"+ objId)
     .then(response => response.json())
     .then(comentarios => {
-        let promedio = Math.floor(getPuntuacion(comentarios))
-        app.promedioPuntuacion = promedio ; 
+        let promedio = parseFloat(Math.round(getPuntuacion(comentarios) * 100) / 100).toFixed(2);
+        if(promedio >= 0 ){
+            app.promedioPuntuacion = promedio ; 
+        }else{
+            app.promedioPuntuacion = 0;  
+        }
         app.comentarios = comentarios;   
         app.usr = usuario;   
-        console.log(comentarios);
     })
     .catch(error => console.log(error));
 }
@@ -83,7 +81,7 @@ function getPuntuacion(comentarios){
     let tamanio = comentarios.length;
     for(let comentario of comentarios){
         total += parseInt(comentario.puntuacion);
-        console.log(comentarios);
+
     }
     return total/tamanio;
 }

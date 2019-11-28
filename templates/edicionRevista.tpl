@@ -55,60 +55,42 @@
             href="admin/editar/{$det['id_revistas']}"> Editar </button></td>
             </form>
              </tr>
-
             </table>
-          </div>
+           </div>
+          {/foreach}
 
+          {foreach $imagenes as $img}
+          <form id="formview" action="admin/borrarIMG/{$img['id_revistas']}" method="POST">
 
-            {*aca puse este action aunque creo que deberia tener ser admin/borrarIMG/{$det['id_revista']} asi evitamos que borre la revista! Y solo borre la imagen*}
-            <form id="formview" action="admin/borrar/{$det['id_revistas']}" method="post">
-             <label id="imagen"> {$det["imagen"]} </label>
             <ul>
-
-            <li>
               <div class="container">
                   <div class="row">
                     <div class="col">
-                      {foreach from=$imagenes item=imagen}
-                      <img src="{$imagen['id_imagen']}" class="img-thumbnail" alt="Imagen por revista" value="{$imagen['id_imagen']}">
-                      <button type="submit" value="{$det['id_revistas']}"  href="admin/borrar/{$det['id_revistas']}"> Borrar </button>
-                      {/foreach}
-                      {/foreach}{*es el foreach de $det*}
-
-
-                      {*agregue informacion al <button> asi funcionaba para borrar*}
+                      <img src="{$img['imagen']}" class="img-thumbnail" alt="Imagen por revista" value="{$img['id_imagen']}">
+                      <button type="submit" value="{$img['id_revistas']}"  href="admin/borrarIMG/{$img['id_revistas']}"> Borrar </button>
                     </div>
                   </div>
                 </div>
-
-            </li>
-
-          </ul>
+                {/foreach}
+            </ul>
         </form>
-            {* Esto es para que en un futuro se puedan eliminar las imagenes siendo administrador. Lo que no se es como se pasan desde
-            el controller y eso, pero aca esta(? *}
 
-          <form id="formview" action="admin/agregarImagen" method="POST" enctype="multipart/form-data">
+             {foreach $detalle as $det}
+          <form id="formview" action="admin/agregarImagen" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label> Imagen de revista: </label>
-                  {* <div>
-                   <input class="form-control" type="file" name="agregarImagen[]" id="imageToUpload" multiple>
-                    <div>  *}
-                      <select id="tipoFiltro" class="form-control" name="revista">
-                        <option> Seleccione la revista correspondiente: </option>
-                            {foreach from=$revistas item=revista}
-                            <option value="{$revista['id_revista']}"> {$revista['titulo']} </option>
-                            {/foreach}
-                         </select>
-                       </div>
-                  </div>
+                   <p class="text-muted"> Puede subir mas de una imagen por revista: </p>
+                   <input type="file" id="imagenes" name="agregarImagen[]" multiple/>
+                   <input type="hidden" id="id" name="id" value="{$id}">
                       <p class="text-muted"> Recuerde subir una imagen con formato JPG </p>
                       <div class="form-group">
                         <button type="submit" class="btn btn-outline-secondary">Insertar</button>
                       </div>
              </div>
            </form>
-            <a href="revistas" class="card-link"> Volver  </a>
+           {/foreach}
+           
+            <a href="admin/revistas" class="card-link"> Volver  </a>
 
         
         {include file="footer.tpl"}

@@ -8,6 +8,7 @@ require_once "./model/imagenesModel.php";
 require_once "./view/inicioView.php";
 require_once "./view/header.php";
 require_once "./view/revistasPorCategoria.php";
+require_once "./view/registroView.php";
 
 
 class visitController{
@@ -22,9 +23,11 @@ class visitController{
   private $revPorCategoriaView;
   private $detalle;
   private $comentariosModel;
+  private $registroView;
 
   function __construct(){
 
+    $this->registroView = new registroView();
     $this->inicioView = new inicioView();
     $this->revistasModel = new revistasModel();
     $this->revistasView = new revistasView();
@@ -73,7 +76,15 @@ class visitController{
         ];
     }
     return $user;
-}
+  }
+
+  function registrarse(){
+    $user = $this->getUser();
+
+    $error = "Complete los campos para poder registrarse.";
+    // $this->registroView->mensaje($error);
+    $this->registroView->showFormularioRegistro($user, $error);
+  }
 
   function mostrarDetalle($id){
     $detalle =  $this->revistasModel->getDetalle($id);

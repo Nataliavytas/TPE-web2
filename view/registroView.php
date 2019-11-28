@@ -9,13 +9,14 @@ class registroView {
      $this->smarty = new Smarty();
   }
 
-  function showFormularioRegistro($user){
+  function showFormularioRegistro($user, $error){
     $this->smarty->assign('user',$user);
-    $this->smarty->display('templates/cargaUsuarios.tpl');
-  }
-
-  function mensaje($error){
     $this->smarty->assign('error', $error);
     $this->smarty->display('templates/cargaUsuarios.tpl');
   }
-  }
+
+  // function mensaje($error){
+  //   $this->smarty->assign('error', $error);
+  //   $this->smarty->display('templates/cargaUsuarios.tpl');
+  // }
+}

@@ -1,22 +1,20 @@
 <?php
-require_once "./view/registroView.php";
+
 require_once "./model/usuariosModel.php";
+require_once "./view/registroView.php";
 
 
 class registroController {
 
+
+    private $usuariosModel; 
     private $registroView;
-    private $usuariosModel;
 
 
   function __construct() {
-      $this->registroView = new registroView();
       $this->usuariosModel = new usuariosModel();
+      $this->registroView = new registroView();
 
-  }
-
-  function registrarse(){
-    $this->registroView->showFormularioRegistro();
   }
 
   function agregarUsuario(){
@@ -24,27 +22,48 @@ class registroController {
     $password = $_POST['password'];
     $rePassword = $_POST['repetirPassword'];
     $error = "";
+
+    $usuario = [
+      "id" => "null",
+      "name" => "Visitante",
+      "admin" => "null",
+    ];
+
     if((!empty($user))&&(!empty($password))&&(!empty($rePassword))){
         $chequeoUsuario =  $this->usuariosModel->getByEmail($user);
-          if($chequeoUsuario['email'] !== $user){
+
+          if($chequeoUsuario['email'] != $user){
+
             if ($password == $rePassword){
-            $this->usuariosModel->agregarUsuario($user, $password);
+
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            $this->usuariosModel->agregarUsuario($user, $hash);
+
             session_start();
             /*$_SESSION['username'] = $user*/
-            header("Locations: " . HOME);
+            $error = "Usuario registrado con exito";
+            $this->registroView->showFormularioRegistro($usuario, $error);
+            header('Location: '. REVISTAS2);
             }else{
               $error = "Las constraseñas no coinciden.";
-              $this->registroView->mensaje($error);
+              $this->registroView->showFormularioRegistro($usuario, $error);
             }
+
         }else{
           $error = "El usuario ya esta registrado";
-          $this->registroView->mensaje($error);
+          $this->registroView->showFormularioRegistro($usuario, $error);
         }
+
       }else{
           $error = "El/los campos esta/n incompleto/s";
-          $this->registroView->mensaje($error);
+          $this->registroView->showFormularioRegistro($usuario, $error);
         }
     }
+  /*  function mail($to, $header, $emailbody){
+      ini_set ( "SMTP", "sashafranchini@gmail.com" );
+      ini_set("smtp_port","25");
+      date_default_timezone_set('America/Argentina/Buenos_Airess');
+    }*/
 
     function iniciarSesion(){
       
@@ -54,20 +73,16 @@ class registroController {
         if(!empty($emailUser) && !empty($password)){
   
             $user = $this->usuariosModel->getByEmail($emailUser);
-          
 
-            if((!empty($user)) && password_verify($password, $user->password)){
+            if((!empty($user)) && password_verify($password, $user["password"])){
               session_start();
-  
-              $_SESSION['id_user'] = $user->id;
-              $_SESSION['username'] = $user->email;
-              $_SESSION['tipo_usuario'] = $user->tipo_usuario;
 
-              if($user->tipo_usuario == 1 || $user->tipo_usuario == 0 ){
-                header("Location: ".REVISTAS);
-              }else{
-                header("Location: " .HOME);
-              }
+              
+              $_SESSION['id_user'] = $user["id"];
+              $_SESSION['username'] = $user["email"];
+              $_SESSION['tipo_usuario'] = $user["tipo_usuario"];
+              
+                header("Location: ".REVISTAS2);
             }else{
               header("Location: " .HOME);
             }
@@ -81,6 +96,4 @@ class registroController {
       session_destroy();
       header("Location: ".HOME);
   }
-
-
-  }
+}

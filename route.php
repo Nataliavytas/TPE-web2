@@ -34,7 +34,7 @@ if($action == ''){
     $visitController->getRevistasPorCategoria($partesURL[1]);
 
 }elseif ($action == 'registro'){
-    $registroController->registrarse();
+    $visitController->registrarse();
 
 }elseif ($action == 'agregarUsuario'){
     $registroController->agregarUsuario();
@@ -54,6 +54,9 @@ if($action == ''){
 }elseif($action == 'admin/agregarImagen'){
     $adminController->agregarImagen();
 
+}elseif($partesURL[0] == "admin" && $partesURL[1] == "borrarIMG"){
+    $adminController->borrarIMG($partesURL[2]);
+    
 }elseif($partesURL[0] == "admin" && $partesURL[1] == "borrar" ) {
     $adminController->borrarRevista($partesURL[2]);
 

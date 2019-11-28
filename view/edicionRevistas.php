@@ -12,6 +12,7 @@ class edicionRevistas {
         $this->smarty->assign('user', $user);
         $this->smarty->assign('categorias', $categorias);
         $this->smarty->assign('detalle', $detalle);
+        $this->smarty->assign('id', $id);
         $this->smarty->assign('imagenes', $imagenes); //LE AGREGUE ESTE ASI FUNCIONABA LAS IMAGENES EN EL TPL DE EDICION
         $this->smarty->assign('revistas', $revistas); //para poder seleccionar la revista y cargue el id correcto
 

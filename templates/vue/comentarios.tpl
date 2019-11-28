@@ -16,7 +16,7 @@
          </div>
          </div>
 
-      <div> 
+      <div  v-show="usr == 1"> 
           <form id="formComentar" method="post">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">puntuacion:</label>
@@ -32,7 +32,7 @@
                   <label for="exampleFormControlTextarea1">Comentario:</label>
                   <textarea name="comentario" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
-              <button type="submit" id="botonComentar" v-on:click="addComentario()">Enviar</button>
+              <button id="botonComentar" v-on:click="addComentario()">Enviar</button>
           </form>
       </div>
 

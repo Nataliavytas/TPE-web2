@@ -40,7 +40,7 @@ class adminController {
 
 
   function getUser(){
-    session_start();
+     session_start();
 
     if(!isset($_SESSION['id_user'])){
         $user = [
@@ -141,13 +141,30 @@ class adminController {
     }
 
     function agregarImagen(){
-           if ($_FILES['agregarImagen']['type'] == "image/jpeg" || $_FILES['agregarImagen']['type'] == "image/jpg" || $_FILES['agregarImagen']['type'] == "image/png") {
-                $this->imagenesModel->agregarImagen($_FILES['agregarImagen'], $_POST['id_revista']);
-                header("Location: ". REVISTAS);
-           }
-           else {
+        $id = $_POST['id'];
+        $rutaTempImagenes = $_FILES['agregarImagen']['tmp_name'];
+        if($this->sonJPG($_FILES['agregarImagen']['type'])) {
+          var_dump($rutaTempImagenes);
+            $this->imagenesModel->agregarImagen($rutaTempImagenes, $id);
+            header("Location: ". REVISTAS);
+           }else {
                $this->edicionRevistas->showError("Formato no aceptado");
                die();
     }
   }
+
+    private function sonJPG($imagenesTipos){
+        foreach ($imagenesTipos as $tipo) {
+        if($tipo != 'image/jpeg') {
+            return false;
+        }
+        }
+        return true;
+    }
+
+    
+    function borrarIMG($id){
+        $this->imagenesModel->borrarIMG($id);
+        header("Location: " . REVISTAS);
+    }
 }

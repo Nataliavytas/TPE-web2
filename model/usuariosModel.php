@@ -12,7 +12,7 @@ class usuariosModel {
         $sentencia = $this->db->prepare("SELECT * FROM usuarios WHERE email = ?");
         $sentencia->execute(array($emailUser));
         
-        return $sentencia->fetch(PDO::FETCH_OBJ);
+        return $sentencia->fetch(PDO::FETCH_ASSOC);
     }
 
     function getUsuarios(){
@@ -34,9 +34,10 @@ class usuariosModel {
     }
   
   
-    function agregarUsuario($user, $password){
-      $sentencia = $this->db->prepare("INSERT INTO usuarios(email, password, tipo_usuario) VALUES (?,?,1)");
-      $sentencia->execute(array($user, $password));
-    }
+    function agregarUsuario($user,$password){
+        $sentencia = $this->db->prepare("INSERT INTO usuarios(email, password, tipo_usuario) VALUES (?,?,0)");
+        $sentencia->execute(array($user, $password));
+   
+      }
 
   }
