@@ -25,7 +25,7 @@ class ComentariosController extends ApiController{
             $this->view->response("Comentario id=$comentario_id not found", 404);
     }
 
-    public function addComentario($params = []) {
+    public function addComentario($params = null) {
 
         $comentario = $this->getData();
 
