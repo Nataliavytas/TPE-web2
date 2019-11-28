@@ -1,7 +1,7 @@
 <!DOCTYPE html>
         <html>
       <body>
-       {include file="headerAdmin.tpl"}
+       {include file="header.tpl"}
 
        <div id="textoinicio">
           <h2> <a href="admin/revistas" type="button"  class="btn btn-outline-secondary" id="botonRevista">Revistas</a>

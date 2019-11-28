@@ -8,7 +8,7 @@ class edicionRevistas {
     function __construct(){
         $this->smarty = new Smarty();
     }
-    function showEditor($detalle, $imagenes, $revistas, $categorias){
+    function showEditor($detalle, $imagenes, $revistas, $user, $categorias){
         $this->smarty->assign('user', $user);
         $this->smarty->assign('categorias', $categorias);
         $this->smarty->assign('detalle', $detalle);
