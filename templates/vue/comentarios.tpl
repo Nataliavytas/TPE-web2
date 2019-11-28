@@ -16,7 +16,7 @@
          </div>
          </div>
 
-      <div  v-show="usr == 1"> 
+      <div  v-show="usr >=0"> 
           <form id="formComentar" method="post">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">puntuacion:</label>

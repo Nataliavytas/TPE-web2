@@ -30,7 +30,7 @@
        $sentencia_imagenes = $this->db->prepare('INSERT INTO imagenes(id_revistas,imagen) VALUES(?,?)');
        foreach ($rutas as $ruta) {
             $sentencia_imagenes->execute([$id, $ruta]);
-      var_dump($sentencia_imagenes->errorInfo());
+      var_dump($sentencia_imagenes->errorInfo());die;
     }
      }
     function borrarIMG($id){
