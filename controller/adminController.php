@@ -119,8 +119,9 @@ class adminController {
           $detalle =  $this->revistasModel->getDetalle($id);
           $imagenes = $this->imagenesModel->getImagenes($id);
           $revistas = $this->revistasModel->getDetalle($id);
+          $categorias = $this->categoriasModel->getCategorias();
           $user = $this->getUser();
-          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas, $user);
+          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas, $user, $categorias);
     }
 
     function getUsuarios() {
