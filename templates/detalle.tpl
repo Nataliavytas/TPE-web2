@@ -13,27 +13,43 @@
           <p>Fecha de publicacion: {$det["fecha"]} </p>
           <p> {$det["descripcion"]} </p>
           <label id="imagen">
+
+          
+                <ul>
+                 {foreach $imagenes as $img}
+                  <li>    
+                     <img src="{$img['imagen']}" class="img-thumbnail" alt="Imagen del id: {$img['id_imagen']}">
+                     </li>
+                   {/foreach}
+                </ul>
+
        </div>
       </div>
       {/foreach}
 
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{* 
              <div class="carousel-inner" value="{$img['imagen']}">
                 {foreach $imagenes as $img}
                      <img src="{$img['imagen']}" class="d-block w-100" alt="Imagen del id: {$img['id_imagen']}">
                 {/foreach}
-              </div>
+              </div> *}
 
-
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
         {include file="vue/comentarios.tpl"}
 
         {include file="footer.tpl"}
