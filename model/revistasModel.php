@@ -31,18 +31,39 @@
    // var_dump($sentencia->errorInfo()); die;
   }
 
-  function getDetalle($id){
-    $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
-    $sentencia->execute(array($id));
-    $revista = $sentencia->fetchAll(PDO::FETCH_ASSOC);
-    return $revista;
+    function getDetalle($id){
+      $imagenRevistas = [];
+      $sentencia = $this->db->prepare("SELECT revistas.*, categorias.nombreCat FROM revistas, categorias WHERE  revistas.id_categorias = categorias.id_categorias AND revistas.id_revistas = ?");
+      $sentencia->execute(array($id));
+      $revista = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            $imagenes = $revista;
+            return $revista;
+  
   }
 
-  function insertarRevista($titulo,$fecha,$descripcion,$categoria){
+  function insertarRevista($titulo,$fecha,$descripcion,$categoria, $imagenes){
     $sentencia = $this->db->prepare("INSERT INTO revistas(titulo, fecha, descripcion, id_categorias) VALUES(?,?,?,?)");
     $sentencia->execute(array($titulo,$fecha,$descripcion,$categoria));
+    var_dump($imagenes);die;
     //var_dump($sentencia->errorInfo()); die;
+    $id_revistas = $this->db->lastInsertId();
+    $rutas = $this->subirImagenes($imagenes);
+    $sentencia_imagenes = $this->db->prepare("INSERT INTO imagenes(id_revistas, imagen) VALUES (?,?)");
+    foreach($rutas as $ruta){
+      $sentencia_imagenes->execute([$id_revistas, $ruta]);
+      
+    }
   }
+  
+          private function subirImagenes($imagenes){
+            $rutas = [];
+            foreach ($imagenes as $imagen) {
+              $destino_final = 'images/revistas' . uniqid() . '.jpg';
+              move_uploaded_file($imagen, $destino_final);
+              $rutas[]=$destino_final;
+            }
+            return $rutas;
+          }
 
     function borrarRevista($id){
       $sentencia = $this->db->prepare("DELETE FROM revistas WHERE id_revistas=?");

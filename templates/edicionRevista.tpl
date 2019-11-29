@@ -60,14 +60,14 @@
           {/foreach}
 
           {foreach $imagenes as $img}
-          <form id="formview" action="admin/borrarIMG/{$img['id_revistas']}" method="POST">
+          <form id="formview" action="admin/borrarIMG/{$img['id_imagen']}" method="POST">
 
             <ul>
               <div class="container">
                   <div class="row">
                     <div class="col">
                       <img src="{$img['imagen']}" class="img-thumbnail" alt="Imagen por revista" value="{$img['id_imagen']}">
-                      <button type="submit" value="{$img['id_revistas']}"  href="admin/borrarIMG/{$img['id_revistas']}"> Borrar </button>
+                      <button type="submit"   href="admin/borrarIMG/{$img['id_imagen']}"> Borrar </button>
                     </div>
                   </div>
                 </div>

@@ -89,6 +89,7 @@ class visitController{
   function mostrarDetalle($id){
     $detalle =  $this->revistasModel->getDetalle($id);
     $imagenes = $this->imagenesModel->getImagenes($id);
+    
     $user = $this->getUser();
     $this->detalleView->showDetalle($detalle, $imagenes, $user);
   }

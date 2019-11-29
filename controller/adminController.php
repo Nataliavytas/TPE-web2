@@ -40,7 +40,7 @@ class adminController {
 
 
   function getUser(){
-     session_start();
+    session_start();
 
     if(!isset($_SESSION['id_user'])){
         $user = [
@@ -70,7 +70,7 @@ class adminController {
 
 
     function getRevistas(){
-        $this->checkLoggedIn();
+     //   $this->checkLoggedIn();
         $user = $this->getUser();
         $categorias = $this->categoriasModel->getCategorias();
         $revistas = $this->revistasModel->getRevistas();
@@ -86,7 +86,7 @@ class adminController {
     }
 
     function agregarRevista(){
-        $this->revistasModel->insertarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $_POST['categoria'] );
+        $this->revistasModel->insertarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $_POST['categoria'], $_FILES['agregarImagen']['tmp_name']);
         header("Location: " .REVISTAS);
     }
 
@@ -118,10 +118,9 @@ class adminController {
     function getDetalleEdicion($id){
           $detalle =  $this->revistasModel->getDetalle($id);
           $imagenes = $this->imagenesModel->getImagenes($id);
-          $revistas = $this->revistasModel->getDetalle($id);
           $categorias = $this->categoriasModel->getCategorias();
           $user = $this->getUser();
-          $this->edicionRevistas->showEditor($detalle, $imagenes, $revistas, $user, $categorias);
+          $this->edicionRevistas->showEditor($detalle, $imagenes, $user, $categorias, $id);
     }
 
     function getUsuarios() {
@@ -164,7 +163,9 @@ class adminController {
 
     
     function borrarIMG($id){
+        //var_dump($id);die;
         $this->imagenesModel->borrarIMG($id);
         header("Location: " . REVISTAS);
+        
     }
 }

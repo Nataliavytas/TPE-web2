@@ -41,10 +41,11 @@ class registroController {
 
             session_start();
             /*$_SESSION['username'] = $user*/
-            $error = "Usuario registrado con exito";
-            $this->registroView->showFormularioRegistro($usuario, $error);
+           // $error = "Usuario registrado con exito";
+            //$this->registroView->showFormularioRegistro($usuario, $error);
             header('Location: '. REVISTAS2);
-            }else{
+             // die();
+          }else{
               $error = "Las constraseñas no coinciden.";
               $this->registroView->showFormularioRegistro($usuario, $error);
             }
