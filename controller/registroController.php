@@ -40,11 +40,12 @@ class registroController {
             $this->usuariosModel->agregarUsuario($user, $hash);
 
             session_start();
-            /*$_SESSION['username'] = $user*/
-           // $error = "Usuario registrado con exito";
-            //$this->registroView->showFormularioRegistro($usuario, $error);
+            // $_SESSION['id_user'] = $user["id"];
+            // $_SESSION['username'] = $user["email"];
+            // $_SESSION['tipo_usuario'] = $user["tipo_usuario"];
+
             header('Location: '. REVISTAS2);
-             // die();
+             
           }else{
               $error = "Las constraseñas no coinciden.";
               $this->registroView->showFormularioRegistro($usuario, $error);
@@ -59,12 +60,7 @@ class registroController {
           $error = "El/los campos esta/n incompleto/s";
           $this->registroView->showFormularioRegistro($usuario, $error);
         }
-    }
-  /*  function mail($to, $header, $emailbody){
-      ini_set ( "SMTP", "sashafranchini@gmail.com" );
-      ini_set("smtp_port","25");
-      date_default_timezone_set('America/Argentina/Buenos_Airess');
-    }*/
+      }
 
     function iniciarSesion(){
       

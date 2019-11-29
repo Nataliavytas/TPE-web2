@@ -41,7 +41,7 @@
             </tbody>
             </table>
                 </div>
-        <form id="formview" action="admin/agregarRevista" method="post">
+        <form id="formview" action="admin/agregarRevista" method="post" enctype="multipart/form-data" >
 
                   <div class="form-group">
                       <label> Titulo de Revista a publicar: </label>

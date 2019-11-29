@@ -28,7 +28,7 @@
     $sentencia->execute(array($id));
     $revistas = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     return $revistas;
-   // var_dump($sentencia->errorInfo()); die;
+
   }
 
     function getDetalle($id){
@@ -44,8 +44,6 @@
   function insertarRevista($titulo,$fecha,$descripcion,$categoria, $imagenes){
     $sentencia = $this->db->prepare("INSERT INTO revistas(titulo, fecha, descripcion, id_categorias) VALUES(?,?,?,?)");
     $sentencia->execute(array($titulo,$fecha,$descripcion,$categoria));
-    var_dump($imagenes);die;
-    //var_dump($sentencia->errorInfo()); die;
     $id_revistas = $this->db->lastInsertId();
     $rutas = $this->subirImagenes($imagenes);
     $sentencia_imagenes = $this->db->prepare("INSERT INTO imagenes(id_revistas, imagen) VALUES (?,?)");
@@ -73,7 +71,7 @@
     function editarRevista( $titulo,$fecha,$descripcion, $id){
       $sentencia = $this->db->prepare("UPDATE revistas SET titulo=?, fecha=?, descripcion=? WHERE id_revistas=?");
       $sentencia->execute(array($titulo, $fecha, $descripcion, $id));
-      //var_dump($sentencia->errorInfo()); die;
+   
     }
 
   }

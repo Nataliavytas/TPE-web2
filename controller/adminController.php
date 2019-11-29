@@ -87,7 +87,6 @@ class adminController {
 
     function agregarRevista(){
         $this->revistasModel->insertarRevista($_POST['titulo'], $_POST['fecha'], $_POST['descripcion'], $_POST['categoria'], $_FILES['agregarImagen']['tmp_name']);
-        var_dump($_FILES['agregarImagen']['tmp_name']); die;
         header("Location: " .REVISTAS);
     }
 
@@ -164,7 +163,6 @@ class adminController {
 
     
     function borrarIMG($id){
-        //var_dump($id);die;
         $this->imagenesModel->borrarIMG($id);
         header("Location: " . REVISTAS);
         
