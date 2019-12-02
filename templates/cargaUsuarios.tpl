@@ -25,5 +25,5 @@
         </form>
         <small class="form-text text-muted">Recuerde que registrarse no lo convierte en Usuario con privilegios. Contactese con el Administrador.</small>
         </div>
-        
+
 {include file="footer.tpl"}

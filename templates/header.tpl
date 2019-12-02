@@ -5,6 +5,7 @@
 
      <base href="http://{$smarty.server.SERVER_NAME}:{$smarty.server.SERVER_PORT}{dirname($smarty.server.PHP_SELF)}/">
 
+     {*<link rel="stylesheet" href=".\css\easterEgg.css">*}
      <link rel="stylesheet" href="./css/main.css">
 
      {*vue.js*}
@@ -21,17 +22,41 @@
     <link rel="stylesheet" href="estilos/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script src="JS\easterEgg.js"></script>
     <link rel="icon" href="images/aguacate.png?v1" type="image/x-icon" />
 <link rel="shortcut icon" href="images/aguacate.png?v1" type="image/x-icon" />
 </head>
 
 
+
  <nav class="navbar navbar-expand-lg fixed-top ">
         {if $user.admin eq "1" or $user.admin eq "0"  }
         <a class="navbar-brand" href="revistas" id="marcaMinimalismo"> MINIMALISMO </a>
+        <nav class="nav justify-content-center float-right">
+          <div class="nav-link">
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="darkSwitch">
+              <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+            </div>
+
+            <script src="dark-mode-switch.min.js"></script>
+
+          </div>
+        </nav>
         {/if}
         {if $user.admin eq "null"}
         <a class="navbar-brand" href="inicio" id="marcaMinimalismo"> MINIMALISMO </a>
+        <nav class="nav justify-content-center float-right">
+          <div class="nav-link">
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="darkSwitch">
+              <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+            </div>
+
+            <script src="dark-mode-switch.min.js"></script>
+
+          </div>
+        </nav>
         {/if}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
@@ -60,4 +85,5 @@
                 {/if}
                   </ul>
     </div>
+
  </nav>

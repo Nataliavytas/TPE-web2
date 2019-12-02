@@ -2,6 +2,7 @@
 require_once "controller/visitController.php";
 require_once "controller/adminController.php";
 require_once "controller/registroController.php";
+require_once "Router.php";
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
 define('HOME', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -10,8 +11,8 @@ define("CATEGORIAS", BASE_URL . 'admin/categorias');
 define("USUARIOS", BASE_URL . 'admin/usuarios');
 define("REVISTAS2", BASE_URL . 'revistas');
 
-$action = $_GET["action"];
 
+$action = $_GET['action'];
 $registroController = new registroController();
 $adminController = new adminController(); //Controlador del lado del administrador (lo que estabas haciendo vos)
 $visitController = new visitController(); //Controlador del lado del usuario anonimo, toda la pagina menos lo que seria "administrador"
@@ -88,6 +89,11 @@ if($action == ''){
     $adminController->borrarUsuario($partesURL[2]);
 
 }
+/*
+
+$router = new Router();
+
+
 //else
 $router->addRoute("", "GET", "visitController", "Home");
 $router->addRoute("inicio", "GET", "visitController", "Home");
@@ -119,4 +125,7 @@ $router->addRoute("admin/editarUsuario/:ID", "PUT", "adminController", "editarUs
 $router->addRoute("admin/borrarUsuario/:ID", "DELETE", "adminController", "borrarUsuario");
 $router->addRoute("logout", "GET", "registroController", "logout");
 $router->addRoute("registro", "GET", "visitController", "registrarse");
-$router->addRoute("iniciarSesion", "GET", "registroController", "iniciarSesion");
+$router->addRoute("iniciarSesion", "POST", "registroController", "iniciarSesion");
+
+$router->route($_GET['action'], $_SERVER['REQUEST_METHOD']);
+*/

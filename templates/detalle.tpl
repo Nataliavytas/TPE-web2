@@ -1,6 +1,6 @@
 <!DOCTYPE html>
       <html>
-      <body>
+      <body >
         {include file="header.tpl"}
 
       {foreach from=$detalle item=det}
@@ -14,10 +14,10 @@
           <p> {$det["descripcion"]} </p>
           <label id="imagen">
 
-          
+
                 <ul>
                  {foreach $imagenes as $img}
-                  <li>    
+                  <li>
                      <img src="{$img['imagen']}" class="img-thumbnail" alt="Imagen del id: {$img['id_imagen']}">
                      </li>
                    {/foreach}
@@ -27,7 +27,6 @@
       </div>
       {/foreach}
 
-          
 
 
 
@@ -43,7 +42,8 @@
 
 
 
-{* 
+
+{*
              <div class="carousel-inner" value="{$img['imagen']}">
                 {foreach $imagenes as $img}
                      <img src="{$img['imagen']}" class="d-block w-100" alt="Imagen del id: {$img['id_imagen']}">

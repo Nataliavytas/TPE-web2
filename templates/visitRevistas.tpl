@@ -3,19 +3,19 @@
 
       <body>
        {include file="header.tpl"}
-       <div id="textoinicio">
+       <div id="textoinicio" class="esta">
               <h2> Revistas publicadas </h2>
               </div>
-       <div class="container">
+       <div class="container" >
             <div id="formatoTabla">
             <form action="showDetalle" method="get">
             <table class="table table-bordered">
             <thead>
             <tr>
-            <th scope="col"> Titulo </th>
-            <th scope="col"> Descripción </th>
-            <th scope="col"> Fecha </th>
-            <th scope="col"> Categoria </th>
+            <th class="tabla2" scope="col"> Titulo </th>
+            <th class="tabla2" scope="col"> Descripción </th>
+            <th class="tabla2" scope="col"> Fecha </th>
+            <th class="tabla2" scope="col"> Categoria </th>
             </tr>
             </thead>
             <tbody id="cuerpoTabla">
@@ -32,7 +32,6 @@
             </form>
             </div>
        </div>
-
         {include file="footer.tpl"}
         </body>
      </html>

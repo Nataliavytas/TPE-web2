@@ -1,7 +1,7 @@
 <!DOCTYPE html>
         <html>
 
-      <body>
+      <body >
        {include file="header.tpl"}
        <div id="textoinicio">
               <h2> Revistas publicadas </h2>

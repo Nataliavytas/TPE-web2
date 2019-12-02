@@ -1,6 +1,6 @@
 <!DOCTYPE html>
       <html>
-      <body>
+      <body >
 
       {include file="header.tpl"}
 
@@ -91,10 +91,10 @@
              </div>
            </form>
            {/foreach}
-           
+
             <a href="admin/revistas" class="card-link"> Volver  </a>
 
-        
+
         {include file="footer.tpl"}
 
         </body>

@@ -1,8 +1,8 @@
 {literal}
 <div id="comentarios">
-<div class="jumbotron"> 
-<h3>El promedio de puntuacion es: {{promedioPuntuacion}} </h3> 
-</div> 
+<div class="jumbotron">
+<h3>El promedio de puntuacion es: {{promedioPuntuacion}} </h3>
+</div>
 <div v-for="comentario in comentarios">
         <div class="card">
           <div class="card-body">
@@ -16,11 +16,11 @@
          </div>
          </div>
 
-      <div  v-show="usr >=0"> 
+      <div  v-show="usr >=0">
           <form id="formComentar" method="post">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">puntuacion:</label>
-                  <select id="exampleFormControlInput1" class="form-control" name="puntuacion">
+                  <select  class="custom-select" id="inputGroupSelect04" id="exampleFormControlInput1" class="form-control" name="puntuacion">
                         <option value="1"> 1 </option>
                         <option value="2"> 2 </option>
                         <option value="3"> 3 </option>

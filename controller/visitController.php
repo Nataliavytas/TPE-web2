@@ -87,11 +87,12 @@ class visitController{
   }
 
   function mostrarDetalle($id){
+    $categorias = $this->categoriasModel->getCategorias();
     $detalle =  $this->revistasModel->getDetalle($id);
     $imagenes = $this->imagenesModel->getImagenes($id);
-    
+
     $user = $this->getUser();
-    $this->detalleView->showDetalle($detalle, $imagenes, $user);
+    $this->detalleView->showDetalle($detalle, $imagenes, $user, $categorias);
   }
 
   function getRevistasPorCategoria($id){

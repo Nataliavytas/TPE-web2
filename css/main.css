@@ -1,3 +1,26 @@
+[data-time="dark"] #textoinicio h2 {
+    color: #00001a !important;
+}
+
+[data-theme="dark"] {
+  background-color: #262626 !important;
+  color: white !important;
+}
+
+ [data-theme="dark"] .jumbotron{
+  background-color: #00001a;
+}
+ [data-theme="dark"] #cuerpoTabla {
+  color: white;
+}
+[data-theme="dark"] .tabla2 {
+ color: white;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #000 !important;
+    color: white;
+}
 
 /* General */
 html{
@@ -51,7 +74,7 @@ html{
 }
 #textoinicio h2{
     size: 30px;
-    color: rgba(0, 0, 0 , 0.623);
+
     text-align: center;
     padding-bottom: 20px;
 }

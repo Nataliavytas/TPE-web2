@@ -1,11 +1,11 @@
 <!DOCTYPE html>
         <html>
-      <body>
+      <body >
        {include file="header.tpl"}
 
        <div id="textoinicio">
         <h2> Revistas actuales <a href="admin/revistas" type="button" class="btn btn-outline-secondary" id="botonRevistas">Revistas</a>
-        <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a> 
+        <a href="admin/categorias" type="button" class="btn btn-outline-secondary" id="botonCategorias">Categorias</a>
          <a href="admin/usuarios" type="button" class="btn btn-outline-secondary" id="botonUsuarios">Usuarios</a> </h2>
         </div>
 
